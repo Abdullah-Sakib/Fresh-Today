@@ -9,7 +9,7 @@ const Banner = () => {
         <div className='relative font-family'>
             <img className='w-max' src={logo} alt=''/>
             <h1 class="absolute  lg:text-3xl md:text-xl  text-dark lg:top-1/3 md:top-1/3 top-20 left-1/2  -translate-x-1/2 -translate-y-1/2">
-           Our motto is serving fresh ingredients your way everyday!</h1>
+            Your satisfaction is our priority!</h1>
         </div>
 
     //     <div class="relative w-40 h-40">
