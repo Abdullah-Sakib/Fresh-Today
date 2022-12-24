@@ -7,6 +7,7 @@ import DashMain from "../../Pages/Dashboard/DashMain/DashMain";
 import Products from "../../Pages/Dashboard/Products/Products";
 import Report from "../../Pages/Dashboard/Report/Report";
 import Users from "../../Pages/Dashboard/Users/Users";
+import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
 
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         path:'/',
-        element: <div>Home</div>
+        element: <Home></Home>
       },
       {
         path: 'login',
