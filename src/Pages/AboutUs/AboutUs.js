@@ -6,7 +6,7 @@ const AboutUs = () => {
       <section class="bg-white dark:bg-gray-900">
         <div class="container px-6 py-10 mx-auto">
           <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
-            Our <span class="text-blue-500">Executive Team</span>
+            Our <span class="text-green-500">Executive Team</span>
           </h1>
 
           <p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
@@ -16,7 +16,7 @@ const AboutUs = () => {
           </p>
 
           <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-2">
-            <div class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent">
+            <div class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-green-500 dark:border-gray-700 dark:hover:border-transparent">
               <div class="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   class="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
@@ -92,7 +92,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent">
+            <div class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-green-500 dark:border-gray-700 dark:hover:border-transparent">
               <div class="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   class="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
@@ -170,7 +170,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent">
+            <div class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-green-500 dark:border-gray-700 dark:hover:border-transparent">
               <div class="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   class="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
@@ -248,7 +248,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent">
+            <div class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-green-500 dark:border-gray-700 dark:hover:border-transparent">
               <div class="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   class="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
@@ -326,7 +326,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent">
+            <div class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-green-500 dark:border-gray-700 dark:hover:border-transparent">
               <div class="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   class="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
