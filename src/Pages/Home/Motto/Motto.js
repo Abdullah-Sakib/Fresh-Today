@@ -13,7 +13,7 @@ const Motto = () => {
             <div className="w-full lg:w-1/3 h-24  lg:h-64   " />
             <div className=''>
             <h1 class="text-5xl text-dark font-bold font-family">
-           Our motto is serving fresh ingredients your way everyday!</h1>
+                Our motto is serving fresh ingredients your way everyday!</h1>
             </div>
             
            
