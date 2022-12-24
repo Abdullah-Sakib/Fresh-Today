@@ -1,7 +1,8 @@
-import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
 
 const DashMain = () => {
+
     return (
         <div className='bg-white text-black'>
             <div className="drawer drawer-mobile">
@@ -30,7 +31,9 @@ const DashMain = () => {
                 </div>
             </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default DashMain;
