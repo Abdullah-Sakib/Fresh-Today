@@ -29,11 +29,15 @@ const CustomerReview = () => {
                 <div id="slide2" className="carousel-item relative w-full flex justify-center shadow-lg">
                     <div className='grid grid-cols-2'>
                         <div className='flex justify-center items-center'>
-                            <img src="https://i.ibb.co/7bQQYkX/customer-1.png" alt="" className='w-32 h-32 rounded-full' />
+                        <div className="avatar">
+                            <div className="w-96 rounded-full">
+                                <img src="https://i.ibb.co/J5GVP1f/gayatri-malhotra-EJWa-KVPB6i-I-unsplash.jpg" alt="" />
+                            </div>
+                        </div>
                         </div>
                         <div className='flex justify-center items-center'>
-                            <div className='text-center'>
-                                <h2 className='text-2xl font-bold text-dark'>John Doe</h2>
+                            <div className='text-start bg-gray-500 p-4 opacity-90 shadow-2xl'>
+                                <h2 className='text-2xl font-bold text-base-100'>John Doe</h2>
                                 <p className='text-base-100'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
                             </div>
                         </div>
@@ -44,13 +48,17 @@ const CustomerReview = () => {
                     </div>
                 </div>
                 <div id="slide3" className="carousel-item relative w-full flex justify-center shadow-lg">
-                    <div className='grid grid-cols-2'>
+                <div className='grid grid-cols-2'>
                         <div className='flex justify-center items-center'>
-                            <img src="https://i.ibb.co/7bQQYkX/customer-1.png" alt="" className='w-32 h-32 rounded-full' />
+                        <div className="avatar">
+                            <div className="w-96 rounded-full">
+                                <img src="https://i.ibb.co/J5GVP1f/gayatri-malhotra-EJWa-KVPB6i-I-unsplash.jpg" alt="" />
+                            </div>
+                        </div>
                         </div>
                         <div className='flex justify-center items-center'>
-                            <div className='text-center'>
-                                <h2 className='text-2xl font-bold text-dark'>John Doe</h2>
+                            <div className='text-start bg-gray-500 p-4 opacity-90 shadow-2xl'>
+                                <h2 className='text-2xl font-bold text-base-100'>John Doe</h2>
                                 <p className='text-base-100'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
                             </div>
                         </div>
