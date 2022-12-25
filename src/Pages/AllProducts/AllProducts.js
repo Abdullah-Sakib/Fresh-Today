@@ -11,7 +11,7 @@ import rice from '../../images/Rice.png'
 
 const AllProducts = () => {
   return (
-    <div class="grid grid-cols-1 ">
+    <div className="grid grid-cols-1 ">
       <div className="mx-auto my-5 ">
         <div className="container mx-auto py-9 md:py-12 px-4 md:px-6">
           <div className="flex items-strech justify-center flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">

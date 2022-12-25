@@ -99,7 +99,7 @@ const Cart = () => {
                                 <td className="py-4 px-6 border-solid border-2 border-green-500 rounded ">
                                     ${product.price}
                                 </td>
-                                <button className="py-4 px-6 btn btn-primary mx-5">{product.isPaid ? 'Paid' : 'Pay Now'}</button>
+                                <button className="py-4 px-6 btn btn-success mx-5">{product.isPaid ? 'Paid' : 'Pay Now'}</button>
                             </tr>)
                         }
 
