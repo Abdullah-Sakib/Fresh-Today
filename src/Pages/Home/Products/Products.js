@@ -43,7 +43,6 @@ const Products = () => {
 
               {/* <a href="#"> */}
               <img
-                className="p-8 rounded-t-lg"
                 src={p.image}
                 className="h-72 lg:h-60 2xl:h-80 w-full rounded-t "
                 alt="product image"
