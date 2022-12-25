@@ -34,15 +34,18 @@ const Header = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/Products">Products</Link>
+              <Link to="/AllProducts">Products</Link>
             </li>
             <li>
               <Link to="/aboutUs">About Us</Link>
             </li>
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
           </ul>
         </div>
-        <img src={logo} className="-mt-4" alt="" />
-        <Link to="/" className="-ml-9 btn btn-ghost normal-case text-4xl">
+        <img src={logo} className="-mt-4 w-20 " alt="" />
+        <Link to="/" className="-ml-5 btn btn-ghost normal-case text-2xl md:text-3xl lg:text-3xl">
           Fresh Today
         </Link>
       </div>
@@ -52,16 +55,19 @@ const Header = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/Products">Products</Link>
-          </li>
+            <Link to="/AllProducts">Products</Link>
+          </li>   
           <li>
             <Link to="/aboutUs">About Us</Link>
           </li>
+          <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/Login" className="btn btn-ghost text-2xl normal-case">
-          Log in{" "}
+        <Link to="/Login" className="btn btn-ghost text-sm md:text-xl normal-case">
+          Log in
         </Link>
       </div>
     </div>

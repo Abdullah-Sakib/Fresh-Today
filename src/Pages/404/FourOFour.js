@@ -33,7 +33,7 @@ const FourOFour = () => {
                 <Link className="btn" to="/">
                   Go Back
                 </Link>
-              </button>
+              </button> 
             </div>
           </div>
         </div>

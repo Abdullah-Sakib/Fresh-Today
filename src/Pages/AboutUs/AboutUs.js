@@ -174,7 +174,7 @@ const AboutUs = () => {
               <div class="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   class="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
-                  src="https://avatars.githubusercontent.com/u/43945238?v=4"
+                  src="https://lh3.googleusercontent.com/u/0/drive-viewer/AFDK6gMxps2Ss_t1ZeX3hHwa4gtQlWBK_cUwYWrI119NooCmc2xjNM65FWUGZ44G4eLtfF0SgBd0GVrwJY4xIbDMEzHYr28ENw=w1366-h695"
                   alt=""
                 />
 
@@ -252,7 +252,7 @@ const AboutUs = () => {
               <div class="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   class="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
-                  src="https://lh3.googleusercontent.com/u/0/drive-viewer/AFDK6gMxps2Ss_t1ZeX3hHwa4gtQlWBK_cUwYWrI119NooCmc2xjNM65FWUGZ44G4eLtfF0SgBd0GVrwJY4xIbDMEzHYr28ENw=w1366-h695"
+                  src="https://media.discordapp.net/attachments/1055464435373834250/1056279343019589703/my-passport-photo_1-removebg-preview.jpg?width=351&height=452"
                   alt=""
                 />
 
