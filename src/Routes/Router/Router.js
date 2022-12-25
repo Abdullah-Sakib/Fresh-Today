@@ -11,6 +11,7 @@ import Report from "../../Pages/Dashboard/Report/Report";
 import Users from "../../Pages/Dashboard/Users/Users";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
+import ProductInfo from "../../Pages/ProductInfo/ProductInfo";
 import Register from "../../Pages/Register/Register";
 
 const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "aboutUs",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "product/:id",
+        element: <ProductInfo></ProductInfo>,
       },
     ],
   },

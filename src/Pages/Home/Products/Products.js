@@ -18,18 +18,18 @@ import { Link } from "react-router-dom";
 
 const Products = () => {
   const products = [
-    { image: p1, name: "Cauliflower" },
-    { image: p2, name: "Papaya" },
-    { image: p3, name: "Carrot" },
-    { image: p4, name: "Almond" },
-    { image: p5, name: "Apple" },
-    { image: p6, name: "Almonds" },
-    { image: p7, name: "Pumpkins" },
-    { image: p8, name: "White-Rice" },
-    { image: p9, name: "Tomato" },
-    { image: p10, name: "Strawbarries" },
-    { image: p11, name: "Potato" },
-    { image: p12, name: "Capsicum" },
+    { id: 1, image: p1, name: "Cauliflower" },
+    { id: 2, image: p2, name: "Papaya" },
+    { id: 3, image: p3, name: "Carrot" },
+    { id: 4, image: p4, name: "Almond" },
+    { id: 5, image: p5, name: "Apple" },
+    { id: 6, image: p6, name: "Almonds" },
+    { id: 7, image: p7, name: "Pumpkins" },
+    { id: 8, image: p8, name: "White-Rice" },
+    { id: 9, image: p9, name: "Tomato" },
+    { id: 10, image: p10, name: "Strawbarries" },
+    { id: 11, image: p11, name: "Potato" },
+    { id: 12, image: p12, name: "Capsicum" },
   ];
 
   return (
@@ -111,13 +111,13 @@ const Products = () => {
                   <span class="text-xl font-bold text-gray-900 dark:text-white">
                     $599
                   </span>
+                  <Link
+                    to={`product/${p.id}`}
 
-                  <a
-                    href="/"
                     class="text-white bg-lime-700 hover:bg-lime-900 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-3 mx-3 py-2.5 text-center dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800"
                   >
                     Buy Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
