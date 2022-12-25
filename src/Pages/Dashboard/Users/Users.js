@@ -35,7 +35,7 @@ const Users = () => {
     }
   ]
   return (
-    <div className='w-full'>
+    <div className='w-full font-family'>
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-semibold ">
           All <span className="text-green-500">Users</span>
@@ -59,7 +59,7 @@ const Users = () => {
                 </select>
               </div>
               <div className=" form-control ">
-                <input className="btn btn-success" type="submit" value="Submit" />
+                <input className="btn btn-success text-white" type="submit" value="Submit" />
               </div>
             </div>
           </form>

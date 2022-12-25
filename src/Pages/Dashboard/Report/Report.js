@@ -3,7 +3,7 @@ import { BsFillArrowRightSquareFill } from "react-icons/bs";
 
 const Report = () => {
   return (
-    <div>
+    <div className=" font-family">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-semibold ">
           Reported <span className="text-green-500">products</span>
@@ -12,9 +12,9 @@ const Report = () => {
           <BsFillArrowRightSquareFill className="text-3xl text-green-500"></BsFillArrowRightSquareFill>
         </label>
       </div>
-      <div className="overflow-x-auto mt-5">
+      <div className=" border-solid border-2 border-green-500 rounded overflow-x-auto mt-5">
         <table className="table w-full">
-          <thead>
+          <thead className=" bg-green-200 rounded ">
             <tr>
               <th></th>
               <th>Product</th>
