@@ -35,7 +35,7 @@ const Users = () => {
     }
   ]
   return (
-    <div className='w-full'>
+    <div className='w-full font-family'>
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-semibold ">
           All <span className="text-green-500">Users</span>
@@ -44,36 +44,39 @@ const Users = () => {
           <BsFillArrowRightSquareFill className="text-3xl text-green-500"></BsFillArrowRightSquareFill>
         </label>
       </div>
+
+      {/* filter start  */}
       <div className=' text-gray-700 text-xl m-5'>
-        <h1 className='text-xl'>Filteration Your User</h1>
+        <h1 className='text-xl'>Filter Your User</h1>
         <div className='w-full'>
-          <form action="" className="space-y-6 ng-untouched ng-pristine ng-valid flex flex-row">
-            <div className="space-y-1 text-sm border-solid border-2 border-green-500 rounded p-5">
-              <label className="block text-xl dark:text-gray-400">Select Product Category</label>
-              <select name="categoryName" className="select w-full max-w-xs border-solid border-2 border-green-500">
-                <option value="Buyer" defaultValue>Buyer</option>
-                <option value="Seller" >Seller</option>
-                <option value="Admin" >Admin</option>
-              </select>
-              <div className="form-control mt-6">
-                <input className="btn btn-primary" type="submit" value="Submit" />
+          <form action="" className="bg-green-50 space-y-6 ng-untouched ng-pristine ng-valid flex flex-row">
+            <div className="flex justify-evenly w-full space-y-1 text-sm border-solid border-2 border-green-500 rounded p-5">
+              <div>
+                <select name="categoryName" className="select border-solid border-2 border-green-500">
+                  <option value="Buyer" defaultValue>Buyer</option>
+                  <option value="Seller" >Seller</option>
+                  <option value="Admin" >Admin</option>
+                </select>
+              </div>
+              <div className=" form-control ">
+                <input className="btn btn-success text-white" type="submit" value="Submit" />
               </div>
             </div>
           </form>
         </div>
       </div>
-      <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
-        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
+      {/* filter end  */}
+
+      <div className="overflow-x-auto relative shadow-md sm:rounded-lg border-2 border-green-500 rounded ">
+        <table className=" w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead className="bg-green-50 text-xl text-gray-700 uppercase dark:text-gray-400">
             <tr>
               <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
+
               </th>
-              <th>Name</th>
+              <th className="p-3">Name</th>
               <th>Role</th>
-              <th>Favorite Color</th>
+              <th>Status</th>
               <th></th>
             </tr>
           </thead>
@@ -81,7 +84,7 @@ const Users = () => {
 
             {
               users.map((user, id) => <tr key={id} className='border-b border-green-200 dark:border-green-700'>
-                <th scope="row" className="py-4 px-6 font-medium text-black-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                <th scope="row" className="py-4 px-6 font-medium text-black-900 whitespace-nowrap bg-green-100 dark:text-white dark:bg-gray-800">
                   <label>
                     <input type="checkbox" className="checkbox" />
                   </label>
@@ -99,13 +102,12 @@ const Users = () => {
                     </div>
                   </div>
                 </td>
-                <td className="py-4 px-6 bg-gray-50 dark:bg-gray-800">
-                  Zemlak, Daniel and Leannon
-                  <br />
-                  <span className="badge badge-ghost badge-sm">{user.role}</span>
+                <td className="py-4 px-6 bg-green-100 dark:bg-gray-800">
+
+                  {user.role}
                 </td>
-                <td className="py-4 px-6">Purple</td>
-                <th>
+                <td className="py-4 px-6">Active</td>
+                <th className="py-4 px-6 bg-green-100 dark:bg-gray-800">
                   <button className="btn btn-ghost btn-xs border border-black">details</button>
                 </th>
               </tr>)

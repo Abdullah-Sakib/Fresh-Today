@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import logo from '../../../images/logo.png'
 
 const DashMain = () => {
+  
   return (
-    <div className="bg-white text-black">
+    <div className="bg-white text-black font-family">
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
@@ -22,19 +24,19 @@ const DashMain = () => {
           <ul className="menu p-4 w-80 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
             <li>
-            <Link to="/">Logo will be here</Link>
+            <Link className="" to="/"> <img src={logo} className="-mt-4 w-20 " alt="This is logo" /> <p className="font-family normal-case text-2xl md:text-3xl lg:text-3xl">Fresh Today</p> </Link>
             </li>
 
-            <li className="text-lg font-semibold">
+            <li className="my-3 bg-green-200 rounded text-lg font-semibold">
               <Link to="/dashboard/users">Users</Link>
             </li>
-            <li className="text-lg font-semibold"> 
+            <li className="my-3 bg-green-200 rounded text-lg font-semibold"> 
               <Link to="/dashboard/products">Products</Link>
             </li>
-            <li className="text-lg font-semibold">
+            <li className="my-3 bg-green-200 rounded text-lg font-semibold">
               <Link to="/dashboard/cart">Cart</Link>
             </li>
-            <li className="text-lg font-semibold">
+            <li className="my-3 bg-green-200 rounded text-lg font-semibold">
               <Link to="/dashboard/reports">Reports</Link>
             </li>
 
