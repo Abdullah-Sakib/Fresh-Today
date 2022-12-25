@@ -44,6 +44,24 @@ const Users = () => {
           <BsFillArrowRightSquareFill className="text-3xl text-green-500"></BsFillArrowRightSquareFill>
         </label>
       </div>
+      <div className=' text-gray-700 text-xl m-5'>
+        <h1 className='text-xl'>Filteration Your User</h1>
+        <div className='w-full'>
+          <form action="" className="space-y-6 ng-untouched ng-pristine ng-valid flex flex-row">
+            <div className="space-y-1 text-sm border-solid border-2 border-green-500 rounded p-5">
+              <label className="block text-xl dark:text-gray-400">Select Product Category</label>
+              <select name="categoryName" className="select w-full max-w-xs border-solid border-2 border-green-500">
+                <option value="Buyer" defaultValue>Buyer</option>
+                <option value="Seller" >Seller</option>
+                <option value="Admin" >Admin</option>
+              </select>
+              <div className="form-control mt-6">
+                <input className="btn btn-primary" type="submit" value="Submit" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
       <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
