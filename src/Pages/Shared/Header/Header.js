@@ -39,6 +39,9 @@ const Header = () => {
             <li>
               <Link to="/aboutUs">About Us</Link>
             </li>
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
           </ul>
         </div>
         <img src={logo} className="-mt-4 w-20 " alt="" />
@@ -57,6 +60,9 @@ const Header = () => {
           <li>
             <Link to="/aboutUs">About Us</Link>
           </li>
+          <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
         </ul>
       </div>
       <div className="navbar-end">

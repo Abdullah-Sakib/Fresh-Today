@@ -14,6 +14,7 @@ import p11 from "../../../images/p (1).jpg";
 import p12 from "../../../images/p (2).jpg";
 import { Link } from "react-router-dom";
 
+
 // This part is contributed by Tasfi
 
 const Products = () => {
@@ -52,6 +53,7 @@ const Products = () => {
                 <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   {p.name}
                 </h5>
+
 
                 <div class="flex items-center mt-2.5 mb-5">
                   <svg
@@ -125,7 +127,7 @@ const Products = () => {
           ))}
         </div>
         <Link
-                    to='/AllProducts'
+                   to='/AllProducts'
                     class="mt-32 mx-auto text-dark font-semibold bg-lime-200 hover:bg-lime-700 focus:ring-4 focus:outline-none focus:ring-lime-300 rounded-lg text-xl px-3 mx-5 py-2.5 text-center dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800"
                   >
                     See More...
