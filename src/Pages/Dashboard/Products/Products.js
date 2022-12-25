@@ -2,6 +2,7 @@ import React from "react";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
 
 const Products = () => {
+  // product array created 
   const products = [
     {
       name: 'Carrot',
