@@ -54,9 +54,9 @@ const Cart = () => {
         }
     ]
     return (
-        <div>
+        <div className=" font-family">
             <div className="flex justify-between items-center">
-                <h1 className="text-3xl font-semibold ">
+                <h1 className="m-5 text-3xl font-semibold ">
                     Cart <span className="text-green-500">products</span>
                 </h1>
                 <label htmlFor="my-drawer-2" className="drawer-button lg:hidden">
