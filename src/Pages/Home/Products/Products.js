@@ -12,6 +12,7 @@ import p9 from "../../../images/p(4).jpg";
 import p10 from "../../../images/p(9).jpg";
 import p11 from "../../../images/p (1).jpg";
 import p12 from "../../../images/p (2).jpg";
+import { Link } from "react-router-dom";
 
 // This part is contributed by Tasfi
 
@@ -38,7 +39,7 @@ const Products = () => {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 justify-items-center">
           {products.map((p) => (
            
-            <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 mt-9">
+            <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 my-9">
               {/* <a href="#"> */}
               <img
                 class="p-8 rounded-t-lg"
@@ -123,6 +124,12 @@ const Products = () => {
             </div>
           ))}
         </div>
+        <Link
+                    to='/AllProducts'
+                    class="mt-32 mx-auto text-dark font-semibold bg-lime-200 hover:bg-lime-700 focus:ring-4 focus:outline-none focus:ring-lime-300 rounded-lg text-xl px-3 mx-5 py-2.5 text-center dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800"
+                  >
+                    See More...
+        </Link>
       </div>
     </>
   );
