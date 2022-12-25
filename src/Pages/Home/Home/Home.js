@@ -4,6 +4,7 @@ import CustomerReview from '../CustomerReview/CustomerReview';
 import Motto from '../Motto/Motto';
 import Products from '../Products/Products';
 import Newsletter from '../Newsletter/Newsletter';
+import TopRatedVendors from '../TopRatedVendors/TopRatedVendors';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <Motto></Motto>
             <Products></Products>
             <CustomerReview></CustomerReview>
+            <TopRatedVendors></TopRatedVendors>
             <Newsletter></Newsletter>
         </div>
     );

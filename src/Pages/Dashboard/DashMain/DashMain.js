@@ -7,17 +7,20 @@ const DashMain = () => {
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
+
         <div className="drawer-content flex flex-col">
+
           <div className="drawer-content flex flex-col p-5">
+
             {/* <!-- Page content here --> */}
             <Outlet></Outlet>
+            
           </div>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side border-solid border-2 border-green-500 rounded ">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 bg-base-200 text-base-content ">
+          <ul className="menu p-4 w-80 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
-
             <li>
             <Link to="/">Logo will be here</Link>
             </li>
@@ -34,11 +37,15 @@ const DashMain = () => {
             <li className="text-lg font-semibold">
               <Link to="/dashboard/reports">Reports</Link>
             </li>
+
           </ul>
+
         </div>
       </div>
     </div>
+
   );
+
 };
 
 export default DashMain;
