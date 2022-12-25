@@ -1,13 +1,13 @@
 import React from "react";
 import logo from "../../images/cate1.png";
-import fruit from '../../images/fruit.png';
-import veg from '../../images/veg.png';
-import dairy from '../../images/dairy.png';
-import meat from '../../images/meat.png';
-import fish from '../../images/fish.png'
-import bread from '../../images/bread.png'
-import juice from '../../images/juice.png'
-import rice from '../../images/Rice.png'
+import fruit from "../../images/fruit.png";
+import veg from "../../images/veg.png";
+import dairy from "../../images/dairy.png";
+import meat from "../../images/meat.png";
+import fish from "../../images/fish.png";
+import bread from "../../images/bread.png";
+import juice from "../../images/juice.png";
+import rice from "../../images/Rice.png";
 
 const AllProducts = () => {
   return (
@@ -32,70 +32,39 @@ const AllProducts = () => {
         </div>
       </div>
       <div>
-        <h3 className="text-3xl font-bold my-9 font-family mx-5">All Categories</h3>
+        <h3 className="text-3xl font-bold my-9 font-family mx-5">
+          All Categories
+        </h3>
       </div>
-      
-      
-      <div className="grid lg:grid-cols-8 lg:mx-auto md:grid-cols-4 sm:grid-cols-2  mx-auto  space-y-4 lg:space-y-0">
-      
-        <div className=" w-44 h-44 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full mx-2">
-          <div className="card-body items-center text-center">
-           <img src={fruit} className='rounded-full w-32 h-44 pb-12' alt=""></img>
-          </div>
-        </div>
-     
-  
-        <div className=" w-44 h-44 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full mx-2">
-          <div className="card-body items-center text-center">
-          <img src={veg} className='rounded-full w-32 h-44  pb-12' alt=""></img>
-          </div>
-        </div>
-  
-   
-        <div className=" w-44 h-44 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full mx-2">
-          <div className="card-body items-center text-center">
-         <img src={dairy} className='rounded-full w-32 h-44  pb-12' alt=""></img>
-          </div>
-        </div>
-   
 
-        <div className=" w-44 h-44 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full mx-2">
-          <div className="card-body items-center text-center">
-         <img src={meat} className='rounded-full w-32 h-44 pb-12' alt=""></img>
-          </div>
+      <div className="grid lg:grid-cols-8 lg:mx-auto md:grid-cols-4 sm:grid-cols-2  space-y-4 lg:space-y-0">
+        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
+          <img src={fruit} className="rounded-full w-28 h-28" alt=""></img>
         </div>
-    
 
-        <div className="w-44 h-44 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full mx-2">
-          <div className="card-body items-center text-center">
-         <img src={fish} className='rounded-full w-32 h-44  pb-12' alt=""></img>
-          </div>
+        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
+          <img src={veg} className="rounded-full w-28 h-28" alt=""></img>
         </div>
-    
-  
-        <div className=" w-44 h-44 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full mx-2">
-          <div className="card-body items-center text-center">
-         <img src={bread} className='rounded-full w-32 h-44  pb-12' alt=""></img>
-          </div>
+        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
+          <img src={dairy} className="rounded-full w-28 h-28" alt=""></img>
         </div>
-   
-   
-        <div className="w-44 h-44  hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full mx-2">
-          <div className="card-body items-center text-center">
-          <img src={juice} className='rounded-full w-32 h-44 pb-12' alt=""></img>
-          </div>
+        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
+          <img src={meat} className="rounded-full w-28 h-28" alt=""></img>
         </div>
- 
-    
-        <div className=" w-44 h-44 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full mx-2">
-          <div className="card-body items-center text-center">           
-        <img src={rice} className='rounded-full w-32 h-44 pb-12' alt=""></img>
-         
-          </div>
+        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
+          <img src={bread} className="rounded-full w-28 h-28" alt=""></img>
+        </div>
+        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
+          <img src={fish} className="rounded-full w-28 h-28" alt=""></img>
+        </div>
+        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
+          <img src={juice} className="rounded-full w-28 h-28" alt=""></img>
+        </div>
+        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
+          <img src={rice} className="rounded-full w-28 h-28" alt=""></img>
         </div>
       </div>
-    
-     
+
       <div>03</div>
     </div>
   );
