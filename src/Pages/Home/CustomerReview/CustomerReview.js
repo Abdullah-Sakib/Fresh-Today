@@ -1,75 +1,80 @@
 import React from 'react';
 import customerReviewBg from '../../../Assets/customer-review-bg.jpg';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Parallax } from "swiper";
+import './CustomerReview.css'
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const CustomerReview = () => {
     return (
-        <div className='my-36 h-screen' style={{backgroundImage: `url(${customerReviewBg})`}}>
-            <div className="carousel h-screen w-full">
-                <div id="slide1" className="carousel-item relative w-full border-2 flex justify-center shadow-lg">
-                    <div className='grid grid-cols-1 lg:grid-cols-2'>
-                        <div className='flex justify-center items-center'>
+            <div className='py-16 font-family'>
+                <h1 className='pb-4 text-center font-bold text-slate-800 text-5xl'>Let's hear what our customers have to say</h1>
+                <Swiper
+                    style={{
+                        "--swiper-navigation-color": "#fff",
+                        "--swiper-pagination-color": "#fff",
+                    }}
+                    speed={600}
+                    parallax={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Parallax, Pagination, Navigation]}
+                    className="mySwiper"
+                >
+                    <div
+                        slot="container-start"
+                        className="parallax-bg"
+                        style={{backgroundImage:`url(${customerReviewBg})`}}
+                        data-swiper-parallax="-23%"
+                    ></div>
+                    <SwiperSlide>
+                        <div className="lg:p-20 lg:flex justify-center items-center gap-4" data-swiper-parallax="-300">
                             <div className="avatar">
-                                <div className="w-96 rounded-full">
-                                    <img src="https://i.ibb.co/J5GVP1f/gayatri-malhotra-EJWa-KVPB6i-I-unsplash.jpg" alt="" />
+                                <div className="w-96 rounded">
+                                    <img src="https://i.ibb.co/J5GVP1f/gayatri-malhotra-EJWa-KVPB6i-I-unsplash.jpg" alt='' />
                                 </div>
                             </div>
-                        </div>
-                        <div className='flex justify-center items-center'>
-                            <div className='text-start bg-gray-500 p-4 opacity-90 shadow-2xl mx-2'>
-                                <h2 className='text-2xl font-bold text-base-100'>John Doe</h2>
-                                <p className='text-base-100'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                            <div className='text-slate-50 text-3xl font-semibold w-96'>
+                                <p className='text-9xl h-16'>"</p>
+                                <p className='pl-16 text-slate-800'>I have always received my orders on time and the quality of the products are always top notch</p>
                             </div>
                         </div>
-                    </div>
-                    <div className="absolute justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 hidden lg:flex">
-                        <a href="#slide3" className="btn btn-circle">❮</a> 
-                        <a href="#slide2" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide2" className="carousel-item relative w-full flex justify-center shadow-lg">
-                    <div className='grid grid-cols-1 lg:grid-cols-2'>
-                        <div className='flex justify-center items-center'>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="lg:p-20 lg:flex justify-center items-center gap-4" data-swiper-parallax="-300">
                             <div className="avatar">
-                                <div className="w-96 rounded-full">
-                                    <img src="https://i.ibb.co/J5GVP1f/gayatri-malhotra-EJWa-KVPB6i-I-unsplash.jpg" alt="" />
+                                <div className="w-96 rounded">
+                                    <img src="https://i.ibb.co/bb8Yfc7/may-gauthier-s3m-R42-Spras-unsplash.jpg" alt='' />
                                 </div>
                             </div>
-                        </div>
-                        <div className='flex justify-center items-center'>
-                            <div className='text-start bg-gray-500 p-4 opacity-90 shadow-2xl mx-2'>
-                                <h2 className='text-2xl font-bold text-base-100'>John Doe</h2>
-                                <p className='text-base-100'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                            <div className='text-slate-50 text-3xl font-semibold w-96'>
+                                <p className='text-9xl h-16'>"</p>
+                                <p className='pl-16 text-slate-800'>My experience with using Fresh Today has been worthwhile. I would strongly suggest it for everybody to use</p>
                             </div>
                         </div>
-                    </div>
-                    <div className="absolute justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 hidden lg:flex">
-                        <a href="#slide1" className="btn btn-circle">❮</a> 
-                        <a href="#slide3" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide3" className="carousel-item relative w-full flex justify-center shadow-lg">
-                <div className='grid grid-cols-1 lg:grid-cols-2'>
-                        <div className='flex justify-center items-center'>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="lg:p-20 lg:flex justify-center items-center gap-4" data-swiper-parallax="-300">
                             <div className="avatar">
-                                <div className="w-96 rounded-full">
-                                    <img src="https://i.ibb.co/J5GVP1f/gayatri-malhotra-EJWa-KVPB6i-I-unsplash.jpg" alt="" />
+                                <div className="w-96 rounded">
+                                    <img src="https://i.ibb.co/jv65wpR/edward-cisneros-H6wpor9mjs-unsplash.jpg" alt='' />
                                 </div>
                             </div>
-                        </div>
-                        <div className='flex justify-center items-center'>
-                            <div className='text-start bg-gray-500 p-4 opacity-90 shadow-2xl mx-2'>
-                                <h2 className='text-2xl font-bold text-base-100'>John Doe</h2>
-                                <p className='text-base-100'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                            <div className='text-slate-50 text-3xl font-semibold w-96'>
+                                <p className='text-9xl h-16'>"</p>
+                                <p className='pl-16 text-slate-800'>Fresh Today has made my life easier. Now I can save time during my grocery shopping which otherwise becomes a hassle</p>
                             </div>
                         </div>
-                    </div>
-                    <div className="absolute justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 hidden lg:flex">
-                        <a href="#slide2" className="btn btn-circle">❮</a> 
-                        <a href="#slide1" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
+                    </SwiperSlide>
+                </Swiper>
             </div>
-        </div>
     );
 };
 
