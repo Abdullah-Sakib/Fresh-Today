@@ -8,7 +8,7 @@ const Footer = () => {
             <div>
                 <Link to="/" className="btn btn-ghost normal-case text-4xl">
                     Fresh Today
-                </Link>
+                </Link>    
                 <p>Copyright © 2022 - All right reserved</p>
             </div> 
             <div>
