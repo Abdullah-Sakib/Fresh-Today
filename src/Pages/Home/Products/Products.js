@@ -14,48 +14,48 @@ import p11 from "../../../images/p (1).jpg";
 import p12 from "../../../images/p (2).jpg";
 import { Link } from "react-router-dom";
 
-
 // This part is contributed by Tasfi
 
 const Products = () => {
   const products = [
-    { image: p1, name: "Cauliflower" },
-    { image: p2, name: "Papaya" },
-    { image: p3, name: "Carrot" },
-    { image: p4, name: "Almond" },
-    { image: p5, name: "Apple" },
-    { image: p6, name: "Almonds" },
-    { image: p7, name: "Pumpkins" },
-    { image: p8, name: "White-Rice" },
-    { image: p9, name: "Tomato" },
-    { image: p10, name: "Strawbarries" },
-    { image: p11, name: "Potato" },
-    { image: p12, name: "Capsicum" },
+    { id: 1, image: p1, name: "Cauliflower" },
+    { id: 2, image: p2, name: "Papaya" },
+    { id: 3, image: p3, name: "Carrot" },
+    { id: 4, image: p4, name: "Almond" },
+    { id: 5, image: p5, name: "Apple" },
+    { id: 6, image: p6, name: "Almonds" },
+    { id: 7, image: p7, name: "Pumpkins" },
+    { id: 8, image: p8, name: "White-Rice" },
+    { id: 9, image: p9, name: "Tomato" },
+    { id: 10, image: p10, name: "Strawbarries" },
+    { id: 11, image: p11, name: "Potato" },
+    { id: 12, image: p12, name: "Capsicum" },
   ];
 
   return (
     <>
-      <div className="mt-48 text-left lg:mx-20 sm:mx-5 md:mx-0 text-4xl font-family ">
-        <h3>Popular items</h3>
+      <div className="mt-16 md:mt-28 lg:mt-32 text-left lg:mx-14 mx-5 md:mx-5 text-4xl font-family ">
+        <h3 className="mb-4">Popular items</h3>
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 justify-items-center">
           {products.map((p) => (
-           
-            <div className="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 my-9">
+
+            <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 md:my-5">
+
               {/* <a href="#"> */}
               <img
                 className="p-8 rounded-t-lg"
                 src={p.image}
-                className="h-80 w-full rounded-t "
+                className="h-72 lg:h-60 2xl:h-80 w-full rounded-t "
                 alt="product image"
               />
               {/* </a> */}
-              <div className="px-5 pb-5">
-                <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+
+              <div class="px-5 pb-5 pt-4">
+                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   {p.name}
                 </h5>
 
-
-                <div className="flex items-center mt-2.5 mb-5">
+                <div class="flex items-center mt-2.5 mb-5">
                   <svg
                     aria-hidden="true"
                     className="w-5 h-5 text-yellow-300"
@@ -114,23 +114,22 @@ const Products = () => {
                   <span className="text-xl font-bold text-gray-900 dark:text-white">
                     $599
                   </span>
-
-                  <a
-                    href="#"
-                    className="text-white bg-lime-700 hover:bg-lime-900 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-3 mx-3 py-2.5 text-center dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800"
+                  <Link
+                    to={`product/${p.id}`}
+                    class="text-white bg-lime-700 hover:bg-lime-900 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-3 mx-3 py-2.5 text-center dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800"
                   >
                     Buy Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
         <Link
-                   to='/AllProducts'
-                    className="mt-32 mx-auto text-dark font-semibold bg-lime-200 hover:bg-lime-700 focus:ring-4 focus:outline-none focus:ring-lime-300 rounded-lg text-xl px-3 mx-5 py-2.5 text-center dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800"
-                  >
-                    See More...
+          to="/AllProducts"
+          class="inline-block mt-5 md:mt-0 text-dark font-semibold bg-lime-200 hover:bg-lime-700 focus:ring-4 focus:outline-none focus:ring-lime-300 rounded-lg text-xl px-3  py-2.5 text-center dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800"
+        >
+          See More...
         </Link>
       </div>
     </>
