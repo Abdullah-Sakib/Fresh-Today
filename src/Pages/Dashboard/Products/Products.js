@@ -29,7 +29,7 @@ const Products = () => {
                             <td className="py-4 px-6">
                                 Sliver
                             </td>
-                            <td className="py-4 px-6 bg-gray-50 dark:bg-gray-800">
+                            <td className="py-4 px-6 bg-green-50 dark:bg-gray-800">
                                 Laptop
                             </td>
                             <td className="py-4 px-6">

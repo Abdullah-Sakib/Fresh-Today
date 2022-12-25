@@ -16,20 +16,22 @@ const DashMain = () => {
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
                 </div>
-                <div className="drawer-side">
+                </div>
+                <div className="drawer-side border-solid border-2 border-green-500 rounded ">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
                         {/* <!-- Sidebar content here --> */}
-                        <li><Link to='/dashboard/users'>Users</Link></li>
-                        <li><Link to='/dashboard/products'>Products</Link></li>
-                        <li><Link to='/dashboard/cart'>Cart</Link></li>
-                        <li><Link to='/dashboard/reports'>Reports</Link></li>
+                        <li className='border-solid border-2 border-green-500 rounded-xl m-2'><Link to='/dashboard/users'>Users</Link></li>
+                        <li className='border-solid border-2 border-green-500 rounded-xl m-2'><Link to='/dashboard/products'>Products</Link></li>
+                        <li className='border-solid border-2 border-green-500 rounded-xl m-2'><Link to='/dashboard/cart'>Cart</Link></li>
+                        <li className='border-solid border-2 border-green-500 rounded-xl m-2'><Link to='/dashboard/reports'>Reports</Link></li>
                         
                     </ul>
 
                 </div>
             </div>
         </div>
+
     );
 };
 
