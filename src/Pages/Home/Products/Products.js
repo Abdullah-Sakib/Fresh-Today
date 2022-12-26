@@ -40,9 +40,13 @@ const Products = () => {
           {products.map((p) => (
             <Link to={`/product/${p.id}`} aria-label="View Item">
               <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl w-full max-w-sm  md:my-9">
-                <img className="h-96 w-96 rounded-lg" src={p.image} alt="" />
+                <img
+                  className="h-96 w-96 lg:h-72 lg:w-80 xl:h-80 xl:w-96 rounded-lg"
+                  src={p.image}
+                  alt=""
+                />
                 <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
-                  <p className="mb-4 text-lg font-bold text-gray-100">
+                  <p className="mb-4 text-3xl font-bold text-gray-100">
                     {p.name}
                   </p>
                 </div>
