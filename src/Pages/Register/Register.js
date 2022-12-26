@@ -115,7 +115,7 @@ const Register = () => {
                 htmlFor="bordered-radio-2"
                 className="py-4 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Seller Account
+                Vendor Account
               </label>
             </div>
           </div>

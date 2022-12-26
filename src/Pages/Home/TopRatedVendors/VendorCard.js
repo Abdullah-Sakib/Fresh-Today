@@ -1,11 +1,11 @@
 import React from 'react';
 
 const VendorCard = ({vendor}) => {
-    const {name, image, orders, rating} = vendor;
+    const {name, image, orders} = vendor;
 
     return (
-        <div className="card card-side bg-base-100 shadow-xl h-40 mx-2 lg:mx-64 border-2">
-            <figure className='lg:w-56'><img className='h-full' src={image} alt={name}/></figure>
+        <div className="card card-side bg-slate-50 shadow-2xl h-40 mx-2 w-full">
+            <figure className='w-1/2 lg:w-1/4'><img className='h-full' src={image} alt={name}/></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>Orders completed: {orders}</p>
