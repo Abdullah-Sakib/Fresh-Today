@@ -34,27 +34,17 @@ const Products = () => {
 
   return (
     <>
-      <div className="mt-48 text-left lg:mx-44 sm:mx-5 md:mx-0 text-4xl font-family ">
+      <div className="mt-48 text-left lg:mx-20 sm:mx-5 md:mx-0 text-4xl font-family ">
         <h3>Popular items</h3>
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 justify-items-center">
           {products.map((p) => (
-            //  <div className="card card-compact w-80 bg-base-100 shadow-xl mt-10 ">
-            //      <figure><img src={p.image} alt="Shoes" className='h-80 w-full ' /></figure>
-            //      <div className="card-body">
-            //        <h2 className="card-title">{p.name}</h2>
-            //        <p>Price: 20 $</p>
-            //        <div className="card-actions justify-end">
-            //          <button className="btn btn-primary">Buy Now</button>
-            //        </div>
-            //      </div>
-            //    </div>
 
-            <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 mt-9">
+            <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 my-9">
               {/* <a href="#"> */}
               <img
                 class="p-8 rounded-t-lg"
                 src={p.image}
-                className="h-80 w-full "
+                className="h-80 w-full rounded-t "
                 alt="product image"
               />
               {/* </a> */}
@@ -62,6 +52,7 @@ const Products = () => {
                 <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   {p.name}
                 </h5>
+
 
                 <div class="flex items-center mt-2.5 mb-5">
                   <svg
@@ -134,6 +125,12 @@ const Products = () => {
             </div>
           ))}
         </div>
+        <Link
+          to='/AllProducts'
+          class="mt-32 mx-auto text-dark font-semibold bg-lime-200 hover:bg-lime-700 focus:ring-4 focus:outline-none focus:ring-lime-300 rounded-lg text-xl px-3 mx-5 py-2.5 text-center dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800"
+        >
+          See More...
+        </Link>
       </div>
     </>
   );
