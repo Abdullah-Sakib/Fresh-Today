@@ -8,10 +8,10 @@ import p5 from "../../../images/p(7).jpg";
 import p6 from "../../../images/p(8).jpg";
 import p7 from "../../../images/p(1).jpg";
 import p8 from "../../../images/p(10).jpg";
-import p9 from "../../../images/p(4).jpg";
+import p9 from "../../../images/tomato.webp";
 import p10 from "../../../images/p(9).jpg";
 import p11 from "../../../images/p (1).jpg";
-import p12 from "../../../images/p (2).jpg";
+import p12 from "../../../images/cap.webp";
 import { Link } from "react-router-dom";
 
 // This part is contributed by Tasfi
