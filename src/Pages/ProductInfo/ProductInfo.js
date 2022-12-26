@@ -3,14 +3,14 @@ import cucumbers from '../../images/cucumbers.jpg'
 import { BsPlusSquare } from "react-icons/bs";
 import { AiOutlineMinusSquare } from "react-icons/ai";
 
-// This part is contributed by Ankan
+// This part is contributed by Ankan Halder
 
 const ProductInfo = () => {
     const vendors = [
         { id: 1, name: 'Vendor One', price: 99, quantity: 23 },
         { id: 2, name: 'Vendor Two', price: 88, quantity: 17 },
         { id: 3, name: 'Vendor Three', price: 94, quantity: 20 },
-        { id: 4, name: 'Vendor Four', price: 80, quantity: 9 },
+        { id: 4, name: 'Vendor Four', price: 82, quantity: 19 },
         { id: 5, name: 'Vendor Five', price: 85, quantity: 11 },
         { id: 6, name: 'Vendor Six', price: 96, quantity: 14 },
     ]
@@ -23,7 +23,7 @@ const ProductInfo = () => {
                 <div className="card-body">
                     <div className='flex justify-between'>
                         <h2 className="text-2xl font-bold w-1/2">Cucumbers</h2>
-                        <p className='w-1/2 text-lg text-right'>See Reviews</p>
+                        <p className='w-1/2 text-lg text-right'><u>See Reviews</u></p>
                     </div>
                 </div>
             </div>

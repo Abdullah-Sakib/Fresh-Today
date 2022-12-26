@@ -34,25 +34,28 @@ const Products = () => {
 
   return (
     <>
-      <div className="mt-48 text-left lg:mx-20 sm:mx-5 md:mx-0 text-4xl font-family ">
-        <h3>Popular items</h3>
+      <div className="mt-16 md:mt-28 lg:mt-32 text-left lg:mx-14 mx-5 md:mx-5 text-4xl font-family ">
+        <h3 className="mb-4">Popular items</h3>
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 justify-items-center">
           {products.map((p) => (
+<<<<<<< HEAD
 
             <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 my-9">
+=======
+            <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 md:my-5">
+>>>>>>> c1773193051348538507467f6581cce290c800b7
               {/* <a href="#"> */}
               <img
                 class="p-8 rounded-t-lg"
                 src={p.image}
-                className="h-80 w-full rounded-t "
+                className="h-72 lg:h-60 2xl:h-80 w-full rounded-t "
                 alt="product image"
               />
               {/* </a> */}
-              <div class="px-5 pb-5">
+              <div class="px-5 pb-5 pt-4">
                 <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   {p.name}
                 </h5>
-
 
                 <div class="flex items-center mt-2.5 mb-5">
                   <svg
@@ -113,9 +116,9 @@ const Products = () => {
                   <span class="text-xl font-bold text-gray-900 dark:text-white">
                     $599
                   </span>
-
                   <Link
                     to={`product/${p.id}`}
+
                     class="text-white bg-lime-700 hover:bg-lime-900 focus:ring-4 focus:outline-none focus:ring-lime-300 font-medium rounded-lg text-sm px-3 mx-3 py-2.5 text-center dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800"
                   >
                     Buy Now
@@ -126,8 +129,13 @@ const Products = () => {
           ))}
         </div>
         <Link
+<<<<<<< HEAD
           to='/AllProducts'
           class="mt-32 mx-auto text-dark font-semibold bg-lime-200 hover:bg-lime-700 focus:ring-4 focus:outline-none focus:ring-lime-300 rounded-lg text-xl px-3 mx-5 py-2.5 text-center dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800"
+=======
+          to="/AllProducts"
+          class="inline-block mt-5 md:mt-0 text-dark font-semibold bg-lime-200 hover:bg-lime-700 focus:ring-4 focus:outline-none focus:ring-lime-300 rounded-lg text-xl px-3  py-2.5 text-center dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800"
+>>>>>>> c1773193051348538507467f6581cce290c800b7
         >
           See More...
         </Link>
