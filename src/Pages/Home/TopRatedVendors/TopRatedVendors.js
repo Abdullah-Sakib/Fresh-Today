@@ -37,7 +37,7 @@ const TopRatedVendors = () => {
     return (
         <div className='font-family'>
             <h1 className='lg:pt-16 pb-4 text-center font-bold text-slate-800 text-5xl'>Choose your favorite from our top vendors</h1>
-            <div className='bg-lime-300 lg:p-36 grid gap-4 lg:grid-cols-2 p-4'>
+            <div className='bg-gradient-to-r from-green-100 via-lime-100 to-green-100 lg:p-36 grid gap-4 lg:grid-cols-2 p-4'>
                 {
                     vendors.map(vendor => <VendorCard
                         key={vendor.id}
