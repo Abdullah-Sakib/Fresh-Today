@@ -3,7 +3,7 @@ import React from "react";
 const AboutUs = () => {
   return (
     <div>
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white dark:bg-gray-900 font-family">
         <div className="container px-6 py-10 mx-auto">
           <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
             Our <span className="text-green-500">Executive Team</span>
@@ -16,7 +16,7 @@ const AboutUs = () => {
           </p>
 
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-2">
-            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-green-500 dark:border-gray-700 dark:hover:border-transparent">
+            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
@@ -25,17 +25,17 @@ const AboutUs = () => {
                 />
 
                 <div className="mt-4 sm:mx-4 sm:mt-0">
-                  <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-white">
+                  <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-dark">
                     Ankan Halder
                   </h1>
 
-                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                  <p className="mt-2 text-gray-800 capitalize dark:text-gray-300 group-hover:text-dark">
                     Software Developer
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
                 nesciunt officia aliquam neque optio? Cumque facere numquam est.
               </p>
@@ -43,7 +43,7 @@ const AboutUs = () => {
               <div className="flex mt-4 -mx-2">
                 <a
                   href="/"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Reddit"
                 >
                   <svg
@@ -60,7 +60,7 @@ const AboutUs = () => {
                   href="https://www.facebook.com/ankan.halder.581"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Facebook"
                 >
                   <svg
@@ -77,7 +77,7 @@ const AboutUs = () => {
                   href="https://github.com/Ankan112"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Github"
                 >
                   <svg
@@ -92,7 +92,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-green-500 dark:border-gray-700 dark:hover:border-transparent">
+            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
@@ -101,17 +101,17 @@ const AboutUs = () => {
                 />
 
                 <div className="mt-4 sm:mx-4 sm:mt-0">
-                  <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-white">
+                  <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-dark">
                     Tasfia Nuzhat
                   </h1>
 
-                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
                     Software Developer
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
                 nesciunt officia aliquam neque optio? Cumque facere numquam est.
               </p>
@@ -121,7 +121,7 @@ const AboutUs = () => {
                   href="/"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Reddit"
                 >
                   <svg
@@ -138,7 +138,7 @@ const AboutUs = () => {
                   href="https://www.facebook.com/tasfianuzhat.tasfi.7?mibextid=ZbWKwL"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Facebook"
                 >
                   <svg
@@ -155,7 +155,7 @@ const AboutUs = () => {
                   href="https://github.com/tasfi60"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Github"
                 >
                   <svg
@@ -170,26 +170,26 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-green-500 dark:border-gray-700 dark:hover:border-transparent">
+            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
-                  src="https://lh3.googleusercontent.com/u/0/drive-viewer/AFDK6gMxps2Ss_t1ZeX3hHwa4gtQlWBK_cUwYWrI119NooCmc2xjNM65FWUGZ44G4eLtfF0SgBd0GVrwJY4xIbDMEzHYr28ENw=w1366-h695"
+                  src="https://i.ibb.co/LZqrn2g/akil.png"
                   alt=""
                 />
 
                 <div className="mt-4 sm:mx-4 sm:mt-0">
-                  <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-white">
+                  <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-dark">
                   Akil Chowdhury 
                   </h1>
 
-                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
                     Software developer
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
                 nesciunt officia aliquam neque optio? Cumque facere numquam est.
               </p>
@@ -199,7 +199,7 @@ const AboutUs = () => {
                   href="/"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Reddit"
                 >
                   <svg
@@ -216,7 +216,7 @@ const AboutUs = () => {
                   href="https://www.facebook.com/akil.chowdhury.5"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Facebook"
                 >
                   <svg
@@ -233,7 +233,7 @@ const AboutUs = () => {
                   href="https://github.com/akil18"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Github"
                 >
                   <svg
@@ -248,7 +248,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-green-500 dark:border-gray-700 dark:hover:border-transparent">
+            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
@@ -257,17 +257,17 @@ const AboutUs = () => {
                 />
 
                 <div className="mt-4 sm:mx-4 sm:mt-0">
-                  <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-white">
+                  <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-dark">
                   Mehedi Hasan
                   </h1>
 
-                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
                     Software developer
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
                 nesciunt officia aliquam neque optio? Cumque facere numquam est.
               </p>
@@ -277,7 +277,7 @@ const AboutUs = () => {
                   href="/"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Reddit"
                 >
                   <svg
@@ -294,7 +294,7 @@ const AboutUs = () => {
                   href="https://www.facebook.com/profile.php?id=100009593980715"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Facebook"
                 >
                   <svg
@@ -311,7 +311,7 @@ const AboutUs = () => {
                   href="https://github.com/Mehedi-noob"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Github"
                 >
                   <svg
@@ -326,7 +326,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-green-500 dark:border-gray-700 dark:hover:border-transparent">
+            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
@@ -335,17 +335,17 @@ const AboutUs = () => {
                 />
 
                 <div className="mt-4 sm:mx-4 sm:mt-0">
-                  <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-white">
+                  <h1 className="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-dark">
                     Abdullah Sakib
                   </h1>
 
-                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
                     Software Developer
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
                 nesciunt officia aliquam neque optio? Cumque facere numquam est.
               </p>
@@ -355,7 +355,7 @@ const AboutUs = () => {
                   href="/"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Reddit"
                 >
                   <svg
@@ -372,7 +372,7 @@ const AboutUs = () => {
                   href="https://www.facebook.com/abdullah.sakib.77715"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Facebook"
                 >
                   <svg
@@ -389,7 +389,7 @@ const AboutUs = () => {
                   href="https://github.com/Abdullah-Sakib"
                   target="_blank"
                   rel="noreferrer"
-                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                  className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-dark"
                   aria-label="Github"
                 >
                   <svg

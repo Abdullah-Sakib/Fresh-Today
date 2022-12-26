@@ -58,38 +58,32 @@ const Products = () => {
           <BsFillArrowRightSquareFill className="text-3xl text-green-500"></BsFillArrowRightSquareFill>
         </label>
       </div>
-      <div className="overflow-x-auto relative shadow-md sm:rounded-lg border-solid border-2 border-green-500">
-        <table className=" w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-xl text-gray-700 uppercase dark:text-gray-400">
-            <tr>
-              <th scope="col" className="py-3 px-6 bg-green-200 rounded dark:bg-gray-800">
-                Product name
-              </th>
-              <th scope="col" className="py-3 px-6">
-                Status
-              </th>
-              <th scope="col" className="py-3 px-6 bg-green-200 rounded dark:bg-gray-800">
-                Category
-              </th>
-              <th scope="col" className="py-3 px-6">
-                Price
-              </th>
+      <div className="overflow-x-auto relative shadow-md sm:rounded-lg ">
+      <table className="table  w-full">
+         
+           <thead className=" rounded ">
+            <tr className="bg-green-100 text-center">
+              <th className="bg-green-200 text-lg ">Product name</th>
+              <th className="bg-green-200 text-lg "> Status</th>
+              <th className="bg-green-200 text-lg ">Category</th>
+              <th className=" text-center bg-green-200 text-lg "> Price</th>
+              
             </tr>
           </thead>
           <tbody>
 
             {
               products.map((product, id) => <tr key={id} className="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap bg-green-200 rounded dark:text-white dark:bg-gray-800">
+                <th scope="row" className="text-xl text-center">
                   {product.name}
                 </th>
-                <td className="py-4 px-6">
+                <td className="py-4 px-6 text-xl  border  text-center ">
                   {product.status}
                 </td>
-                <td className="py-4 px-6 bg-green-200 rounded dark:bg-gray-800">
+                <td className="py-4 px-6 text-xl  border  text-center ">
                   {product.category}
                 </td>
-                <td className="py-4 px-6">
+                <td className="py-4 px-6 text-xl  border  text-center ">
                   ${product.price}
                 </td>
               </tr>)

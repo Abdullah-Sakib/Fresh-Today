@@ -6,7 +6,7 @@ const DashHome = () => {
     <div>
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-semibold ">
-          Dashboard <span className="text-green-500">Home</span>
+          Dashboard <span className="text-green-400">Home</span>
         </h1>
         <label htmlFor="my-drawer-2" className="drawer-button lg:hidden">
           <BsFillArrowRightSquareFill className="text-3xl text-green-500"></BsFillArrowRightSquareFill>
