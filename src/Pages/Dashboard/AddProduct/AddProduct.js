@@ -4,17 +4,38 @@ import { useForm } from "react-hook-form";
 
 const AddProduct = () => {
   const { register, handleSubmit } = useForm();
+  const imageHostingKey = process.env.REACT_APP_imgbb_api_key;
 
   const handleAddProduct = (data) => {
-    const productData = {
-      ...data,
-      image: data.image[0],
-      date: new Date(),
-      vendor: 'vendor name',
-      email: 'vendor@gmail.com'
-    }
+    const image = data.image[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    fetch(`https://api.imgbb.com/1/upload?key=${imageHostingKey}`, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgData) => {
+        data.image = imgData.data.url;
 
-    console.log(productData);
+        const productData = {
+          ...data,
+          image: data.image,
+          date: new Date(),
+          vendor: "vendor name",
+          email: "vendor@gmail.com",
+        };
+
+        fetch("http://localhost:5000/products", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(productData),
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data));
+      });
   };
 
   return (
@@ -67,8 +88,9 @@ const AddProduct = () => {
           name="category"
           className="select select-bordered block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-lime-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-lime-300 text-base"
           {...register("category", { required: true })}
+          defaultValue={"Select product category"}
         >
-          <option value="" disabled hidden selected>
+          <option value="" disabled>
             select product category
           </option>
           <option value="apple">Apple</option>
@@ -76,7 +98,6 @@ const AddProduct = () => {
           <option value="carrot">Carrot</option>
           <option value="almond">Almond</option>
           <option value="tomato">Tomato</option>
-
         </select>
 
         <label className="label font-semibold">Name</label>

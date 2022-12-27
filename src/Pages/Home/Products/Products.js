@@ -13,6 +13,7 @@ import p10 from "../../../images/p(9).jpg";
 import p11 from "../../../images/p (1).jpg";
 import p12 from "../../../images/cap.webp";
 import { Link } from "react-router-dom";
+import frout from "../../../images/fruit.png"
 
 // This part is contributed by Tasfi
 
@@ -38,11 +39,11 @@ const Products = () => {
         <h3 className="mb-5 md:mb-0">Popular items</h3>
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 justify-items-center">
           {products.map((p) => (
-            <Link to={`/product/${p.id}`} aria-label="View Item">
+            <Link key={p.id} to={`/product/${p.id}`} aria-label="View Item">
               <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl w-full max-w-sm  md:my-9">
                 <img
                   className="h-96 w-96 lg:h-72 lg:w-80 xl:h-80 xl:w-96 rounded-lg"
-                  src={p.image}
+                  src={frout}
                   alt=""
                 />
                 <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
@@ -82,17 +83,17 @@ export default Products;
 // <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 justify-items-center">
 //   {products.map((p) => (
 
-//     <div class="w-full max-w-sm  shadow-md my-9">
+//     <div className="w-full max-w-sm  shadow-md my-9">
 //       {/* <a href="#"> */}
 //       <img
-//         // class="p-8 rounded-t-lg hover:bg-lime-700"
+//         // className="p-8 rounded-t-lg hover:bg-lime-700"
 // //         src={p.image}
 // //         className="h-80 w-full rounded-lg hover:bg-lime-700  "
 // //         alt="product image"
 // //       />
 // //       {/* </a> */}
-// //       {/* <div class="px-5 pb-5">
-// //         <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+// //       {/* <div className="px-5 pb-5">
+// //         <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
 // //           {p.name}
 // //         </h5>
 // //       </div> */}

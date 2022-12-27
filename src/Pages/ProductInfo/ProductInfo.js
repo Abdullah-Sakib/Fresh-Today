@@ -29,21 +29,21 @@ const ProductInfo = () => {
             </div>
             <div className='grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 mb-10'>
                 {
-                    vendors.map(vendor => <div key={vendor.id} class="flex max-w-md overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                        <div class="w-1/3 bg-cover" style={{ backgroundImage: `url(${cucumbers})` }} ></div>
+                    vendors.map(vendor => <div key={vendor.id} className="flex max-w-md overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                        <div className="w-1/3 bg-cover" style={{ backgroundImage: `url(${cucumbers})` }} ></div>
 
-                        <div class="w-2/3 p-4 md:p-4">
-                            <h1 class="text-2xl font-bold text-gray-800 dark:text-white">{vendor.name}</h1>
+                        <div className="w-2/3 p-4 md:p-4">
+                            <h1 className="text-2xl font-bold text-gray-800 dark:text-white">{vendor.name}</h1>
 
-                            <h1 class="text-md font-bold text-gray-700 dark:text-gray-200 md:text-md">from ${vendor.price}</h1>
-                            <h1 class="text-sm font-bold text-gray-500 dark:text-gray-200 md:text-sm">Quantity {vendor.quantity}</h1>
-                            <div class="flex justify-between mt-10 item-center">
+                            <h1 className="text-md font-bold text-gray-700 dark:text-gray-200 md:text-md">from ${vendor.price}</h1>
+                            <h1 className="text-sm font-bold text-gray-500 dark:text-gray-200 md:text-sm">Quantity {vendor.quantity}</h1>
+                            <div className="flex justify-between mt-10 item-center">
                                 <div className='flex justify-between items-center'>
                                     <BsPlusSquare></BsPlusSquare>
-                                    <span class="text-lg mx-4 font-bold text-gray-700 dark:text-gray-200 md:text-xl"> 0 </span>
+                                    <span className="text-lg mx-4 font-bold text-gray-700 dark:text-gray-200 md:text-xl"> 0 </span>
                                     <AiOutlineMinusSquare className='text-xl'></AiOutlineMinusSquare>
                                 </div>
-                                <button class="px-2 py-2 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-green-500 rounded">Add to Cart</button>
+                                <button className="px-2 py-2 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-green-500 rounded">Add to Cart</button>
                             </div>
                         </div>
                     </div>
