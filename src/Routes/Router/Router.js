@@ -3,6 +3,7 @@ import Main from "../../Layout/Main/Main";
 import FourOFour from "../../Pages/404/FourOFour";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
 import AllProducts from "../../Pages/AllProducts/AllProducts";
+import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import Cart from "../../Pages/Dashboard/Cart/Cart";
 import DashHome from "../../Pages/Dashboard/DashHome/DashHome";
 import DashMain from "../../Pages/Dashboard/DashMain/DashMain";
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/products",
         element: <Products></Products>,
+      },
+      {
+        path: "/dashboard/addProduct",
+        element: <AddProduct></AddProduct>,
       },
       {
         path: "/dashboard/cart",
