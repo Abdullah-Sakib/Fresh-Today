@@ -1,37 +1,15 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from "react";
-import p1 from "../../../images/p(2).jpg";
-import p2 from "../../../images/p(3).jpg";
-import p3 from "../../../images/p(5).jpg";
-import p4 from "../../../images/p(6).jpg";
-import p5 from "../../../images/p(7).jpg";
-import p6 from "../../../images/p(8).jpg";
-import p7 from "../../../images/p(1).jpg";
-import p8 from "../../../images/p(10).jpg";
-import p9 from "../../../images/tomato.webp";
-import p10 from "../../../images/p(9).jpg";
-import p11 from "../../../images/p (1).jpg";
-import p12 from "../../../images/cap.webp";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import frout from "../../../images/p(7) (1).jpg"
 
 // This part is contributed by Tasfi
 
 const Products = () => {
-  const products = [
-    { id: 1, image: p1, name: "Cauliflower" },
-    { id: 2, image: p2, name: "Papaya" },
-    { id: 3, image: p3, name: "Carrot" },
-    { id: 4, image: p4, name: "Almond" },
-    { id: 5, image: p5, name: "Apple" },
-    { id: 6, image: p6, name: "Almonds" },
-    { id: 7, image: p7, name: "Pumpkins" },
-    { id: 8, image: p8, name: "White-Rice" },
-    { id: 9, image: p9, name: "Tomato" },
-    { id: 10, image: p10, name: "Strawbarries" },
-    { id: 11, image: p11, name: "Potato" },
-    { id: 12, image: p12, name: "Capsicum" },
-  ];
+  const [products, setProducts] = useState([]);
+
+  fetch("http://localhost:5000/categories")
+    .then((res) => res.json())
+    .then((data) => setProducts(data));
 
   return (
     <>
@@ -43,7 +21,7 @@ const Products = () => {
               <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl w-full max-w-sm  md:my-9">
                 <img
                   className="h-96 w-96 lg:h-72 lg:w-80 xl:h-80 xl:w-96 rounded-lg"
-                  src={frout}
+                  src={p.image}
                   alt=""
                 />
                 <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
