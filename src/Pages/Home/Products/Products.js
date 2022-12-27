@@ -13,7 +13,7 @@ import p10 from "../../../images/p(9).jpg";
 import p11 from "../../../images/p (1).jpg";
 import p12 from "../../../images/cap.webp";
 import { Link } from "react-router-dom";
-import frout from "../../../images/fruit.png"
+import frout from "../../../images/p(7) (1).jpg"
 
 // This part is contributed by Tasfi
 
