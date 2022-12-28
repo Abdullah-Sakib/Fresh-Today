@@ -12,6 +12,7 @@ import Report from "../../Pages/Dashboard/Report/Report";
 import Users from "../../Pages/Dashboard/Users/Users";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
+import Payment from "../../Pages/Payment/Payment";
 import ProductInfo from "../../Pages/ProductInfo/ProductInfo";
 import Register from "../../Pages/Register/Register";
 
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     children: [
       {
-        path:'/',
+        path: '/',
         element: <Home></Home>
       },
       {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "product/:id",
         element: <ProductInfo></ProductInfo>,
+      },
+      {
+        path: '/payment',
+        element: <Payment></Payment>
       },
     ],
   },
