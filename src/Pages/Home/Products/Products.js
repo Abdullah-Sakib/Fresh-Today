@@ -19,7 +19,7 @@ const Products = () => {
         <h3 className="mb-5 md:mb-0 md:ml-5 lg:ml-0 font-bold">Popular items</h3>
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 justify-items-center">
           {products.map((p) => (
-            <Link key={p._id} to={`/product/${p._id}`} aria-label="View Item">
+            <Link key={p._id} to={`/product/${p?.name}`} aria-label="View Item">
               <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl w-full max-w-sm  md:my-9">
                 <figure className="h-80 w-80 lg:h-64 lg:w-64">
                   <img
