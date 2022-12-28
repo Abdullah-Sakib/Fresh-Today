@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-
-  console.log(products);
-
+  
   useEffect(() => {
     fetch("http://localhost:5000/categories")
     .then((res) => res.json())
