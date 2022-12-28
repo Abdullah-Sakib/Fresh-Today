@@ -3,11 +3,13 @@ import { BsPlusSquare } from "react-icons/bs";
 import { AiOutlineMinusSquare } from "react-icons/ai";
 import { useLoaderData } from 'react-router-dom';
 
-// This part is contributed by Ankan
+// This part is contributed by Ankan Halder
 
 const ProductInfo = () => {
+
     const products = useLoaderData();
     
+
     return (
         <div className='w-11/12 mx-auto'>
             <div className="card w-full my-10 bg-base-100 shadow-xl">
