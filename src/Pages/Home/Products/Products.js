@@ -13,17 +13,20 @@ const Products = () => {
 
   return (
     <>
-      <div className="mt-16 md:mt-28 lg:mt-32 text-left lg:mx-20 mx-5 md:mx-0 text-4xl font-family ">
-        <h3 className="mb-5 md:mb-0">Popular items</h3>
+      <div className="mt-16 md:mt-28 lg:mt-32 text-left lg:mx-20 mx-5 md:mx-5 text-4xl font-family ">
+        <h3 className="mb-5 md:mb-0 md:ml-5 lg:ml-0 font-bold">Popular items</h3>
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 justify-items-center">
           {products.map((p) => (
             <Link key={p.id} to={`/product/${p.id}`} aria-label="View Item">
               <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl w-full max-w-sm  md:my-9">
-                <img
-                  className="h-96 w-96 lg:h-72 lg:w-80 xl:h-80 xl:w-96 rounded-lg"
-                  src={p.image}
-                  alt=""
-                />
+                <figure className="h-80 w-80 lg:h-64 lg:w-64">
+                  <img
+                    // className="h-96 w-96 lg:h-72 lg:w-72 xl:h-80 xl:w-96 rounded-lg"
+                    className="h-full w-full object-cover  rounded-lg"
+                    src={p.image}
+                    alt=""
+                  />
+                </figure>
                 <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
                   <p className="mb-4 text-3xl font-bold text-gray-100">
                     {p.name}
