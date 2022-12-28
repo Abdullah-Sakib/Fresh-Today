@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 // This part is contributed by Tasfi
@@ -7,9 +7,13 @@ import { Link } from "react-router-dom";
 const Products = () => {
   const [products, setProducts] = useState([]);
 
-  fetch("http://localhost:5000/categories")
+  console.log(products);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/categories")
     .then((res) => res.json())
     .then((data) => setProducts(data));
+  },[])
 
   return (
     <>
@@ -17,7 +21,7 @@ const Products = () => {
         <h3 className="mb-5 md:mb-0 md:ml-5 lg:ml-0 font-bold">Popular items</h3>
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 justify-items-center">
           {products.map((p) => (
-            <Link key={p.id} to={`/product/${p.id}`} aria-label="View Item">
+            <Link key={p._id} to={`/product/${p._id}`} aria-label="View Item">
               <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl w-full max-w-sm  md:my-9">
                 <figure className="h-80 w-80 lg:h-64 lg:w-64">
                   <img
