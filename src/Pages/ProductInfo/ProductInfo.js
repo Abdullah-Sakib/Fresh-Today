@@ -2,6 +2,7 @@ import React from 'react';
 import cucumbers from '../../images/cucumbers.jpg'
 import { BsPlusSquare } from "react-icons/bs";
 import { AiOutlineMinusSquare } from "react-icons/ai";
+import AddCart from '../AddCart/AddCart';
 
 // This part is contributed by Ankan
 
@@ -43,7 +44,7 @@ const ProductInfo = () => {
                                     <span className="text-lg mx-4 font-bold text-gray-700 dark:text-gray-200 md:text-xl"> 0 </span>
                                     <AiOutlineMinusSquare className='text-xl'></AiOutlineMinusSquare>
                                 </div>
-                                <button className="px-2 py-2 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-green-500 rounded">Add to Cart</button>
+                               <AddCart></AddCart>
                             </div>
                         </div>
                     </div>

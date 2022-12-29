@@ -1,6 +1,7 @@
 import React from "react";
 import motto from "../../../images/motto.png";
 
+
 const Motto = () => {
   return (
     <div className="flex items-center justify-between w-full  mt-16 md:mt-28 lg:mt-32 ">
@@ -9,6 +10,7 @@ const Motto = () => {
         <div>
           <h1 className="text-4xl md:text-5xl text-dark font-bold font-family mt-10 text-center md:mt-10 lg:mt-0">
             Our motto is serving fresh ingredients your way everyday!
+           
           </h1>
         </div>
       </div>
