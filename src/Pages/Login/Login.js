@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const email = useRef("");
   const password = useRef("");
   const handleLoginForm = (e) => {
@@ -9,10 +10,26 @@ const Login = () => {
     const userEmail = email.current.value;
     const userPassword = password.current.value;
     const user = { userEmail, userPassword };
-
-    
     console.log(user);
+
+    try{
+      fetch("http://localhost:5000/user/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          localStorage.setItem("token", data.accessToken);
+        });
+    }
+    catch(error){
+      console.log(error);
+    }
+
     e.target.reset();
+    navigate("/");
   };
   return (
     <form

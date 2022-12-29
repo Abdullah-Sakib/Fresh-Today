@@ -14,7 +14,8 @@ const Payment = () => {
         const orderSummery = { name, email, price, phone, address, postcode }
         console.log(orderSummery)
 
-        fetch('http://localhost:5000/payment', {
+        try{
+            fetch('http://localhost:5000/payment', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -26,6 +27,10 @@ const Payment = () => {
                 window.location.replace(data.url)
                 console.log(data)
             })
+        }
+        catch(error){
+            console.log(error)
+        }
     }
     return (
         <div className='w-11/12 mx-auto'>
