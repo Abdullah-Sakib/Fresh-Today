@@ -60,7 +60,7 @@ const CustomerReview = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className="lg:p-20 lg:flex justify-center items-center gap-4"
+            className="lg:p-20 md:flex justify-center items-center gap-4"
             data-swiper-parallax="-300"
           >
             <div className="avatar">
