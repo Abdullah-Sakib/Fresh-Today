@@ -13,6 +13,8 @@ import Users from "../../Pages/Dashboard/Users/Users";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Payment from "../../Pages/Payment/Payment";
+import PaymentFailed from "../../Pages/Payment/PaymentFailed";
+import PaymentSuccess from "../../Pages/Payment/PaymentSuccess";
 import ProductInfo from "../../Pages/ProductInfo/ProductInfo";
 import Register from "../../Pages/Register/Register";
 
@@ -49,6 +51,14 @@ const router = createBrowserRouter([
       {
         path: '/payment',
         element: <Payment></Payment>
+      },
+      {
+        path: '/payment/success',
+        element: <PaymentSuccess></PaymentSuccess>
+      },
+      {
+        path: '/payment/failed',
+        element: <PaymentFailed></PaymentFailed>
       },
     ],
   },
