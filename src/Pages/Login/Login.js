@@ -9,6 +9,8 @@ const Login = () => {
     const userEmail = email.current.value;
     const userPassword = password.current.value;
     const user = { userEmail, userPassword };
+
+    
     console.log(user);
     e.target.reset();
   };

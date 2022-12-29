@@ -15,10 +15,10 @@ const Home = () => {
             <Motto></Motto>
             <Products></Products>
             <CustomerReview></CustomerReview>
-            <TopRatedVendors></TopRatedVendors>
-            <Newsletter></Newsletter>
-            <Faq></Faq>
             <Process></Process>
+            <TopRatedVendors></TopRatedVendors>
+            <Faq></Faq>
+            <Newsletter></Newsletter>
         </div>
     );
 };
