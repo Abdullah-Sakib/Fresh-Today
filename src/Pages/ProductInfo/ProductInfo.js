@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BsPlusSquare } from "react-icons/bs";
 import { AiOutlineMinusSquare } from "react-icons/ai";
 import { useLoaderData } from 'react-router-dom';
+import CartModal from './CartModal/CartModal';
 
 // This part is contributed by Ankan Halder
 
 const ProductInfo = () => {
 
     const products = useLoaderData();
-    
+
+    const [selectedProduct, setSelectedProduct] = useState(null)
+
 
     return (
         <div className='w-11/12 mx-auto'>
@@ -39,12 +42,16 @@ const ProductInfo = () => {
                                     <span className="text-lg mx-4 font-bold text-gray-700 dark:text-gray-200 md:text-xl"> 0 </span>
                                     <AiOutlineMinusSquare className='text-xl'></AiOutlineMinusSquare>
                                 </div>
-                                <button className="px-2 py-2 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-green-500 rounded">Add to Cart</button>
+                                <label onClick={() => setSelectedProduct(product)} htmlFor="cartModal" className="btn px-2 py-2 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-green-500 rounded">Add to Cart</label>
                             </div>
                         </div>
                     </div>
 
                     )
+                }
+                {
+                    selectedProduct && <CartModal selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}></CartModal>
+
                 }
             </div>
         </div>
