@@ -7,7 +7,7 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <div className="navbar bg-gradient-to-r from-lime-50 to-lime-100 font-family text-2xl">
+    <div className="navbar print:hidden bg-gradient-to-r from-lime-50 to-lime-100 font-family text-2xl">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -59,7 +59,7 @@ const Header = () => {
           </li>
           <li>
             <Link to="/AllProducts">Products</Link>
-          </li>   
+          </li>
           <li>
             <Link to="/aboutUs">About Us</Link>
           </li>
@@ -67,8 +67,8 @@ const Header = () => {
             <Link to="/dashboard/cart">Cart</Link>
           </li>
           <li>
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
