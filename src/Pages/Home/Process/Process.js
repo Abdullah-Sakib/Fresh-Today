@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import roadMapImg from '../../../images/roadmap.svg'
 
 const Process = () => {
