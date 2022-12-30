@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  
+
   useEffect(() => {
     fetch("http://localhost:5000/categories")
-    .then((res) => res.json())
-    .then((data) => setProducts(data));
-  },[])
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, [])
 
   return (
     <>
@@ -29,7 +29,7 @@ const Products = () => {
                     alt=""
                   />
                 </figure>
-                <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
+                <div className="absolute flex justify-center items-center inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
                   <p className="mb-4 text-3xl font-bold text-gray-100">
                     {p.name}
                   </p>
