@@ -24,14 +24,13 @@ const Login = () => {
         .then((data) => {
           localStorage.setItem("token", data.accessToken);
           store.dispatch({ type: "setUser", payload: data.user });
+          e.target.reset();
+          navigate("/");
         });
     }
     catch(error){
       console.log(error);
     }
-
-    e.target.reset();
-    navigate("/");
   };
 
   return (
