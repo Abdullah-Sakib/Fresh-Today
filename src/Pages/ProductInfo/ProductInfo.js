@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BsPlusSquare } from "react-icons/bs";
 import { AiOutlineMinusSquare } from "react-icons/ai";
+import AddCart from '../AddCart/AddCart';
 import { useLoaderData } from 'react-router-dom';
 import CartModal from './CartModal/CartModal';
 
@@ -42,7 +43,8 @@ const ProductInfo = () => {
                                     <span className="text-lg mx-4 font-bold text-gray-700 dark:text-gray-200 md:text-xl"> 0 </span>
                                     <AiOutlineMinusSquare className='text-xl'></AiOutlineMinusSquare>
                                 </div>
-                                <label onClick={() => setSelectedProduct(product)} htmlFor="cartModal" className="btn px-2 py-2 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-green-500 rounded">Add to Cart</label>
+                               <AddCart  key={product._id} product={product}></AddCart>
+                                {/* <label onClick={() => setSelectedProduct(product)} htmlFor="cartModal" className="btn px-2 py-2 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-green-500 rounded">Add to Cart</label> */}
                             </div>
                         </div>
                     </div>
