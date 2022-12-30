@@ -1,20 +1,37 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const account = useRef("");
   const name = useRef("");
   const email = useRef("");
   const password = useRef("");
   const handleRegisterForm = (e) => {
     e.preventDefault();
-    const accountType = account.current.value;
-    const userName = name.current.value;
+    const role = account.current.value;
+    const username = name.current.value;
     const userEmail = email.current.value;
     const userPassword = password.current.value;
-    const user = { accountType, userName, userEmail, userPassword };
+    const user = { role, username, userEmail, userPassword };
     console.log(user);
+
+    try {
+      fetch("http://localhost:5000/user/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+
     e.target.reset();
+    navigate("/login");
   };
   return (
     <form
@@ -107,7 +124,7 @@ const Register = () => {
                 ref={account}
                 id="bordered-radio-2"
                 type="radio"
-                value="seller"
+                value="vendor"
                 name="account"
                 className="w-4 h-4 text-green-400 bg-gray-100 border-gray-300 dark:bg-gray-700 dark:border-gray-600 radio radio-success"
               />

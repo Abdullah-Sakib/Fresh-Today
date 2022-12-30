@@ -4,11 +4,11 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 
 
-// 01304392323 - Omar Faruk - omarfaruk@gmail.com
-// 01404349533 - Dilowar Hosen - dilowarhosen@gmail.com
-// 01502765723 - Rashed Shihab - rashedshihab@gmail.com
-// 01707362339 - Shakil Mahmud - shakilmahmud@gmail.com
-// 01902545432 - Faizul Osman - faizulosman@gmail.com
+// 01304392323 - Omar Faruk - omarfaruk@gmail.com - omarfaruk
+// 01404349533 - Dilowar Hosen - dilowarhosen@gmail.com - dilowarhosen
+// 01502765723 - Rashed Shihab - rashedshihab@gmail.com - rashedshihab
+// 01707362339 - Shakil Mahmud - shakilmahmud@gmail.com - shakil
+// 01902545432 - Faizul Osman - faizulosman@gmail.com - faizulosman
 
 const AddProduct = () => {
   const { register, handleSubmit } = useForm();

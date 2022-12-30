@@ -1,17 +1,38 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import { useStore } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const store = useStore();
+  const navigate = useNavigate();
   const email = useRef("");
   const password = useRef("");
+
   const handleLoginForm = (e) => {
     e.preventDefault();
     const userEmail = email.current.value;
     const userPassword = password.current.value;
     const user = { userEmail, userPassword };
-    console.log(user);
-    e.target.reset();
+
+    try{
+      fetch("http://localhost:5000/user/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          localStorage.setItem("token", data.accessToken);
+          store.dispatch({ type: "setUser", payload: data.user });
+          e.target.reset();
+          navigate("/");
+        });
+    }
+    catch(error){
+      console.log(error);
+    }
   };
+
   return (
     <form
       onSubmit={handleLoginForm}
