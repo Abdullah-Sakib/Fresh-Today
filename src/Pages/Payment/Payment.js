@@ -14,47 +14,40 @@ const Payment = () => {
     const orderSummery = { name, email, price, phone, address, postcode };
     console.log(orderSummery);
 
-    fetch("http://localhost:5000/payment", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(orderSummery),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        window.location.replace(data.url);
-        console.log(data);
-      });
-  };
-  return (
-    <div className="w-11/12 mx-auto">
-      <div className="hero">
-        <div className="hero-content flex-col justify-between lg:flex-row-reverse">
-          <div className="mt-5 text-center lg:text-left">
-            <img style={{ width: "90%" }} src={payment} alt="" />
-          </div>
-          <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
-            <div className="card-body">
-              <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">
-                Order Summary
-              </h2>
-              <form onSubmit={handleOrderSummeryForm}>
-                <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
-                  <div>
-                    <label
-                      className="text-gray-700 dark:text-gray-200"
-                      htmlFor="username"
-                    >
-                      Name
-                    </label>
-                    <input
-                      id="username"
-                      type="text"
-                      name="name"
-                      className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
-                    />
-                  </div>
+        try{
+            fetch('http://localhost:5000/payment', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orderSummery)
+        })
+            .then(res => res.json())
+            .then(data => {
+                window.location.replace(data.url)
+                console.log(data)
+            })
+        }
+        catch(error){
+            console.log(error)
+        }
+    }
+    return (
+        <div className='w-11/12 mx-auto'>
+            <div className="hero">
+                <div className="hero-content flex-col justify-between lg:flex-row-reverse">
+                    <div className="mt-5 text-center lg:text-left">
+                        <img style={{ width: '90%' }} src={payment} alt="" />
+                    </div>
+                    <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
+                        <div className="card-body">
+                            <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">Order Summary</h2>
+                            <form onSubmit={handleOrderSummeryForm}>
+                                <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+                                    <div>
+                                        <label className="text-gray-700 dark:text-gray-200" htmlFor="username">Name</label>
+                                        <input id="username" type="text" name='name' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                                    </div>
 
                   <div>
                     <label
