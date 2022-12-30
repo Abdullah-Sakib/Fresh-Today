@@ -1,11 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useStore } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../images/logo.png";
 import "./Header.css";
 
 // This part is contributed by Tasfi
 
 const Header = () => {
+  const store = useStore();
+  const user = store.getState().states.user;
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    store.dispatch({ type: "removeUser" });
+    navigate("/");
+  };
+  
   return (
     <div className="navbar print:hidden bg-gradient-to-r from-lime-50 to-lime-100 font-family text-2xl">
       <div className="navbar-start">
@@ -72,9 +82,16 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/Login" className="btn btn-ghost text-sm md:text-xl normal-case">
-          Log in
-        </Link>
+        {
+          user ? 
+            <button onClick={handleLogout} className="btn btn-ghost text-sm md:text-xl normal-case">
+            Logout
+          </button>
+        :
+          <Link to="/Login" className="btn btn-ghost text-sm md:text-xl normal-case">
+            Log in
+          </Link>
+        }
       </div>
     </div>
   );

@@ -1,16 +1,18 @@
 import React, { useRef } from "react";
+import { useStore } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const store = useStore();
   const navigate = useNavigate();
   const email = useRef("");
   const password = useRef("");
+
   const handleLoginForm = (e) => {
     e.preventDefault();
     const userEmail = email.current.value;
     const userPassword = password.current.value;
     const user = { userEmail, userPassword };
-    console.log(user);
 
     try{
       fetch("http://localhost:5000/user/login", {
@@ -20,8 +22,8 @@ const Login = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           localStorage.setItem("token", data.accessToken);
+          store.dispatch({ type: "setUser", payload: data.user });
         });
     }
     catch(error){
@@ -31,6 +33,7 @@ const Login = () => {
     e.target.reset();
     navigate("/");
   };
+
   return (
     <form
       onSubmit={handleLoginForm}

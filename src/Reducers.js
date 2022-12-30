@@ -1,14 +1,18 @@
 import { createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
-  apple:100
+  user: null,
+  loading: false,
 };
 
 export const Reducers = createReducer(initialState, {
-  appApple: (state, action) => {
-    state.apple = state.apple + action.payload;
+  setUser: (state, action) => {
+    state.user = action.payload;
   },
-  eatApple: (state, action) => {
-    state.apple = state.apple - action.payload;
+  removeUser: (state, action) => {
+    state.user = null;
+  },
+  setLoading: (state, action) => {
+    state.loading = action.payload;
   }
 })
