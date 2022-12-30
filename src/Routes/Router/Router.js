@@ -17,6 +17,7 @@ import PaymentFailed from "../../Pages/Payment/PaymentFailed";
 import PaymentSuccess from "../../Pages/Payment/PaymentSuccess";
 import ProductInfo from "../../Pages/ProductInfo/ProductInfo";
 import Register from "../../Pages/Register/Register";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Home></Home>
       },
       {
@@ -64,7 +65,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashMain></DashMain>,
+    element: <PrivateRoute><DashMain></DashMain></PrivateRoute>,
     children: [
       {
         path: "/dashboard",
