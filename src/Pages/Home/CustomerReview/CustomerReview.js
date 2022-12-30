@@ -1,8 +1,8 @@
-import React from "react";
-import customerReviewBg from "../../../Assets/customer-review-bg.jpg";
+import React from 'react';
+import customerReviewBg from '../../../Assets/customer-review-bg.jpg';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Parallax } from "swiper";
-import "./CustomerReview.css";
+import './CustomerReview.css'
 
 // Import Swiper styles
 import "swiper/css";
