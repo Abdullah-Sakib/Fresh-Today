@@ -1,43 +1,45 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/style-prop-object */
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Form, useLoaderData } from "react-router-dom";
+import Conversation from "../Conversation/Conversation";
+import ProductInfo from "../ProductInfo/ProductInfo";
 import "./Chat.css";
 
-const Chat = () => {
+const Chat = ({c}) => {
+  
+  console.log(c);
+//   const {user} = useContext(AuthContext);
   const [showChatbar, setshowChatbar] = useState(false);
   const [owntext, setowntext] = useState(true);
 
 
+  // useEffect(() => {
+  //   vendorId = 
+  //   .then((res) => res.json())
+  //   .then((data) => setConversations(data));                          
+  // },[user._id])
  
-    const handleChat  = event =>{
+
+  
+    const handleChat  = event => {
             event.preventDefault();
             const form = event.target;
-            const cname = form.name.value;
-            const email = form.email.value;
+            // const name = user.name;
+            // const email = user.email;
             const message = form.message.value;
-            // const date = form.date.value;
-            // const photo = user.photoURL;
+            // const photo = user.img;
 
-            const review = {
-                // service: _id,
-                // ServiceName: name,
-                // Price: Price,
-                // date: date,
-                customer: cname,
-                message,
-                email,
-                // photo
+            const chat = {  message}
+            console.log(chat)
 
-            }
-
-            fetch('https://food-app-server.vercel.app/review',{
-                method: 'POST',
+            fetch('http://localhost:5000/chats',{
+                method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify(review)
+                body: JSON.stringify(chat)
             })
                 .then(res => res.json())
                 .then(data => {
@@ -50,7 +52,7 @@ const Chat = () => {
             }
 
     
-
+        
 
   return (
     <div>
@@ -103,7 +105,9 @@ const Chat = () => {
           }`}
         >
           <div className="p-1 m-3 overflow-y-scroll h-full overflow-x-hidden">
-            <div className="message flex flex-col mt-9 p-2">
+
+
+            {/* <div className="message flex flex-col mt-9 p-2">
               <div className="message-top flex">
                 <img
                   src="https://avatars.githubusercontent.com/u/106773180?v=4"
@@ -120,7 +124,7 @@ const Chat = () => {
               <div>
                 <p className="messageBottom text-sm px-4 py-2">1 hour ago</p>
               </div>
-            </div>
+            </div> */}
 
             <div
               className={`message flex flex-col my-2 p-2 ${
@@ -135,7 +139,7 @@ const Chat = () => {
                 />
                 <p
                   className="messageText p-1 rounded-lg bg-lime-100"
-                  style={{ maxWidth: "250px" }}
+                  style={{ maxWidth: "250px" }} 
                 >
                   Hi this is tasfi..
                 </p>
@@ -144,7 +148,8 @@ const Chat = () => {
                 <p className="messageBottom text-sm px-4 py-2">1 hour ago</p>
               </div>
             </div>
-
+ 
+            <Conversation></Conversation>
             <div className="message flex flex-col my-2 p-2">
               <div className="message-top flex">
                 <img
@@ -227,7 +232,7 @@ const Chat = () => {
               </div>
             </div>
 
-            <div className="message flex flex-col my-2 p-2">
+            {/* <div className="message flex flex-col my-2 p-2">
               <div className="message-top flex">
                 <img
                   src="https://avatars.githubusercontent.com/u/106773180?v=4"
@@ -244,8 +249,8 @@ const Chat = () => {
               <div>
                 <p className="messageBottom text-sm px-4 py-2">1 hour ago</p>
               </div>
-            </div>
-            <div
+            </div> */}
+            {/* <div
               className={`message flex flex-col my-2 p-2 ${
                 owntext ? "items-end" : "text-start"
               }`}
@@ -266,9 +271,9 @@ const Chat = () => {
               <div>
                 <p className="messageBottom text-sm px-4 py-2">1 hour ago</p>
               </div>
-            </div>
+            </div> */}
 
-            <div className="message flex flex-col my-2 p-2">
+            {/* <div className="message flex flex-col my-2 p-2">
               <div className="message-top flex">
                 <img
                   src="https://avatars.githubusercontent.com/u/106773180?v=4"
@@ -285,20 +290,22 @@ const Chat = () => {
               <div>
                 <p className="messageBottom text-sm px-4 py-2">1 hour ago</p>
               </div>
-            </div>
+            </div> */}
 
-            <div className="flex w-full mx-auto my-4">
+            <Form className="flex w-full mx-auto my-4" onSubmit={handleChat}>
               <div>
-              <textarea className="textarea textarea-bordered w-60" placeholder="Your message"></textarea>
+              <textarea className="textarea textarea-bordered w-60" placeholder="Your message"  name="message" ></textarea>
               </div>
-              <button className="btn gap-2 w-20 flex"  onSubmit={handleChat}>
+              <button className="btn gap-2 w-20 flex" >
              
                      Send
-                   </button>
-            </div>
+              </button>
+            </Form>
           </div>
         </div>
       </>
+      
+      
     </div>
   );
 };

@@ -43,8 +43,8 @@ const ProductInfo = () => {
                                     <span className="text-lg mx-4 font-bold text-gray-700 dark:text-gray-200 md:text-xl"> 0 </span>
                                     <AiOutlineMinusSquare className='text-xl'></AiOutlineMinusSquare>
                                 </div>
-                               <AddCart></AddCart>
-                                <label onClick={() => setSelectedProduct(product)} htmlFor="cartModal" className="btn px-2 py-2 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-green-500 rounded">Add to Cart</label>
+                               <AddCart  key={product._id} product={product}></AddCart>
+                                {/* <label onClick={() => setSelectedProduct(product)} htmlFor="cartModal" className="btn px-2 py-2 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-green-500 rounded">Add to Cart</label> */}
                             </div>
                         </div>
                     </div>
