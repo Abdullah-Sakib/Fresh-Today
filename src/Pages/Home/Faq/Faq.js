@@ -9,11 +9,14 @@ const Faq = () => {
                 <div className="flex flex-col mb-16 sm:text-center">
                     <a href="/" className="mb-6 sm:mx-auto">
                         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
-                        <img src={logo} className="-mt-4 w-20 " alt="" />
+                            <img src={logo} className="-mt-4 w-20 " alt="" />
                         </div>
                     </a>
                     <div className="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
-                        <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+                        <h2
+                            // className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto"
+                            className="mb-5 text-center font-bold text-slate-800 text-5xl font-family"
+                        >
                             <span className="relative inline-block">
                                 <svg
                                     viewBox="0 0 52 24"
