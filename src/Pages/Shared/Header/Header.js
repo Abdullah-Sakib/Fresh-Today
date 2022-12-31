@@ -14,6 +14,8 @@ const Header = () => {
 
   const handleLogout = () => {
     store.dispatch({ type: "removeUser" });
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     navigate("/");
   };
   

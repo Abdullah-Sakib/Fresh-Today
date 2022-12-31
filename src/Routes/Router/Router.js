@@ -17,6 +17,7 @@ import PaymentFailed from "../../Pages/Payment/PaymentFailed";
 import PaymentSuccess from "../../Pages/Payment/PaymentSuccess";
 import ProductInfo from "../../Pages/ProductInfo/ProductInfo";
 import Register from "../../Pages/Register/Register";
+import AdminRoute from "./AdminRoute/AdminRoute";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
@@ -73,7 +74,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/users",
-        element: <Users></Users>,
+        element: <AdminRoute><Users></Users></AdminRoute>,
       },
       {
         path: "/dashboard/products",

@@ -1,8 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
-  user: null || JSON.parse(localStorage.getItem("user")),
-  loading: false,
+  user: null || JSON.parse(localStorage.getItem("user"))
 };
 
 export const Reducers = createReducer(initialState, {
@@ -11,8 +10,5 @@ export const Reducers = createReducer(initialState, {
   },
   removeUser: (state, action) => {
     state.user = null;
-  },
-  setLoading: (state, action) => {
-    state.loading = action.payload;
   }
 })
