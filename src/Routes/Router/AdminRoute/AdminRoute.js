@@ -2,15 +2,17 @@ import React from 'react';
 import { useStore } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 
-const PrivateRoute = ({children}) => {
+const AdminRoute = ({children}) => {
     const store = useStore();
     const user = store.getState().states.user;
+    const role = user.role;
+    console.log(role);
 
-    if(user){
+    if(role === 'admin'){
         return children;
     }
 
     return <Navigate to='/login'></Navigate>; 
 };
 
-export default PrivateRoute;
+export default AdminRoute;
