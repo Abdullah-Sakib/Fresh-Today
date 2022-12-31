@@ -1,8 +1,11 @@
 import React from "react";
+import { useStore } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../../../images/logo.png";
 
 const DashMain = () => {
+  const store = useStore();
+  const user = store.getState().states.user;
   return (
     <div className="bg-white text-black font-family">
       <div className="drawer drawer-mobile">
@@ -19,30 +22,36 @@ const DashMain = () => {
           <ul className="menu p-4 w-80 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
             <div className="flex">
-              <img src={logo} className="-mt-4 w-20 " alt="" />
+              <img src={logo} className="-mt-4 w-20 mb-5" alt="" />
               <Link
                 to="/"
-                className="-ml-5 btn btn-ghost normal-case text-2xl md:text-3xl lg:text-3xl"
+                className="-ml-5  btn btn-ghost normal-case text-2xl md:text-3xl lg:text-3xl"
               >
                 Fresh Today
               </Link>
             </div>
 
-            <li className="my-3 bg-gradient-to-r from-lime-200  via-green-200 to-lime-200 rounded text-lg font-semibold">
-              <Link to="/dashboard/users">Users</Link>
-            </li>
-            <li className="my-3 bg-gradient-to-r from-lime-200 via-green-200 to-lime-200 rounded text-lg font-semibold">
-              <Link to="/dashboard/products">Products</Link>
-            </li>
-            <li className="my-3 bg-gradient-to-r from-lime-200 via-green-200 to-lime-200 rounded text-lg font-semibold">
-              <Link to="/dashboard/addProduct">Add product</Link>
-            </li>
-            <li className="my-3 bg-gradient-to-r from-lime-200 via-green-200 to-lime-200 rounded text-lg font-semibold">
-              <Link to="/dashboard/cart">Cart</Link>
-            </li>
-            <li className="my-3 bg-gradient-to-r from-lime-200 via-green-200 to-lime-200 rounded text-lg font-semibold">
-              <Link to="/dashboard/reports">Reports</Link>
-            </li>
+            {user?.role === "admin" && (
+              <li className="my-3 bg-gradient-to-r from-lime-200  via-green-200 to-lime-200 rounded text-lg font-semibold">
+                <Link to="/dashboard/users">Users</Link>
+              </li>
+            )}
+            {user?.role === "vendor" && (
+              <li className="my-3 bg-gradient-to-r from-lime-200 via-green-200 to-lime-200 rounded text-lg font-semibold">
+                <Link to="/dashboard/products">Products</Link>
+              </li>
+            )}
+            {user?.role === "vendor" && (
+              <li className="my-3 bg-gradient-to-r from-lime-200 via-green-200 to-lime-200 rounded text-lg font-semibold">
+                <Link to="/dashboard/addProduct">Add product</Link>
+              </li>
+            )}
+
+            {user?.role === "admin" && (
+              <li className="my-3 bg-gradient-to-r from-lime-200 via-green-200 to-lime-200 rounded text-lg font-semibold">
+                <Link to="/dashboard/reports">Reports</Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>
