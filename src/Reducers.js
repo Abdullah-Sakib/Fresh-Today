@@ -1,7 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
-  user: null,
+  user: null || JSON.parse(localStorage.getItem("user")),
   loading: false,
 };
 
