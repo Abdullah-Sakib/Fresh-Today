@@ -113,7 +113,7 @@ const Register = () => {
                 defaultChecked
                 id="account-1"
                 type="radio"
-                value="buyer"
+                value="customer"
                 name="account"
                 className="w-4 h-4 text-green-400 bg-gray-100 border-gray-300  dark:bg-gray-700 dark:border-gray-600 radio radio-success"
               />
