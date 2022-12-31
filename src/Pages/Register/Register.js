@@ -1,19 +1,25 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const [passwordError, setPasswordError] = useState('')
   const navigate = useNavigate();
-  const account = useRef("");
   const name = useRef("");
   const email = useRef("");
   const password = useRef("");
   const handleRegisterForm = (e) => {
     e.preventDefault();
-    const role = account.current.value;
+    const role = e.target.account.value;
     const username = name.current.value;
     const userEmail = email.current.value;
     const userPassword = password.current.value;
     const user = { role, username, userEmail, userPassword };
+
+    if (userPassword.length < 6) {
+      setPasswordError('Password should be at least 6 characters.');
+      return;
+    }
+    setPasswordError('');
     console.log(user);
 
     try {
@@ -105,7 +111,6 @@ const Register = () => {
             <div className="flex items-center w-6/12 pl-4 mb-4 mr-4 rounded border border-gray-200 dark:border-gray-700 ">
               <input
                 defaultChecked
-                ref={account}
                 id="account-1"
                 type="radio"
                 value="customer"
@@ -121,7 +126,6 @@ const Register = () => {
             </div>
             <div className="flex items-center w-6/12 pl-4 mb-4 rounded border border-gray-200 dark:border-gray-700">
               <input
-                ref={account}
                 id="bordered-radio-2"
                 type="radio"
                 value="vendor"
@@ -145,6 +149,7 @@ const Register = () => {
             Name
           </label>
           <input
+            required
             ref={name}
             id="registerName"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-green-300"
@@ -159,6 +164,7 @@ const Register = () => {
             Email Address
           </label>
           <input
+            required
             ref={email}
             id="LoggingEmailAddress"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-green-300"
@@ -175,12 +181,16 @@ const Register = () => {
           </label>
 
           <input
+            required
             ref={password}
             id="loggingPassword"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-green-300"
             type="password"
           />
         </div>
+        <p className="text-red-700 mt-4">
+          {passwordError}
+        </p>
 
         <div className="mt-6">
           <button

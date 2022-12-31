@@ -1,11 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Chat from "../Chat/Chat";
 import Conversation from "../Conversation/Conversation";
 
+
 const AddCart = ({ product }) => {
   //   const {user} = useContext(AuthContext);
+
 
   const [item, setItem] = useState({});
   const [showSidebar, setShowSidebar] = useState(false);
@@ -98,6 +101,7 @@ const AddCart = ({ product }) => {
         <div className='font-family border text-center p-2 px-5 text-gray-900 w-full '>
            5. product
         </div> */}
+
         </div>
 
         <div className="fixed flex text-gray-900 text-xl p-2 justify-center w-full">
@@ -109,6 +113,7 @@ const AddCart = ({ product }) => {
           </div>
         </div>
       </div>
+
     </>
   );
 };
