@@ -5,10 +5,9 @@ import { Navigate } from 'react-router-dom';
 const AdminRoute = ({children}) => {
     const store = useStore();
     const user = store.getState().states.user;
-    const role = user.role;
-    console.log(role);
+    const role = user?.role;
 
-    if(role === 'admin'){
+    if(user && role === 'admin' ){
         return children;
     }
 

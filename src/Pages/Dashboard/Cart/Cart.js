@@ -1,5 +1,4 @@
 import React from "react";
-import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
@@ -55,14 +54,11 @@ const Cart = () => {
     },
   ];
   return (
-    <div className=" font-family">
+    <div className=" font-family m-5 md:m-10 ">
       <div className="flex justify-between items-center">
         <h1 className="mb-5 text-3xl font-semibold ">
           Cart <span className="text-green-500">products</span>
         </h1>
-        <label htmlFor="my-drawer-2" className="drawer-button lg:hidden">
-          <BsFillArrowRightSquareFill className="text-3xl text-green-500"></BsFillArrowRightSquareFill>
-        </label>
       </div>
       <div className="overflow-x-auto relative shadow-md sm:rounded-lg border-solid border rounded ">
         <table className="table  w-full">
@@ -94,20 +90,21 @@ const Cart = () => {
                   <button className=" bg-gradient-to-r from-lime-200  via-green-100 to-lime-200 rounded-lg px-4 py-2 text-dark">
                     {product.isPaid ? "Paid" : "Pay Now"}
                   </button>
-
                 </td>
-
               </tr>
             ))}
 
             <tr className="bg-green-400 text-center">
-              <th colSpan={3} className="bg-green-400 text-lg ">Total</th>
+              <th colSpan={3} className="bg-green-400 text-lg ">
+                Total
+              </th>
               <th className="bg-green-400 text-lg ">220</th>
               <th className="text-center bg-green-400 text-lg">
-                <button className="btn btn-active"><Link to='/payment'>Pay Now</Link></button>
+                <button className="btn btn-active">
+                  <Link to="/payment">Pay Now</Link>
+                </button>
               </th>
             </tr>
-
           </tbody>
         </table>
       </div>
