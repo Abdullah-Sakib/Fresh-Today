@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { toast } from "react-hot-toast";
 import { useStore } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -22,11 +23,18 @@ const Login = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          localStorage.setItem("token", data.accessToken);
-          localStorage.setItem("user", JSON.stringify(data.user));
-          store.dispatch({ type: "setUser", payload: data.user });
-          e.target.reset();
-          navigate("/");
+          if(!data?.user)
+          {
+            toast.error(data);
+          }
+          else{
+            localStorage.setItem("token", data.accessToken);
+            localStorage.setItem("user", JSON.stringify(data.user));
+            store.dispatch({ type: "setUser", payload: data.user });
+            e.target.reset();
+            toast.success("Login Successful");
+            navigate("/");
+          }
         });
     }
     catch(error){
