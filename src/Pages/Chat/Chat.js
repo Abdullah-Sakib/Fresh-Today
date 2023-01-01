@@ -7,52 +7,73 @@ import Conversation from "../Conversation/Conversation";
 import ProductInfo from "../ProductInfo/ProductInfo";
 import "./Chat.css";
 
-const Chat = ({c}) => {
-  
-  console.log(c);
-//   const {user} = useContext(AuthContext);
-  const [showChatbar, setshowChatbar] = useState(false);
-  const [owntext, setowntext] = useState(true);
+const Chat = ({ c }) => {
+    const [conversations,setConversations] = useState([]);
 
+  console.log(c);
+  //   const {user} = useContext(AuthContext);
+  const [showChatbar, setshowChatbar] = useState(false);
+  // const [owntext, setowntext] = useState(true);
+ const conversationId = "63ae01d31068510422115243";
 
   // useEffect(() => {
   //   vendorId = 
   //   .then((res) => res.json())
   //   .then((data) => setConversations(data));                          
   // },[user._id])
- 
 
-  
-    const handleChat  = event => {
-            event.preventDefault();
-            const form = event.target;
-            // const name = user.name;
-            // const email = user.email;
-            const message = form.message.value;
-            // const photo = user.img;
 
-            const chat = {  message}
-            console.log(chat)
+  useEffect(() => {
+        fetch(`http://localhost:5000/chats/${conversationId}`)
+        .then((res) => res.json())
+        .then((data) => setConversations(data))
+      },[conversations])
+console.log("conversations", conversations);
 
-            fetch('http://localhost:5000/chats',{
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(chat)
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    if(data.acknowledged){
-                        form.reset();
-                    }
-                })
-                .catch(error => console.error(error));
-            }
+const user ={
+      name: "Nishi",
+      _id:"63abe5c93ae7aaa83199cb0a",
+      email:"nishi@gmail.com",
+      img:"https://i.pinimg.com/550x/1b/30/03/1b30035e27d189ac55a495d48b888351.jpg"
+    }
 
-    
-        
+  const handleChat = event => {
+    event.preventDefault();
+    const form = event.target;
+    // const name = user.name;
+    // const email = user.email;
+    const message = form.message.value;
+    // const photo = user.img;
+
+    const chat = { 
+      conversationId,
+      senderId: user._id,
+      name: user.name,
+      message: message, 
+      email: user.email,
+      photo: user.img,
+    }
+    console.log(chat)
+
+    fetch('http://localhost:5000/chats', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(chat)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        if (data.acknowledged) {
+          form.reset();
+        }
+      })
+      .catch(error => console.error(error));
+  }
+
+
+
 
   return (
     <div>
@@ -100,9 +121,8 @@ const Chat = ({c}) => {
         )}
 
         <div
-          className={`w-96 bottom-0 bg-white  antialiased text-gray-800 fixed h-full z-40 ease-in-out duration-300 ${
-            showChatbar ? "translate-x-0 right-full mx-2" : "translate-x-full"
-          }`}
+          className={`w-96 bottom-0 bg-white  antialiased text-gray-800 fixed h-full z-40 ease-in-out duration-300 ${showChatbar ? "translate-x-0 right-full mx-2" : "translate-x-full"
+            }`}
         >
           <div className="p-1 m-3 overflow-y-scroll h-full overflow-x-hidden">
 
@@ -126,112 +146,16 @@ const Chat = ({c}) => {
               </div>
             </div> */}
 
-            <div
-              className={`message flex flex-col my-2 p-2 ${
-                owntext ? "items-end" : "text-start"
-              }`}
-            >
-              <div className="message-top flex flex-row-reverse">
-                <img
-                  src="https://avatars.githubusercontent.com/u/106773180?v=4"
-                  className="flex-shrink-0 object-cover w-9 h-9 rounded-full sm:mx-4 ring-4 ring-gray-300 mr-10 message-img"
-                  alt=""
-                />
-                <p
-                  className="messageText p-1 rounded-lg bg-lime-100"
-                  style={{ maxWidth: "250px" }} 
-                >
-                  Hi this is tasfi..
-                </p>
-              </div>
-              <div>
-                <p className="messageBottom text-sm px-4 py-2">1 hour ago</p>
-              </div>
-            </div>
- 
-            <Conversation></Conversation>
-            <div className="message flex flex-col my-2 p-2">
-              <div className="message-top flex">
-                <img
-                  src="https://avatars.githubusercontent.com/u/106773180?v=4"
-                  className="flex-shrink-0 object-cover w-9 h-9 rounded-full sm:mx-4 ring-4 ring-gray-300 mr-10 message-img"
-                  alt=""
-                />
-                <p
-                  className="messageText p-1 rounded-lg bg-lime-100"
-                  style={{ maxWidth: "250px" }}
-                >
-                  Hi this is tasfi..
-                </p>
-              </div>
-              <div>
-                <p className="messageBottom text-sm px-4 py-2">1 hour ago</p>
-              </div>
-            </div>
-            <div
-              className={`message flex flex-col my-2 p-2 ${
-                owntext ? "items-end" : "text-start"
-              }`}
-            >
-              <div className="message-top flex flex-row-reverse">
-                <img
-                  src="https://avatars.githubusercontent.com/u/106773180?v=4"
-                  className="flex-shrink-0 object-cover w-9 h-9 rounded-full sm:mx-4 ring-4 ring-gray-300 mr-10 message-img"
-                  alt=""
-                />
-                <p
-                  className="messageText p-1 rounded-lg bg-lime-100"
-                  style={{ maxWidth: "250px" }}
-                >
-                  Hi this is tasfi..
-                </p>
-              </div>
-              <div>
-                <p className="messageBottom text-sm px-4 py-2">1 hour ago</p>
-              </div>
-            </div>
+            {
+              conversations.map(conversation=>
+                <Conversation conversation = {conversation}></Conversation>
+              )
+            }
 
-            <div className="message flex flex-col my-2 p-2">
-              <div className="message-top flex">
-                <img
-                  src="https://avatars.githubusercontent.com/u/106773180?v=4"
-                  className="flex-shrink-0 object-cover w-9 h-9 rounded-full sm:mx-4 ring-4 ring-gray-300 mr-10 message-img"
-                  alt=""
-                />
-                <p
-                  className="messageText p-1 rounded-lg bg-lime-100"
-                  style={{ maxWidth: "250px" }}
-                >
-                  Hi this is tasfi..
-                </p>
-              </div>
-              <div>
-                <p className="messageBottom text-sm px-4 py-2">1 hour ago</p>
-              </div>
-            </div>
-            <div
-              className={`message flex flex-col my-2 p-2 ${
-                owntext ? "items-end" : "text-start"
-              }`}
-            >
-              <div className="message-top flex flex-row-reverse">
-                <img
-                  src="https://avatars.githubusercontent.com/u/106773180?v=4"
-                  className="flex-shrink-0 object-cover w-9 h-9 rounded-full sm:mx-4 ring-4 ring-gray-300 mr-10 message-img"
-                  alt=""
-                />
-                <p
-                  className="messageText p-1 rounded-lg bg-lime-100"
-                  style={{ maxWidth: "250px" }}
-                >
-                  Hi this is tasfi..
-                </p>
-              </div>
-              <div>
-                <p className="messageBottom text-sm px-4 py-2">1 hour ago</p>
-              </div>
-            </div>
+            
+            
 
+           
             {/* <div className="message flex flex-col my-2 p-2">
               <div className="message-top flex">
                 <img
@@ -294,18 +218,18 @@ const Chat = ({c}) => {
 
             <Form className="flex w-full mx-auto my-4" onSubmit={handleChat}>
               <div>
-              <textarea className="textarea textarea-bordered w-60" placeholder="Your message"  name="message" ></textarea>
+                <textarea className="textarea textarea-bordered w-60" placeholder="Your message" name="message" ></textarea>
               </div>
               <button className="btn gap-2 w-20 flex" >
-             
-                     Send
+
+                Send
               </button>
             </Form>
           </div>
         </div>
       </>
-      
-      
+
+
     </div>
   );
 };

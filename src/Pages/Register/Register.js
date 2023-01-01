@@ -9,7 +9,8 @@ const Register = () => {
   const password = useRef("");
   const handleRegisterForm = (e) => {
     e.preventDefault();
-    const role = account.current.value;
+    const role = e.target.account.value;
+    // const role = account.current.value;
     const username = name.current.value;
     const userEmail = email.current.value;
     const userPassword = password.current.value;
@@ -108,7 +109,7 @@ const Register = () => {
                 ref={account}
                 id="account-1"
                 type="radio"
-                value="buyer"
+                value="customer"
                 name="account"
                 className="w-4 h-4 text-green-400 bg-gray-100 border-gray-300  dark:bg-gray-700 dark:border-gray-600 radio radio-success"
               />
