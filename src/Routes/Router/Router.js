@@ -15,7 +15,7 @@ import Login from "../../Pages/Login/Login";
 import Payment from "../../Pages/Payment/Payment";
 import PaymentFailed from "../../Pages/Payment/PaymentFailed";
 import PaymentSuccess from "../../Pages/Payment/PaymentSuccess";
-import ProductInfo from "../../Pages/ProductInfo/ProductInfo";
+import ProductCart from "../../Pages/ProductCart/ProductCart";
 import Register from "../../Pages/Register/Register";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "product/:name",
-        element: <ProductInfo></ProductInfo>,
+        element: <ProductCart></ProductCart>,
         loader: ({params}) => fetch(`http://localhost:5000/products/${params.name}`)
       },
       {
