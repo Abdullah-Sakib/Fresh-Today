@@ -16,8 +16,6 @@ const AddProduct = () => {
   const imageHostingKey = process.env.REACT_APP_imgbb_api_key;
 
 
-
-
   const handleAddProduct = (data) => {
     setProcessing(true);
     const image = data.image[0];

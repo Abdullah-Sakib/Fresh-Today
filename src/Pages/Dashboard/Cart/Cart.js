@@ -57,7 +57,7 @@ const Cart = () => {
     <div className=" font-family m-5 md:m-10 ">
       <div className="flex justify-between items-center">
         <h1 className="mb-5 text-3xl font-semibold ">
-          Cart <span className="text-green-500">products</span>
+          My <span className="text-green-500">orders</span>
         </h1>
       </div>
       <div className="overflow-x-auto relative shadow-md sm:rounded-lg border-solid border rounded ">

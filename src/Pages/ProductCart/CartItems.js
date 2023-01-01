@@ -4,7 +4,7 @@ import { AiOutlineMinusSquare } from "react-icons/ai";
 
 const CartItems = ({ c }) => {
   const [counter, setCounter] = useState(0);
- 
+
   const handleQuantity = (e) => {
     if (e === 0) {
       setCounter(0);
@@ -37,33 +37,24 @@ const CartItems = ({ c }) => {
           <div className="flex flex-1 items-end justify-between text-sm">
             <p className="text-gray-700">Qty :</p>
             <div className="flex justify-between items-center font-family">
-              <BsPlusSquare
-                className="text-gray-700"
+              <button
                 onClick={() => {
                   setCounter(counter + 1);
                 }}
-              ></BsPlusSquare>
-              <span className="text-lg mx-2 font-bold text-gray-700 dark:text-gray-200 md:text-sm">
+              >
+                <BsPlusSquare className="text-gray-700  h-5 w-5"></BsPlusSquare>
+              </button>
+              <span className="text-lg mx-3 font-bold text-gray-700 dark:text-gray-200 md:text-sm">
                 {counter}
               </span>
-              <AiOutlineMinusSquare
-                className="text-gray-700"
-                onClick={() => handleQuantity(counter)}
-              ></AiOutlineMinusSquare>
-            </div>
-
-            <div className="flex">
-              <button
-                type="button"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-              >
-                Remove
+              <button onClick={() => handleQuantity(counter)}>
+                <AiOutlineMinusSquare className="text-gray-700 h-6 w-6"></AiOutlineMinusSquare>
               </button>
             </div>
           </div>
         </div>
       </li>
-      total: 
+      total:
     </div>
   );
 };

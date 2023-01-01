@@ -63,7 +63,7 @@ const ProductInfo = () => {
                     <button
                       onClick={() => {
                         handleCart(product);
-                        // setShowSidebar(true);
+                        setShowSidebar(true);
                       }}
                       className="text-white text-md font-semibold bg-green-400 py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 "
                     >
@@ -76,100 +76,91 @@ const ProductInfo = () => {
           </div>
         ))}
 
-        {cart.length && (
-          <div
-            className={`w-5/6 font-family bottom-0 right-0  text-white fixed h-5/6 z-40 px-2 ease-in-out duration-300 ${
-              showSidebar ? "translate-x-0 " : "translate-x-full "
-            }`}
-          >
-            <div className="" aria-labelledby="slide-over-title" role="dialog">
-              <div className="z-50 overflow-hidden">
-                <div className=" inset-0 overflow-hidden">
-                  <div className="fixed pointer-events-none inset-y-0 right-0 flex max-w-full pl-10 ">
-                    <div className=" pointer-events-auto  w-screen max-w-md">
-                      <div
-                        className="flex  flex-col overflow-y-scroll h-full bg-white shadow-xl"
-                        id="addToCartSideBar"
-                      >
-                        <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
-                          <div className="flex items-start justify-between">
-                            <h2
-                              className="text-lg font-medium text-gray-900"
-                              id="slide-over-title"
+        <div
+          className={`w-5/6 font-family bottom-0 right-0  pointer-events-none text-white fixed h-5/6 z-40 px-2 ease-in-out duration-300 ${
+            showSidebar ? "translate-x-0 " : "translate-x-full "
+          }`}
+        >
+          <div className="" aria-labelledby="slide-over-title" role="dialog">
+            <div className="z-50 overflow-hidden">
+              <div className=" inset-0 overflow-hidden">
+                <div className="fixed pointer-events-none inset-y-0 right-0 flex max-w-full pl-10 ">
+                  <div className=" pointer-events-auto  w-screen max-w-md">
+                    <div
+                      className="flex  flex-col overflow-y-scroll h-full bg-white shadow-xl"
+                      id="addToCartSideBar"
+                    >
+                      <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
+                        <div className="flex items-start justify-between">
+                          <h2
+                            className="text-lg font-medium text-gray-900"
+                            id="slide-over-title"
+                          >
+                            Shopping cart
+                          </h2>
+                          <div className="ml-3 flex h-7 items-center">
+                            <button
+                              type="button"
+                              className="-m-2 p-2 text-gray-400 hover:text-gray-500"
+                              onClick={() => {
+                                setShowSidebar(false);
+                              }}
                             >
-                              Shopping cart
-                            </h2>
-                            <div className="ml-3 flex h-7 items-center">
-                              <button
-                                type="button"
-                                className="-m-2 p-2 text-gray-400 hover:text-gray-500"
-                                onClick={() => {
-                                  setShowSidebar(false);
-                                }}
+                              <span className="sr-only">Close panel</span>
+
+                              <svg
+                                className="h-6 w-6"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth="1.5"
+                                stroke="currentColor"
+                                aria-hidden="true"
                               >
-                                <span className="sr-only">Close panel</span>
-
-                                <svg
-                                  className="h-6 w-6"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  strokeWidth="1.5"
-                                  stroke="currentColor"
-                                  aria-hidden="true"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M6 18L18 6M6 6l12 12"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-
-                          <div className="mt-8">
-                            <div className="flow-root">
-                              <ul className="-my-6 divide-y divide-gray-200">
-                                {cart.map((c) => (
-                                  <CartItems c={c} key={c?._id}></CartItems>
-                                ))}
-                              </ul>
-                            </div>
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M6 18L18 6M6 6l12 12"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
 
-                        <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
-                          <div className="flex justify-between text-base font-medium text-gray-900">
-                            <p>Subtotal</p>
-                            <p>.00 /-</p>
+                        <div className="mt-8">
+                          <div className="flow-root">
+                            <ul className="-my-6 divide-y divide-gray-200">
+                              {cart.map((c) => (
+                                <CartItems c={c} key={c?._id}></CartItems>
+                              ))}
+                            </ul>
                           </div>
-                          <p className="mt-0.5 text-sm text-gray-500">
-                            Shipping and taxes calculated at checkout.
-                          </p>
-                          <div className="mt-6">
-                            <Link
-                              className="flex items-center justify-center rounded-md border border-transparent  px-6 py-3 text-base font-medium text-white shadow-sm bg-green-800 hover:bg-green-600"
-                              to="/cart"
+                        </div>
+                      </div>
+
+                      <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
+                        <p className="mt-0.5 text-sm text-gray-500">
+                          Shipping and taxes calculated at checkout.
+                        </p>
+                        <div className="mt-6">
+                          <Link
+                            className="flex items-center justify-center rounded-md border border-transparent  px-6 py-3 text-base font-medium text-white shadow-sm bg-green-800 hover:bg-green-600"
+                            to="/cart"
+                          >
+                            Place order
+                          </Link>
+                        </div>
+                        <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
+                          <p>
+                            or{" "}
+                            <button
+                              type="button"
+                              className="font-medium text-indigo-600 hover:text-indigo-500"
                             >
-                              Checkout
-                            </Link>
-                          </div>
-                          <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
-                            <p>
-                              or{" "}
-                              <button
-                                type="button"
-                                className="font-medium text-indigo-600 hover:text-indigo-500"
-                              >
-                                <Link to="/Allproducts">
-                                  {" "}
-                                  Continue Shopping
-                                </Link>
-                                <span aria-hidden="true"> &rarr;</span>
-                              </button>
-                            </p>
-                          </div>
+                              <Link to="/Allproducts"> Continue Shopping</Link>
+                              <span aria-hidden="true"> &rarr;</span>
+                            </button>
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -178,7 +169,7 @@ const ProductInfo = () => {
               </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

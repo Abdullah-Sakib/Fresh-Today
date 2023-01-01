@@ -42,7 +42,7 @@ const Register = () => {
   return (
     <form
       onSubmit={handleRegisterForm}
-      className="flex w-full max-w-sm mx-auto overflow-hidden my-20 bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-6xl"
+      className="flex w-full max-w-sm mx-auto overflow-hidden my-20 bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-6xl font-family"
     >
       <div
         className="hidden bg-cover lg:block lg:w-1/2"
