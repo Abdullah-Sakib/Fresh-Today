@@ -1,183 +1,82 @@
 import React, { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
-import CartItems from "./CartItems";
+import { BsPlusSquare } from "react-icons/bs";
+import { AiOutlineMinusSquare } from "react-icons/ai";
+import AddCart from "../AddCart/AddCart";
+import { useLoaderData } from "react-router-dom";
+import CartModal from "./CartModal/CartModal";
+import Chat from "../Chat/Chat";
 
 // This part is contributed by Ankan Halder
 
 const ProductInfo = () => {
   const products = useLoaderData();
 
-  const [cart, setCart] = useState([]);
-  const [showSidebar, setShowSidebar] = useState(false);
-
-  // console.log(cart);
-
-  const handleCart = (product) => {
-    const newCart = [...cart, product];
-    setCart(newCart);
-    console.log(cart);
-  };
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
-    <div className=" font-family">
-      <section className="relative bg-[url(https://ramarama.my/wp-content/uploads/2020/11/fresh-food-groceries-tray-box-wood-tabletop-banner-background-scaled.jpg)] bg-cover bg-center bg-no-repeat">
-        <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"></div>
-
-        <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
-          <div className="max-w-xl text-center sm:text-left">
-            <h1 className="text-3xl font-extrabold sm:text-5xl">
-              Explore the best items
-              <strong className="block font-extrabold text-green-700">
-                From here
-              </strong>
-            </h1>
-
-            <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
-              illo tenetur fuga ducimus numquam ea!
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-4 text-center"></div>
+    <div className="w-11/12 mx-auto">
+      <div className="card w-full my-10 bg-base-100 shadow-xl">
+        <figure>
+          <img
+            style={{ width: "100%", height: "400px" }}
+            src={products[0]?.image}
+            alt="Shoes"
+          />
+        </figure>
+        <div className="card-body">
+          <div className="flex justify-between">
+            <h2 className="text-2xl font-bold w-1/2">
+              {products[0]?.productName}
+            </h2>
+            <p className="w-1/2 text-lg text-right">See Reviews</p>
           </div>
         </div>
-      </section>
-
-      <div className="w-11/12 mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 my-40">
+      </div>
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 mb-10">
         {products?.map((product) => (
           <div
             key={product._id}
-            className="flex max-w-md overflow-hidden  rounded-lg  dark:bg-gray-800"
+            className="flex max-w-md overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800"
           >
-            <div className="mt-5 flex items-center">
-              <div className="container bg-gray-100 mx-auto p-6 max-w-sm rounded-2xl overflow-hidden shadow hover:shadow-2xl transition duration-300">
-                <img className="rounded-xl" src={product.image} alt="" />
+            <div
+              className="w-1/3 bg-cover"
+              style={{ backgroundImage: `url(${product?.image})` }}
+            ></div>
+
+            <div className="w-2/3 p-4 md:p-4">
+              <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
+                {product.category}
+              </h1>
+
+              <h1 className="text-md font-bold text-gray-700 dark:text-gray-200 md:text-md">
+                from {product.price} <span className="text-sm">Tk</span>
+              </h1>
+              <h1 className="text-sm font-bold text-gray-500 dark:text-gray-200 md:text-sm">
+                Available {product.quantity} kg
+              </h1>
+              <div className="flex justify-between mt-10 item-center">
                 <div className="flex justify-between items-center">
-                  <div>
-                    <h1 className="mt-5 text-2xl font-semibold">
-                      {product.productName}
-                    </h1>
-                    <p className="mt-2">price: {product.price}/-</p>
-                    <p className="mt-2">Available {product.quantity} kg</p>
-                  </div>
-                  <div>
-                    <button
-                      onClick={() => {
-                        handleCart(product);
-                        // setShowSidebar(true);
-                      }}
-                      className="text-white text-md font-semibold bg-green-400 py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 "
-                    >
-                      Add to cart
-                    </button>
-                  </div>
+                  <BsPlusSquare></BsPlusSquare>
+                  <span className="text-lg mx-4 font-bold text-gray-700 dark:text-gray-200 md:text-xl">
+                    {" "}
+                    0{" "}
+                  </span>
+                  <AiOutlineMinusSquare className="text-xl"></AiOutlineMinusSquare>
                 </div>
+                <div className="flex flex-col">
+                  <Chat></Chat>
+                  <AddCart key={product._id} product={product}></AddCart>
+                </div>
+                {/* <label onClick={() => setSelectedProduct(product)} htmlFor="cartModal" className="btn px-2 py-2 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-green-500 rounded">Add to Cart</label> */}
               </div>
             </div>
           </div>
         ))}
-
-        {cart.length && (
-          <div
-            className={`w-5/6 font-family bottom-0 right-0  text-white fixed h-5/6 z-40 px-2 ease-in-out duration-300 ${
-              showSidebar ? "translate-x-0 " : "translate-x-full "
-            }`}
-          >
-            <div className="" aria-labelledby="slide-over-title" role="dialog">
-              <div className="z-50 overflow-hidden">
-                <div className=" inset-0 overflow-hidden">
-                  <div className="fixed pointer-events-none inset-y-0 right-0 flex max-w-full pl-10 ">
-                    <div className=" pointer-events-auto  w-screen max-w-md">
-                      <div
-                        className="flex  flex-col overflow-y-scroll h-full bg-white shadow-xl"
-                        id="addToCartSideBar"
-                      >
-                        <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
-                          <div className="flex items-start justify-between">
-                            <h2
-                              className="text-lg font-medium text-gray-900"
-                              id="slide-over-title"
-                            >
-                              Shopping cart
-                            </h2>
-                            <div className="ml-3 flex h-7 items-center">
-                              <button
-                                type="button"
-                                className="-m-2 p-2 text-gray-400 hover:text-gray-500"
-                                onClick={() => {
-                                  setShowSidebar(false);
-                                }}
-                              >
-                                <span className="sr-only">Close panel</span>
-
-                                <svg
-                                  className="h-6 w-6"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  strokeWidth="1.5"
-                                  stroke="currentColor"
-                                  aria-hidden="true"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M6 18L18 6M6 6l12 12"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-
-                          <div className="mt-8">
-                            <div className="flow-root">
-                              <ul className="-my-6 divide-y divide-gray-200">
-                                {cart.map((c) => (
-                                  <CartItems c={c} key={c?._id}></CartItems>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
-                          <div className="flex justify-between text-base font-medium text-gray-900">
-                            <p>Subtotal</p>
-                            <p>.00 /-</p>
-                          </div>
-                          <p className="mt-0.5 text-sm text-gray-500">
-                            Shipping and taxes calculated at checkout.
-                          </p>
-                          <div className="mt-6">
-                            <Link
-                              className="flex items-center justify-center rounded-md border border-transparent  px-6 py-3 text-base font-medium text-white shadow-sm bg-green-800 hover:bg-green-600"
-                              to="/cart"
-                            >
-                              Checkout
-                            </Link>
-                          </div>
-                          <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
-                            <p>
-                              or{" "}
-                              <button
-                                type="button"
-                                className="font-medium text-indigo-600 hover:text-indigo-500"
-                              >
-                                <Link to="/Allproducts">
-                                  {" "}
-                                  Continue Shopping
-                                </Link>
-                                <span aria-hidden="true"> &rarr;</span>
-                              </button>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {selectedProduct && (
+          <CartModal
+            selectedProduct={selectedProduct}
+            setSelectedProduct={setSelectedProduct}
+          ></CartModal>
         )}
       </div>
     </div>

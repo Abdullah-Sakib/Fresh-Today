@@ -10,7 +10,6 @@ const Header = () => {
   const store = useStore();
   const user = store.getState().states.user;
   const navigate = useNavigate();
-  console.log(user);
 
   const handleLogout = () => {
     store.dispatch({ type: "removeUser" });
