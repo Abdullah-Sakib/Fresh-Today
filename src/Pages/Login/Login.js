@@ -23,6 +23,7 @@ const Login = () => {
         .then((res) => res.json())
         .then((data) => {
           localStorage.setItem("token", data.accessToken);
+          localStorage.setItem("user", JSON.stringify(data.user));
           store.dispatch({ type: "setUser", payload: data.user });
           e.target.reset();
           navigate("/");

@@ -4,7 +4,7 @@ import { useStore } from "react-redux";
 import { CartProvider } from "react-use-cart";
 import { useCart } from "react-use-cart";
 import CartItems from "./CartItems";
-import pa from "../../images/pa.png"
+import pa from "../../images/pa.png";
 
 // This part is contributed by Ankan Halder
 
@@ -26,55 +26,27 @@ const ProductInfo = () => {
   };
   return (
     <div className="w-11/12 mx-auto font-family">
-      {/* <div className="card w-full my-20 bg-base-100 shadow-xl">
-        <figure>
-          <img
-            className="animate-bounce"
-            style={{ width: "500px", height: "500px" ,marginTop:"35px"}}
-            src={pa}
-            alt="Shoes"
-          />
-        </figure>
-      
-        <div className="card-body">
-          <div className="flex justify-between">
-            <h2 className="text-2xl font-bold w-1/2">
-              {products[0]?.productName}
-            </h2>
-            <p className="w-1/2 text-lg text-right">See Reviews</p>
+      <section class="relative bg-[url(https://ramarama.my/wp-content/uploads/2020/11/fresh-food-groceries-tray-box-wood-tabletop-banner-background-scaled.jpg)] bg-cover bg-center bg-no-repeat">
+        <div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"></div>
+
+        <div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+          <div class="max-w-xl text-center sm:text-left">
+            <h1 class="text-3xl font-extrabold sm:text-5xl">
+              Explore the best items
+              <strong class="block font-extrabold text-green-700">
+                From here
+              </strong>
+            </h1>
+
+            <p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
+              illo tenetur fuga ducimus numquam ea!
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4 text-center"></div>
           </div>
         </div>
-      </div> */}
-      <section
-  class="relative bg-[url(https://ramarama.my/wp-content/uploads/2020/11/fresh-food-groceries-tray-box-wood-tabletop-banner-background-scaled.jpg)] bg-cover bg-center bg-no-repeat"
->
-  <div
-    class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"
-  ></div>
-
-  <div
-    class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
-  >
-    <div class="max-w-xl text-center sm:text-left">
-      <h1 class="text-3xl font-extrabold sm:text-5xl">
-        Explore the best items
-
-        <strong class="block font-extrabold text-green-700">
-          From here
-        </strong>
-      </h1>
-
-      <p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo
-        tenetur fuga ducimus numquam ea!
-      </p>
-
-      <div class="mt-8 flex flex-wrap gap-4 text-center">
-       
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 my-40">
         {products?.map((product) => (
@@ -222,13 +194,12 @@ const ProductInfo = () => {
                           Shipping and taxes calculated at checkout.
                         </p>
                         <div class="mt-6">
-                          <a
-                            href="#"
+                          <Link
                             class="flex items-center justify-center rounded-md border border-transparent  px-6 py-3 text-base font-medium text-white shadow-sm bg-green-800 hover:bg-green-600"
+                            to="/dashboard/cart"
                           >
-                            {" "}
-                            <Link to="/dashboard/cart">Checkout</Link>
-                          </a>
+                            Checkout
+                          </Link>
                         </div>
                         <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                           <p>
