@@ -3,8 +3,8 @@ import { BsPlusSquare } from "react-icons/bs";
 import { AiOutlineMinusSquare } from "react-icons/ai";
 import AddCart from "../AddCart/AddCart";
 import { useLoaderData } from "react-router-dom";
-import CartModal from "./CartModal/CartModal";
 import Chat from "../Chat/Chat";
+import CartModal from "./CartModal";
 
 // This part is contributed by Ankan Halder
 

@@ -116,21 +116,21 @@ const Chat = ({ c }) => {
           <></>
         )} */}
 
-        {showChatbar ? (
-          <button
-            className="text-5xl text-dark cursor-pointer fixed right-5 top-56 z-50 "
-            onClick={() => setshowChatbar(!showChatbar)}
-          >
-            x
-          </button>
-        ) : (
-          <></>
-        )}
+{showChatbar ? (
+        <button
+          className="text-5xl text-dark cursor-pointer fixed right-5 top-56 z-50 "
+          onClick={() => setshowChatbar(!showChatbar)}
+        >
+          x
+        </button>
+
+      ) : (
+        <></>
+      )}
 
         <div
-          className={`w-96  bottom-0 right-0 bg-lime-50 text-black fixed h-3/4 z-40 px-2 ease-in-out duration-300 ${
-            showChatbar ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`w-96  bottom-0 right-0 bg-lime-50 text-black fixed h-3/4 z-40 px-2 ease-in-out duration-300 ${showChatbar ? "translate-x-0" : "translate-x-full"
+            }`}
         >
           <div className="p-1 m-3 overflow-y-scroll h-full overflow-x-hidden">
             {/* <div className="message flex flex-col mt-9 p-2">
