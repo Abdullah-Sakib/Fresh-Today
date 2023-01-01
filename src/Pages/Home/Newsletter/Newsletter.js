@@ -35,7 +35,7 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-lime-200 via-green-100 to-lime-200 py-20 my-16 md:my-28 lg:my-32 grid justify-center font-family shadow">
+    <div className="bg-gradient-to-r from-lime-200 via-green-100 to-lime-200 py-20 my-16 md:my-28 lg:my-64  grid justify-center font-family shadow">
       <h2 className="text-3xl font-bold text-center mb-8">
         SUBSCRIBE TO OUR NEWSLETTER!
       </h2>

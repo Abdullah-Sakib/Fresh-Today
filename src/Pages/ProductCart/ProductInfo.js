@@ -26,25 +26,7 @@ const ProductInfo = () => {
   };
   return (
     <div className="w-11/12 mx-auto font-family">
-      {/* <div className="card w-full my-20 bg-base-100 shadow-xl">
-        <figure>
-          <img
-            className="animate-bounce"
-            style={{ width: "500px", height: "500px" ,marginTop:"35px"}}
-            src={pa}
-            alt="Shoes"
-          />
-        </figure>
-      
-        <div className="card-body">
-          <div className="flex justify-between">
-            <h2 className="text-2xl font-bold w-1/2">
-              {products[0]?.productName}
-            </h2>
-            <p className="w-1/2 text-lg text-right">See Reviews</p>
-          </div>
-        </div>
-      </div> */}
+    
       <section
   class="relative bg-[url(https://ramarama.my/wp-content/uploads/2020/11/fresh-food-groceries-tray-box-wood-tabletop-banner-background-scaled.jpg)] bg-cover bg-center bg-no-repeat"
 >
@@ -108,46 +90,12 @@ const ProductInfo = () => {
               </div>
             </div>
 
-            {/* <div className="w-2/3 p-4 md:p-4">
-              <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
-                {product.productName}
-              </h1>
-
-              <h1 className="text-md font-bold text-gray-700 dark:text-gray-200 md:text-md">
-                from {product.price} <span className="text-sm">Tk</span>
-              </h1>
-              <h1 className="text-sm font-bold text-gray-500 dark:text-gray-200 md:text-sm">
-                Available {product.quantity} kg
-              </h1>
-              <div className="flex justify-between mt-10 item-center">
-              
-                <button
-                  onClick={() => {
-                   handleCart(product);
-                   setShowSidebar(true)
-                  }}
-                  className="font-family backdrop-blur text-white bg-green-800 hover:bg-green-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                  data-drawer-target="drawer-example"
-                  data-drawer-show="drawer-example"
-                  aria-controls="drawer-example"
-                  fill="#2563EB"
-                  type="submit"
-                  viewBox="0 0 100 80"
-                  width="40"
-                  height="40"
-                >
-                  Add to cart
-                  <rect width="100" height="10"></rect>
-                  <rect y="30" width="100" height="10"></rect>
-                  <rect y="60" width="100" height="10"></rect>
-                </button>
-              </div>
-            </div> */}
+            
           </div>
         ))}
 
         <div
-          className={`w-5/6 font-family bottom-0 right-0  text-white fixed h-5/6 z-40 px-2 ease-in-out duration-300 ${
+          className={`w-5/6 font-family bottom-0 right-0 pointer-events-none text-white fixed h-5/6 z-40 px-2 ease-in-out duration-300 ${
             showSidebar ? "translate-x-0 " : "translate-x-full "
           }`}
         >

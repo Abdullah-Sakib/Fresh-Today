@@ -1,22 +1,50 @@
 import React from "react";
+import pa from '../../images/pa.png';
+import './AboutUs.css';
 
 const AboutUs = () => {
+
+ 
+
   return (
     <div>
       <section className="bg-white dark:bg-gray-900 font-family">
         <div className="container px-6 py-10 mx-auto">
-          <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
-            Our <span className="text-green-500">Executive Team</span>
-          </h1>
+          
 
-          <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
+          {/* <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
             incidunt ex placeat modi magni quia error alias, adipisci rem
             similique, at omnis eligendi optio eos harum.
-          </p>
+          </p> */}
+
+   <div class="shadow-lg sm:mb-10 lg:grid lg:grid-cols-5 md:grid-cols-none md:bg-gray-300 bg-gray-300 lg:bg-white lg:h-full">
+      <div class=" px-10 py-10 max-w-md m-auto lg:col-span-2 mt-20 mb-20 shadow-xl rounded-xl lg:mt-10 md:shadow-xl md:rounded-xl lg:shadow-none lg:rounded-none lg:w-full lg:mb-10 lg:px-5 lg:pt-5 lg:pb-5 lg:max-w-lg bg-white">
+      
+        <img class="h-64 sm:h-52 sm:w-full sm:object-cover lg:hidden object-center mt-2 rounded-lg shadow-2xl" src="https://www.myaccelerate.io/assets/utilities/image/epa.jpg" alt="Ad- woman on a beach"/>
+        <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
+            Our <span className="text-green-500">Mission</span>
+          </h1>
+        <h1 class="text-lg text-gray-600 text-justify pt-2 font-family">Our mission was to work together with a view to building a online Grocery Shop which will let customers order products from their preferable vendor at affordable price.</h1>
+       
+      </div>
+
+      <div class="hidden relative lg:block  lg:col-span-3 shadow-lg">
+        <img class="animate-pulse absolute inset-0 w-full h-full object-cover object-center" src="https://cdnblog.webkul.com/blog/wp-content/uploads/2022/03/1.png" alt="Ad- woman on a beach"/>
+      </div>
+    </div>
+
+    <h1 className="text-3xl my-32 font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
+            Our <span className="text-green-500">Executive Team</span>
+          </h1>
+
+
+
+    
+
 
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-2">
-            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
+            <div className="px-12 py-8 transition-colors shadow-lg duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
@@ -36,8 +64,7 @@ const AboutUs = () => {
               </div>
 
               <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                nesciunt officia aliquam neque optio? Cumque facere numquam est.
+                A Enthusiastic individual who worked as a Web Developer with around 1 years of experience. Extensively worked developing Responsive Web Applications. Experience in developing web page effectively using HTML5,REACTJS,TAILWIND CSS,CSS3 and so trending languages in making web pages cross-browser compatible.
               </p>
 
               <div className="flex mt-4 -mx-2">
@@ -92,7 +119,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
+            <div className="px-12 py-8 transition-colors shadow-lg duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
@@ -112,8 +139,7 @@ const AboutUs = () => {
               </div>
 
               <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                nesciunt officia aliquam neque optio? Cumque facere numquam est.
+                A Enthusiastic individual who worked as a Web Developer with around 1 years of experience. Extensively worked developing Responsive Web Applications. Experience in developing web page effectively using HTML5,REACTJS,TAILWIND CSS,CSS3 and so trending languages in making web pages cross-browser compatible.
               </p>
 
               <div className="flex mt-4 -mx-2">
@@ -170,7 +196,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
+            <div className="px-12 py-8 transition-colors shadow-lg duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
@@ -190,8 +216,7 @@ const AboutUs = () => {
               </div>
 
               <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                nesciunt officia aliquam neque optio? Cumque facere numquam est.
+                A Enthusiastic individual who worked as a Web Developer with around 1 years of experience. Extensively worked developing Responsive Web Applications. Experience in developing web page effectively using HTML5,REACTJS,TAILWIND CSS,CSS3 and so trending languages in making web pages cross-browser compatible.
               </p>
 
               <div className="flex mt-4 -mx-2">
@@ -248,7 +273,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
+            <div className="px-12 py-8 transition-colors shadow-lg duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
@@ -268,8 +293,7 @@ const AboutUs = () => {
               </div>
 
               <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                nesciunt officia aliquam neque optio? Cumque facere numquam est.
+                A Enthusiastic individual who worked as a Web Developer with around 1 years of experience. Extensively worked developing Responsive Web Applications. Experience in developing web page effectively using HTML5,REACTJS,TAILWIND CSS,CSS3 and so trending languages in making web pages cross-browser compatible.
               </p>
 
               <div className="flex mt-4 -mx-2">
@@ -326,7 +350,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="px-12 py-8 transition-colors duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
+            <div className="px-12 py-8 transition-colors shadow-lg duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
@@ -346,8 +370,7 @@ const AboutUs = () => {
               </div>
 
               <p className="mt-4 text-gray-500 capitalize dark:text-gray-300 group-hover:text-dark">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                nesciunt officia aliquam neque optio? Cumque facere numquam est.
+                A Enthusiastic individual who worked as a Web Developer with around 1 years of experience. Extensively worked developing Responsive Web Applications. Experience in developing web page effectively using HTML5,REACTJS,TAILWIND CSS,CSS3 and so trending languages in making web pages cross-browser compatible.
               </p>
 
               <div className="flex mt-4 -mx-2">
