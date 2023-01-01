@@ -121,7 +121,7 @@ const Register = () => {
                 htmlFor="account-1"
                 className="py-4 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Buyer Account
+                Customer Account
               </label>
             </div>
             <div className="flex items-center w-6/12 pl-4 mb-4 rounded border border-gray-200 dark:border-gray-700">
