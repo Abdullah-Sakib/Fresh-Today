@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 
-
+// ----------------------- vendors -----------------------
 // 01304392323 - Omar Faruk - omarfaruk@gmail.com - omarfaruk
 // 01404349533 - Dilowar Hosen - dilowarhosen@gmail.com - dilowarhosen
 // 01502765723 - Rashed Shihab - rashedshihab@gmail.com - rashedshihab
@@ -12,15 +12,11 @@ import { toast } from "react-hot-toast";
 
 const AddProduct = () => {
   const { register, handleSubmit } = useForm();
-  const [categories, setCategories] = useState([]);
   const [processing, setProcessing] = useState(false);
   const imageHostingKey = process.env.REACT_APP_imgbb_api_key;
 
-  useEffect(() => {
-    fetch("http://localhost:5000/categories")
-      .then((res) => res.json())
-      .then((data) => setCategories(data));
-  }, []);
+
+
 
   const handleAddProduct = (data) => {
     setProcessing(true);
@@ -43,7 +39,6 @@ const AddProduct = () => {
           vendorEmail: "faizulosman@gmail.com",
         };
 
-
         fetch("http://localhost:5000/products", {
           method: "POST",
           headers: {
@@ -53,11 +48,10 @@ const AddProduct = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            if(data.acknowledged){
-              toast.success('Product added successfully.')
-            }
-            else{
-              toast.error('Failed to add product. Please try again.')
+            if (data.acknowledged) {
+              toast.success("Product added successfully.");
+            } else {
+              toast.error("Failed to add product. Please try again.");
             }
           });
         setProcessing(false);
@@ -77,7 +71,7 @@ const AddProduct = () => {
 
       <form
         onSubmit={handleSubmit(handleAddProduct)}
-        className="flex flex-col md:w-2/3 p-5 bg-lime-100 rounded-lg mb-10"
+        className="flex flex-col md:w-3/4 p-5 bg-lime-100 rounded-lg mb-10"
       >
         <label className="label font-semibold">Product category</label>
         <select
@@ -86,11 +80,10 @@ const AddProduct = () => {
           {...register("category", { required: true })}
         >
           <option value="">select product category</option>
-          {categories.map((category) => (
-            <option key={category?._id} value={category?.name}>
-              {category?.name}
-            </option>
-          ))}
+          <option value="Vegetables">Vegetables</option>
+          <option value="Fruits">Fruits</option>
+          <option value="Dry-Food">Dry-Food</option>
+          <option value="Meat">Meat</option>
         </select>
 
         <label className="label font-semibold">Product name</label>
