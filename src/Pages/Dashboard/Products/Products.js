@@ -18,7 +18,7 @@ const Products = () => {
     <div className=" font-family">
       <div className="flex justify-between items-center">
         <h1 className="mb-5 text-3xl font-semibold ">
-          Seller <span className="text-green-500">products</span>
+          Vendor <span className="text-green-500">products</span>
         </h1>
         <label htmlFor="my-drawer-2" className="drawer-button lg:hidden">
           <BsFillArrowRightSquareFill className="text-3xl text-green-500"></BsFillArrowRightSquareFill>

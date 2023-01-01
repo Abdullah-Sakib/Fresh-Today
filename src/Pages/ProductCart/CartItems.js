@@ -5,6 +5,7 @@ import { AiOutlineMinusSquare } from "react-icons/ai";
 const CartItems = ({ c }) => {
   const [counter, setCounter] = useState(0);
 
+
   const handleQuantity = (e) => {
     if (e === 0) {
       setCounter(0);
@@ -51,9 +52,11 @@ const CartItems = ({ c }) => {
                 <AiOutlineMinusSquare className="text-gray-700 h-6 w-6"></AiOutlineMinusSquare>
               </button>
             </div>
+
           </div>
         </div>
       </li>
+      total:
       total:
     </div>
   );

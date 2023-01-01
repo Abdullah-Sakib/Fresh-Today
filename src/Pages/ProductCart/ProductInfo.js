@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import Chat from "../Chat/Chat";
 import CartItems from "./CartItems";
 
 // This part is contributed by Ankan Halder
@@ -69,6 +70,7 @@ const ProductInfo = () => {
                     >
                       Add to cart
                     </button>
+                    <Chat></Chat>
                   </div>
                 </div>
               </div>

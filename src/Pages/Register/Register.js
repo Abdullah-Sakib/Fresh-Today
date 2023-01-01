@@ -10,6 +10,7 @@ const Register = () => {
   const handleRegisterForm = (e) => {
     e.preventDefault();
     const role = e.target.account.value;
+    // const role = account.current.value;
     const username = name.current.value;
     const userEmail = email.current.value;
     const userPassword = password.current.value;

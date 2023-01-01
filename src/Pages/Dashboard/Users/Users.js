@@ -82,7 +82,7 @@ const Users = () => {
                         }
                         {
                           role === "admin" && <img
-                          src="https://media.istockphoto.com/id/1192884194/vector/admin-sign-on-laptop-icon-stock-vector.jpg?s=170667a&w=0&k=20&c=S274xvXNsp27UyKxzNjhmZEzAb3Zqi2pFOqZjLsZJz0="
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwi_rWDZvItHKcX8akg8E81ek_y5q4T8vyByIBtluiGKudwaF_DDE7P5_7aWMHDHcM-sc&usqp=CAU"
                           alt="Avatar Tailwind CSS Component"
                         />
                         }
