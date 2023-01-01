@@ -1,7 +1,8 @@
 import { createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
-  user: null || JSON.parse(localStorage.getItem("user"))
+  user: null || JSON.parse(localStorage.getItem("user")),
+  totalPrice: 0
 };
 
 export const Reducers = createReducer(initialState, {
@@ -10,5 +11,8 @@ export const Reducers = createReducer(initialState, {
   },
   removeUser: (state, action) => {
     state.user = null;
+  },
+  setTotalPrice: (state, action) => {
+    state.totalPrice += action.payload;
   }
 })
