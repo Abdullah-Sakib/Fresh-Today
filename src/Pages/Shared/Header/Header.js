@@ -72,23 +72,26 @@ const Header = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
+        <ul
+          // className="menu menu-horizontal px-1"
+          className="menu-horizontal my-4"
+        >
+          <li className="mr-4 border-b-4 border-green-700">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="mr-4 hover:border-b-4 border-green-700">
             <Link to="/AllProducts">Products</Link>
           </li>
-          <li>
+          <li className="mr-4 hover:border-b-4 border-green-700">
             <Link to="/aboutUs">About Us</Link>
           </li>
           {user?.role === "customer" && (
-            <li>
+            <li className="mr-4 hover:border-b-4 border-green-700">
               <Link to="/cart">Cart</Link>
             </li>
           )}
           {(user?.role === "admin" || user?.role === "vendor") && (
-            <li>
+            <li className="mr-4 hover:border-b-4 border-green-700">
               <Link to="/dashboard">Dashboard</Link>
             </li>
           )}
