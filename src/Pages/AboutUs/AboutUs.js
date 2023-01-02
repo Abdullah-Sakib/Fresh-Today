@@ -44,7 +44,7 @@ const AboutUs = () => {
           </h1>
 
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-2">
-            <div className="px-12 py-8 transition-colors shadow-lg duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent">
+            <div className="px-12 py-8 transition-colors shadow-lg duration-300 transform border rounded-xl hover:border-transparent group hover:bg-lime-200 dark:border-gray-700 dark:hover:border-transparent ">
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"
