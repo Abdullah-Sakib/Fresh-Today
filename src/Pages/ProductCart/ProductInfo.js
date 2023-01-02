@@ -60,13 +60,13 @@ const ProductInfo = () => {
                     <p className="mt-2">price: {product.price}/-</p>
                     <p className="mt-2">Available {product.quantity} kg</p>
                   </div>
-                  <div>
+                  <div className="flex flex-col justify-between items-end">
                     <button
                       onClick={() => {
                         handleCart(product);
                         setShowSidebar(true);
                       }}
-                      className="text-white text-md font-semibold bg-green-400 py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 "
+                      className="text-white text-md font-semibold bg-green-400 py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 mb-2 mt-5"
                     >
                       Add to cart
                     </button>

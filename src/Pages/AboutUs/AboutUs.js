@@ -13,26 +13,26 @@ const AboutUs = () => {
             similique, at omnis eligendi optio eos harum.
           </p> */}
 
-          <div class="shadow-lg sm:mb-10 lg:grid lg:grid-cols-5 md:grid-cols-none md:bg-gray-300 bg-gray-300 lg:bg-white lg:h-full">
-            <div class=" px-10 py-10 max-w-md m-auto lg:col-span-2 mt-20 mb-20 shadow-xl rounded-xl lg:mt-10 md:shadow-xl md:rounded-xl lg:shadow-none lg:rounded-none lg:w-full lg:mb-10 lg:px-5 lg:pt-5 lg:pb-5 lg:max-w-lg bg-white">
+          <div className="shadow-lg sm:mb-10 lg:grid lg:grid-cols-5 md:grid-cols-none md:bg-gray-300 bg-gray-300 lg:bg-white lg:h-full">
+            <div className=" px-10 py-10 max-w-md m-auto lg:col-span-2 mt-20 mb-20 shadow-xl rounded-xl lg:mt-10 md:shadow-xl md:rounded-xl lg:shadow-none lg:rounded-none lg:w-full lg:mb-10 lg:px-5 lg:pt-5 lg:pb-5 lg:max-w-lg bg-white w-full">
               <img
-                class="h-64 sm:h-52 sm:w-full sm:object-cover lg:hidden object-center mt-2 rounded-lg shadow-xl mb-4"
+                className="h-64 sm:h-52 sm:w-full sm:object-cover lg:hidden object-center mt-2 rounded-lg shadow-xl mb-4"
                 src="https://cdnblog.webkul.com/blog/wp-content/uploads/2022/03/1.png"
                 alt="Ad- woman on a beach"
               />
               <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
                 Our <span className="text-green-500">Mission</span>
               </h1>
-              <h1 class="text-lg text-gray-600 text-justify pt-2 font-family">
+              <h1 className="text-lg text-gray-600 text-justify pt-2 font-family">
                 Our mission was to work together with a view to building a
                 online Grocery Shop which will let customers order products from
                 their preferable vendor at affordable price.
               </h1>
             </div>
 
-            <div class="hidden relative lg:block  lg:col-span-3 shadow-lg">
+            <div className="hidden relative lg:block  lg:col-span-3 shadow-lg">
               <img
-                class="animate-pulse absolute inset-0 w-full h-full object-cover object-center"
+                className="animate-pulse absolute inset-0 w-full h-full object-cover object-center"
                 src="https://cdnblog.webkul.com/blog/wp-content/uploads/2022/03/1.png"
                 alt="Ad- woman on a beach"
               />
