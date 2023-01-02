@@ -3,10 +3,10 @@ import React from "react";
 const Highlight = () => {
   return (
     <div>
-      <div class="flex items-center justify-center font-family mt-16 md:mt-28 lg:mt-32 ">
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
-          <div class="relative  bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow ">
-            <div class=" shadow-xl text-white mx-20 mb-3 absolute rounded-full py-4 px-4  bg-green-500 left-4 -top-6">
+      <div className="flex items-center justify-evenly font-family mt-16 md:mt-28 lg:mt-32 ">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+          <div className="relative  bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow ">
+            <div className=" shadow-xl text-white mx-20 mb-3 absolute rounded-full py-4 px-4  bg-lime-600 left-4 -top-6">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -22,10 +22,10 @@ const Highlight = () => {
               </div>
             </div>
 
-            <div class="mt-12">
-              <div class="border-t-2"></div>
+            <div className="mt-12">
+              <div className="border-t-2"></div>
 
-              <div class="flex justify-between">
+              <div className="flex justify-between">
                 <div>
                   <h3 className=" text-xl leading-5 font-semibold text-gray-800 lg:mt-5 mt-8 ">
                     Delivery
@@ -38,8 +38,8 @@ const Highlight = () => {
             </div>
           </div>
 
-          <div class="relative  bg-white py-6 px-6 rounded-3xl w-64 my-4   shadow">
-            <div class="shadow-xl text-white mx-20 mb-3 absolute rounded-full py-4 px-4  bg-green-500 left-4 -top-6">
+          <div className="relative  bg-white py-6 px-6 rounded-3xl w-64 my-4   shadow">
+            <div className="shadow-xl text-white mx-20 mb-3 absolute rounded-full py-4 px-4  bg-lime-600 left-4 -top-6">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -56,10 +56,10 @@ const Highlight = () => {
                 </svg>
               </div>
             </div>
-            <div class="mt-12">
-              <div class="border-t-2"></div>
+            <div className="mt-12">
+              <div className="border-t-2"></div>
 
-              <div class="flex justify-between">
+              <div className="flex justify-between">
                 <div>
                   <h3 className="text-xl leading-5 font-semibold text-gray-800 lg:mt-5 mt-8">
                     Customer Care
@@ -79,8 +79,8 @@ const Highlight = () => {
             </div>
           </div>
 
-          <div class="relative  bg-white py-6 px-6 rounded-3xl w-64 my-4  shadow ">
-            <div class="shadow-xl text-white mx-20 mb-3 absolute rounded-full py-4 px-4  bg-green-500 left-4 -top-6">
+          <div className="relative  bg-white py-6 px-6 rounded-3xl w-64 my-4  shadow ">
+            <div className="shadow-xl text-white mx-20 mb-3 absolute rounded-full py-4 px-4  bg-lime-600 left-4 -top-6">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -97,10 +97,10 @@ const Highlight = () => {
                 </svg>
               </div>
             </div>
-            <div class="mt-12">
-              <div class="border-t-2"></div>
+            <div className="mt-12">
+              <div className="border-t-2"></div>
 
-              <div class="flex justify-between">
+              <div className="flex justify-between">
                 <div>
                   <h3 className=" text-xl leading-5 font-semibold text-gray-800 lg:mt-5 mt-8 ">
                     Return Policy
@@ -113,8 +113,8 @@ const Highlight = () => {
               </div>
             </div>
           </div>
-          <div class="relative  bg-white py-6 px-6 rounded-3xl w-64 my-4  shadow ">
-            <div class="shadow-xl text-white mx-20 mb-3 absolute rounded-full py-4 px-4  bg-green-500 left-4 -top-6">
+          <div className="relative  bg-white py-6 px-6 rounded-3xl w-64 my-4  shadow ">
+            <div className="shadow-xl text-white mx-20 mb-3 absolute rounded-full py-4 px-4  bg-lime-600 left-4 -top-6">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -132,10 +132,10 @@ const Highlight = () => {
                 </svg>
               </div>
             </div>
-            <div class="mt-12">
-              <div class="border-t-2"></div>
+            <div className="mt-12">
+              <div className="border-t-2"></div>
 
-              <div class="flex justify-between">
+              <div className="flex justify-between">
                 <div>
                   <h3 className=" text-xl leading-5 font-semibold text-gray-800 lg:mt-5 mt-8 ">
                     Payment Gateway

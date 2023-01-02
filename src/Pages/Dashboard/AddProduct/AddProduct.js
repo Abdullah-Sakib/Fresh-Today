@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
+import { useStore } from "react-redux";
 
 // ----------------------- vendors -----------------------
 // 01304392323 - Omar Faruk - omarfaruk@gmail.com - omarfaruk
@@ -14,7 +15,8 @@ const AddProduct = () => {
   const { register, handleSubmit } = useForm();
   const [processing, setProcessing] = useState(false);
   const imageHostingKey = process.env.REACT_APP_imgbb_api_key;
-
+  const store = useStore();
+  const user = store.getState().states.user;
 
   const handleAddProduct = (data) => {
     setProcessing(true);
@@ -33,9 +35,10 @@ const AddProduct = () => {
           ...data,
           image: data.image,
           productAddtionDate: new Date(),
-          vendorName: "Faizul Osman",
-          vendorEmail: "faizulosman@gmail.com",
+          vendorName: user?.username,
+          vendorEmail: user?.email,
         };
+
 
         fetch("http://localhost:5000/products", {
           method: "POST",
@@ -46,7 +49,7 @@ const AddProduct = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            if (data.acknowledged) {
+            if (data._id ) {
               toast.success("Product added successfully.");
             } else {
               toast.error("Failed to add product. Please try again.");

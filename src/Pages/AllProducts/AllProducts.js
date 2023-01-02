@@ -10,6 +10,7 @@ import juice from "../../images/juice.png";
 import rice from "../../images/Rice.png";
 import { Link } from "react-router-dom";
 
+
 const CategoriesImages = [
   { id: 1, image: fruit, name: 'Fruits' },
   { id: 2, image: veg, name: 'Vegetables' },
@@ -26,6 +27,7 @@ const AllProducts = () => {
   const [categoryVegetables, setCategoryVegetables] = useState([]);
   const [categoryDryFood, setCategoryDryFood] = useState([]);
   const [categoryMeat, setCategoryMeat] = useState([]);
+
   useEffect(() => {
     fetch(`http://localhost:5000/products/category/Fruits`)
       .then(res => res.json())
@@ -58,7 +60,7 @@ const AllProducts = () => {
   return (
     <div className="grid grid-cols-1 AllProducts">
       <div className="mx-auto my-5 ">
-        <div className="container mx-auto py-9 md:py-12 px-4 md:px-6">
+        <div className="container mx-auto py-9 md:py-12 ">
           <div className="flex items-strech justify-center flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">
             <div className="flex flex-col md:flex-row items-strech justify-between shadow bg-lime-50 rounded py-6 px-6 md:py-12 lg:px-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12">
               <div className="flex flex-col justify-center md:w-1/2">
@@ -95,27 +97,7 @@ const AllProducts = () => {
           )
         }
 
-        {/* <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
-          <img src={veg} className="rounded-full w-28 h-28" alt=""></img>
-        </div>
-        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
-          <img src={dairy} className="rounded-full w-28 h-28" alt=""></img>
-        </div>
-        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
-          <img src={meat} className="rounded-full w-28 h-28" alt=""></img>
-        </div>
-        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
-          <img src={bread} className="rounded-full w-28 h-28" alt=""></img>
-        </div>
-        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
-          <img src={fish} className="rounded-full w-28 h-28" alt=""></img>
-        </div>
-        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
-          <img src={juice} className="rounded-full w-28 h-28" alt=""></img>
-        </div>
-        <div className=" w-44 h-44 lg:w-36 lg:h-36 hover:bg-lime-100 cursor-pointer bg-lime-200 shadow text-dark rounded-full md:mx-2 flex justify-center items-center mx-auto">
-          <img src={rice} className="rounded-full w-28 h-28" alt=""></img>
-        </div> */}
+       
       </div>
 
       <div className="mt-16 md:mt-28 lg:mt-32 text-left lg:mx-20 mx-5 md:mx-5 text-4xl font-family ">
