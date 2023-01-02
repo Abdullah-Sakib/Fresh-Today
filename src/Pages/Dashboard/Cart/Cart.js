@@ -1,58 +1,15 @@
 import React from "react";
+import { useStore } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const cart = [
-    {
-      name: "carrot",
-      Quality: "flesh",
-      category: "vegetable",
-      price: "15",
-      isPaid: true,
-    },
-    {
-      name: "carrot",
-      Quality: "flesh",
-      category: "vegetable",
-      price: "15",
-      isPaid: true,
-    },
-    {
-      name: "carrot",
-      Quality: "flesh",
-      category: "vegetable",
-      price: "15",
-      isPaid: true,
-    },
-    {
-      name: "carrot",
-      Quality: "flesh",
-      category: "vegetable",
-      price: "15",
-      isPaid: true,
-    },
-    {
-      name: "carrot",
-      Quality: "flesh",
-      category: "vegetable",
-      price: "15",
-      isPaid: true,
-    },
-    {
-      name: "carrot",
-      Quality: "flesh",
-      category: "vegetable",
-      price: "15",
-      isPaid: true,
-    },
-    {
-      name: "carrot",
-      Quality: "flesh",
-      category: "vegetable",
-      price: "15",
-      isPaid: true,
-    },
-  ];
+  const store = useStore();
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  
+  const totalPrice = cart.reduce((total, product) => total + product.price, 0);
+  store.dispatch({ type: "setTotalPrice", payload: totalPrice });
+  localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
+  
   return (
     <div className=" font-family m-5 md:m-10 ">
       <div className="flex justify-between items-center">
@@ -65,7 +22,7 @@ const Cart = () => {
           <thead className=" rounded ">
             <tr className="bg-green-100 text-center">
               <th className="bg-green-200 text-lg ">Product name</th>
-              <th className="bg-green-200 text-lg "> Quality</th>
+              <th className="bg-green-200 text-lg "> Quantity</th>
               <th className="bg-green-200 text-lg ">Category</th>
               <th className="bg-green-200 text-lg "> Price</th>
               <th className="text-center bg-green-200 text-lg">
@@ -77,10 +34,10 @@ const Cart = () => {
             {cart.map((product, id) => (
               <tr key={id}>
                 <th scope="row" className="text-xl text-center">
-                  {product.name}
+                  {product.productName}
                 </th>
                 <td className="py-4 px-6 text-xl  border  text-center ">
-                  {product.Quality}
+                  {product.quantity}
                 </td>
                 <td className="text-xl text-center">{product.category}</td>
                 <td className="py-4 px-6 border text-xl text-center">
@@ -98,7 +55,7 @@ const Cart = () => {
               <th colSpan={3} className="bg-green-400 text-lg ">
                 Total
               </th>
-              <th className="bg-green-400 text-lg ">220</th>
+              <th className="bg-green-400 text-lg ">{totalPrice}</th>
               <th className="text-center bg-green-400 text-lg">
                 <button className="btn btn-active">
                   <Link to="/payment">Pay Now</Link>
