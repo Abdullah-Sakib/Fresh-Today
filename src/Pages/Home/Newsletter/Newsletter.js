@@ -35,7 +35,8 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-lime-200 via-green-100 to-lime-200 py-20 my-16 md:my-28 lg:my-32 grid justify-center font-family shadow">
+    
+    <div className="my-16 md:my-28 lg:my-32 relative bg-[url(https://img.freepik.com/free-photo/green-leaves-grass-bokeh-lights-background_1048-2818.jpg?w=996&t=st=1672610675~exp=1672611275~hmac=99063e0c72b992a1dabe663de940059677357fbdb489c281fd12246dbc703fa7)] bg-cover bg-center bg-no-repeat py-20   grid justify-center font-family shadow">
       <h2 className="text-3xl font-bold text-center mb-8">
         SUBSCRIBE TO OUR NEWSLETTER!
       </h2>
@@ -53,7 +54,7 @@ const Newsletter = () => {
         />
         <input
           type="submit"
-          className="btn bg-blue-900 rounded-none text-base-100 border-0"
+          className="btn bg-blue-900 rounded-none text-base-100 border-0 mt-2 md:mt-0"
           value="Submit"
           disabled={disabled}
         />

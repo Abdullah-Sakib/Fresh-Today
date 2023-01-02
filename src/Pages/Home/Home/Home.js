@@ -5,8 +5,10 @@ import Motto from '../Motto/Motto';
 import Products from '../Products/Products';
 import Newsletter from '../Newsletter/Newsletter';
 import TopRatedVendors from '../TopRatedVendors/TopRatedVendors';
-import Faq from '../Faq/Faq';
+import Highlight from '../Highlight/Highlight';
 import Process from '../Process/Process';
+import FAQ1 from '../Faq/FAQ1';
+
 
 const Home = () => {
     return (
@@ -17,7 +19,8 @@ const Home = () => {
             <CustomerReview></CustomerReview>
             <Process></Process>
             <TopRatedVendors></TopRatedVendors>
-            <Faq></Faq>
+            <FAQ1></FAQ1>
+            <Highlight></Highlight>
             <Newsletter></Newsletter>
         </div>
     );
