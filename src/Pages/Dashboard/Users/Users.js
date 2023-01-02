@@ -1,39 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
 
 const Users = () => {
-  const users = [
-    {
-      name: "john doe",
-      address: "Dhaka, Bangladesh",
-      role: "buyer",
-    },
-    {
-      name: "john doe",
-      address: "Dhaka, Bangladesh",
-      role: "buyer",
-    },
-    {
-      name: "john doe",
-      address: "Dhaka, Bangladesh",
-      role: "buyer",
-    },
-    {
-      name: "john doe",
-      address: "Dhaka, Bangladesh",
-      role: "buyer",
-    },
-    {
-      name: "john doe",
-      address: "Dhaka, Bangladesh",
-      role: "buyer",
-    },
-    {
-      name: "john doe",
-      address: "Dhaka, Bangladesh",
-      role: "buyer",
-    },
-  ];
+  const [role, setRole] = useState("vendor");
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/user/${role}`)
+      .then((res) => res.json())
+      .then((data) => setUsers(data));
+  }, [role]);
+
+  
   return (
     <div className="w-full font-family">
       <div className="flex justify-between items-center">
@@ -57,13 +35,14 @@ const Users = () => {
               <div>
                 <select
                   name="categoryName"
+                  onChange={(e) => setRole(e.target.value)}
                   className="select border-solid border-2 border-green-500 shadow "
                 >
-                  <option value="Buyer" defaultValue>
-                    Buyer
+                  <option value="vendor">Vendor</option>
+                  <option value="customer" defaultValue>
+                    Customer
                   </option>
-                  <option value="Seller">Seller</option>
-                  <option value="Admin">Admin</option>
+                  <option value="admin">Admin</option>
                 </select>
               </div>
             </div>
@@ -89,10 +68,24 @@ const Users = () => {
                   <div className="flex justify-center space-x-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnN8ZW58MHx8MHx8&w=1000&q=80"
+                        {role === "customer" && (
+                          <img
+                            src="https://thumbs.dreamstime.com/b/person-icon-isolated-elegant-green-round-button-vector-illustration-person-icon-elegant-green-round-button-vector-illustration-167324755.jpg"
+                            alt="Avatar Tailwind CSS Component"
+                          />
+                        )}
+                        {
+                          role === "vendor" && <img
+                          src="https://www.citypng.com/public/uploads/preview/hd-profile-user-round-green-icon-symbol-transparent-png-11639594320ayr6vyoidq.png"
                           alt="Avatar Tailwind CSS Component"
                         />
+                        }
+                        {
+                          role === "admin" && <img
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwi_rWDZvItHKcX8akg8E81ek_y5q4T8vyByIBtluiGKudwaF_DDE7P5_7aWMHDHcM-sc&usqp=CAU"
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                        }
                       </div>
                     </div>
                     <div>

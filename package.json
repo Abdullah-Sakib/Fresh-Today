@@ -8,8 +8,8 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.2.2",
     "daisyui": "^2.46.0",
+    "firebase": "^9.15.0",
     "flowbite": "^1.5.5",
     "lottie-web": "^5.10.1",
     "react": "^18.2.0",
@@ -23,6 +23,7 @@
     "react-use-cart": "^1.13.0",
     "socket.io-client": "^4.5.4",
     "swiper": "^8.4.5",
+    "timeago.js": "^4.0.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

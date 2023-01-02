@@ -1,19 +1,40 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth } from "firebase/auth";
+import app from "../../Firebase/firebase.config";
 
 const Register = () => {
+  const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
-  const account = useRef("");
   const name = useRef("");
   const email = useRef("");
   const password = useRef("");
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => console.error(error));
+  };
+
   const handleRegisterForm = (e) => {
     e.preventDefault();
-    const role = account.current.value;
+    const role = e.target.account.value;
+    // const role = account.current.value;
     const username = name.current.value;
     const userEmail = email.current.value;
     const userPassword = password.current.value;
     const user = { role, username, userEmail, userPassword };
+
+    if (userPassword.length < 6) {
+      setPasswordError("Password should be at least 6 characters.");
+      return;
+    }
+    setPasswordError("");
     console.log(user);
 
     try {
@@ -36,7 +57,7 @@ const Register = () => {
   return (
     <form
       onSubmit={handleRegisterForm}
-      className="flex w-full max-w-sm mx-auto overflow-hidden my-20 bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-6xl"
+      className="flex w-full max-w-sm mx-auto overflow-hidden my-20 bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-6xl font-family"
     >
       <div
         className="hidden bg-cover lg:block lg:w-1/2"
@@ -54,8 +75,8 @@ const Register = () => {
           Welcome back!
         </p> */}
 
-        <a
-          href="/"
+        <Link
+          onClick={handleGoogleSignIn}
           className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
         >
           <div className="px-4 py-2">
@@ -82,7 +103,7 @@ const Register = () => {
           <span className="w-5/6 px-4 py-3 font-bold text-center">
             Register in with Google
           </span>
-        </a>
+        </Link>
 
         <div className="flex items-center justify-between mt-4">
           <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
@@ -105,28 +126,26 @@ const Register = () => {
             <div className="flex items-center w-6/12 pl-4 mb-4 mr-4 rounded border border-gray-200 dark:border-gray-700 ">
               <input
                 defaultChecked
-                ref={account}
                 id="account-1"
                 type="radio"
-                value="buyer"
+                value="customer"
                 name="account"
-                className="w-4 h-4 text-green-400 bg-gray-100 border-gray-300  dark:bg-gray-700 dark:border-gray-600 radio radio-success"
+                className="text-green-400 radio-success"
               />
               <label
                 htmlFor="account-1"
                 className="py-4 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Buyer Account
+                Customer Account
               </label>
             </div>
             <div className="flex items-center w-6/12 pl-4 mb-4 rounded border border-gray-200 dark:border-gray-700">
               <input
-                ref={account}
                 id="bordered-radio-2"
                 type="radio"
                 value="vendor"
                 name="account"
-                className="w-4 h-4 text-green-400 bg-gray-100 border-gray-300 dark:bg-gray-700 dark:border-gray-600 radio radio-success"
+                className=" radio-success"
               />
               <label
                 htmlFor="bordered-radio-2"
@@ -145,6 +164,7 @@ const Register = () => {
             Name
           </label>
           <input
+            required
             ref={name}
             id="registerName"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-green-300"
@@ -159,6 +179,7 @@ const Register = () => {
             Email Address
           </label>
           <input
+            required
             ref={email}
             id="LoggingEmailAddress"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-green-300"
@@ -175,12 +196,14 @@ const Register = () => {
           </label>
 
           <input
+            required
             ref={password}
             id="loggingPassword"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-green-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-green-300"
             type="password"
           />
         </div>
+        <p className="text-red-700 mt-4">{passwordError}</p>
 
         <div className="mt-6">
           <button

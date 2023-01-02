@@ -17,7 +17,10 @@ import PaymentFailed from "../../Pages/Payment/PaymentFailed";
 import PaymentSuccess from "../../Pages/Payment/PaymentSuccess";
 import ProductCart from "../../Pages/ProductCart/ProductCart";
 import Register from "../../Pages/Register/Register";
+import AdminAndVendorRoute from "./Admin&VendorRoute/Admin&VendorRoute";
+import AdminRoute from "./AdminRoute/AdminRoute";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import VendorRoute from "./VendorRoute/VendorRoute";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +29,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
         path: "/AllProducts",
@@ -41,55 +44,104 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
+        path: "cart",
+        element: (
+          <PrivateRoute>
+            <Cart></Cart>
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "aboutUs",
         element: <AboutUs></AboutUs>,
       },
       {
         path: "product/:name",
         element: <ProductCart></ProductCart>,
-        loader: ({params}) => fetch(`http://localhost:5000/products/${params.name}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.name}`),
       },
       {
-        path: '/payment',
-        element: <Payment></Payment>
+        path: "/payment",
+        element: (
+          <PrivateRoute>
+            <Payment></Payment>
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/payment/success',
-        element: <PaymentSuccess></PaymentSuccess>
+        path: "/payment/success",
+        element: (
+          <PrivateRoute>
+            <PaymentSuccess></PaymentSuccess>
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/payment/failed',
-        element: <PaymentFailed></PaymentFailed>
+        path: "/payment/failed",
+        element: (
+          <PrivateRoute>
+            <PaymentFailed></PaymentFailed>
+          </PrivateRoute>
+        ),
       },
     ],
   },
   {
     path: "/dashboard",
-    element: <PrivateRoute><DashMain></DashMain></PrivateRoute>,
+    element: (
+      <AdminAndVendorRoute>
+        <DashMain></DashMain>
+      </AdminAndVendorRoute>
+    ),
     children: [
       {
         path: "/dashboard",
-        element: <DashHome></DashHome>,
+        element: (
+          <AdminAndVendorRoute>
+            <DashHome></DashHome>
+          </AdminAndVendorRoute>
+        ),
       },
       {
         path: "/dashboard/users",
-        element: <Users></Users>,
+        element: (
+          <AdminRoute>
+            <Users></Users>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/products",
-        element: <Products></Products>,
+        element: (
+          <VendorRoute>
+            <Products></Products>
+          </VendorRoute>
+        ),
       },
       {
         path: "/dashboard/addProduct",
-        element: <AddProduct></AddProduct>,
+        element: (
+          <VendorRoute>
+            <AddProduct></AddProduct>
+          </VendorRoute>
+        ),
       },
       {
         path: "/dashboard/cart",
-        element: <Cart></Cart>,
+        element: (
+          <PrivateRoute>
+            <Cart></Cart>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/reports",
-        element: <Report></Report>,
+        element: (
+          <AdminRoute>
+            <Report></Report>
+          </AdminRoute>
+        ),
       },
     ],
   },

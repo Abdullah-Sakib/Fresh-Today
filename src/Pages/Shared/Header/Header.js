@@ -13,9 +13,11 @@ const Header = () => {
 
   const handleLogout = () => {
     store.dispatch({ type: "removeUser" });
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     navigate("/");
   };
-  
+
   return (
     <div className="navbar print:hidden bg-gradient-to-r from-lime-50 to-lime-100 font-family text-2xl">
       <div className="navbar-start">
@@ -49,49 +51,68 @@ const Header = () => {
             <li>
               <Link to="/aboutUs">About Us</Link>
             </li>
-            <li>
-              <Link to="/dashboard/cart">Cart</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
+            {user?.role === "customer" && (
+              <li>
+                <Link to="/cart">Cart</Link>
+              </li>
+            )}
+            {(user?.role === "admin" || user?.role === "vendor") && (
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
+            )}
           </ul>
         </div>
         <img src={logo} className="-mt-4 w-20 " alt="" />
-        <Link to="/" className="-ml-5 btn btn-ghost normal-case text-2xl md:text-3xl lg:text-3xl">
+        <Link
+          to="/"
+          className="-ml-5 btn btn-ghost normal-case text-2xl md:text-3xl lg:text-3xl"
+        >
           Fresh Today
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
+        <ul
+          // className="menu menu-horizontal px-1"
+          className="menu-horizontal my-4"
+        >
+          <li className="mr-4 border-b-4 border-green-700">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="mr-4 hover:border-b-4 border-green-700">
             <Link to="/AllProducts">Products</Link>
           </li>
-          <li>
+          <li className="mr-4 hover:border-b-4 border-green-700">
             <Link to="/aboutUs">About Us</Link>
           </li>
-          <li>
-            <Link to="/dashboard/cart">Cart</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
+          {user?.role === "customer" && (
+            <li className="mr-4 hover:border-b-4 border-green-700">
+              <Link to="/cart">Cart</Link>
+            </li>
+          )}
+          {(user?.role === "admin" || user?.role === "vendor") && (
+            <li className="mr-4 hover:border-b-4 border-green-700">
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+          )}
         </ul>
       </div>
       <div className="navbar-end">
-        {
-          user ? 
-            <button onClick={handleLogout} className="btn btn-ghost text-sm md:text-xl normal-case">
+        {user ? (
+          <button
+            onClick={handleLogout}
+            className="btn btn-ghost text-sm md:text-xl normal-case"
+          >
             Logout
           </button>
-        :
-          <Link to="/Login" className="btn btn-ghost text-sm md:text-xl normal-case">
+        ) : (
+          <Link
+            to="/Login"
+            className="btn btn-ghost text-sm md:text-xl normal-case"
+          >
             Log in
           </Link>
-        }
+        )}
       </div>
     </div>
   );
