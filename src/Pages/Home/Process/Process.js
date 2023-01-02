@@ -3,7 +3,7 @@ import roadMapImg from "../../../images/roadmap.svg";
 
 const Process = () => {
   return (
-    <div className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 mt-16 md:mt-28 lg:mt-32 ">
+    <div className="font-family px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-14 mt-16 md:mt-28 lg:mt-32 ">
       <div className="grid gap-6 row-gap-10 lg:grid-cols-2">
         <div className="lg:py-6 lg:pr-16">
           <div className="flex">
@@ -39,8 +39,8 @@ const Process = () => {
             <div className="pt-1 pb-8">
               <p className="mb-2 text-lg font-bold">Step 1</p>
               <p className="text-gray-700">
-                All recipes are written using certain conventions, which define
-                the characteristics of common ingredients. The rules vary from
+                All products have showed under a certain category, which
+                includes the amount and price of product.The rules vary from
                 place to place.
               </p>
             </div>
@@ -78,9 +78,9 @@ const Process = () => {
             <div className="pt-1 pb-8">
               <p className="mb-2 text-lg font-bold">Step 2</p>
               <p className="text-gray-700">
-                The first mate and his Skipper too will do their very best to
-                make the others comfortable in their tropic island nest. Michael
-                Knight a young loner.
+                If user is a customer ,he/she can add product to his/her cart
+                from their preferable vender.All post from vendors also showen
+                on another page.
               </p>
             </div>
           </div>
@@ -117,8 +117,9 @@ const Process = () => {
             <div className="pt-1 pb-8">
               <p className="mb-2 text-lg font-bold">Step 3</p>
               <p className="text-gray-700">
-                Tell them I hate them. Is the Space Pope reptilian!? Tell her
-                she looks thin. Hello, little man. I will destroy you!
+                If user is a vendor ,he/she can add post about his/her product
+                at their preferable price.All post from vendors also showen
+                here.
               </p>
             </div>
           </div>
@@ -155,9 +156,8 @@ const Process = () => {
             <div className="pt-1 pb-8">
               <p className="mb-2 text-lg font-bold">Step 4</p>
               <p className="text-gray-700">
-                If one examines precultural libertarianism, one is faced with a
-                choice: either accept rationalism or conclude that context is a
-                product.
+                Customer can place order after finishing adding product and then
+                make payment through their comfortable online method.
               </p>
             </div>
           </div>

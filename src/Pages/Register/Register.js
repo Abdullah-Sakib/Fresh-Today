@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const [passwordError, setPasswordError] = useState('')
+  const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
   const name = useRef("");
   const email = useRef("");
@@ -17,10 +17,10 @@ const Register = () => {
     const user = { role, username, userEmail, userPassword };
 
     if (userPassword.length < 6) {
-      setPasswordError('Password should be at least 6 characters.');
+      setPasswordError("Password should be at least 6 characters.");
       return;
     }
-    setPasswordError('');
+    setPasswordError("");
     console.log(user);
 
     try {
@@ -116,7 +116,7 @@ const Register = () => {
                 type="radio"
                 value="customer"
                 name="account"
-                className="w-4 h-4 text-green-400 bg-gray-100 border-gray-300  dark:bg-gray-700 dark:border-gray-600 radio radio-success"
+                className="text-green-400 radio-success"
               />
               <label
                 htmlFor="account-1"
@@ -131,7 +131,7 @@ const Register = () => {
                 type="radio"
                 value="vendor"
                 name="account"
-                className="w-4 h-4 text-green-400 bg-gray-100 border-gray-300 dark:bg-gray-700 dark:border-gray-600 radio radio-success"
+                className=" radio-success"
               />
               <label
                 htmlFor="bordered-radio-2"
@@ -189,9 +189,7 @@ const Register = () => {
             type="password"
           />
         </div>
-        <p className="text-red-700 mt-4">
-          {passwordError}
-        </p>
+        <p className="text-red-700 mt-4">{passwordError}</p>
 
         <div className="mt-6">
           <button

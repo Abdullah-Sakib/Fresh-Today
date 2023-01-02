@@ -5,7 +5,7 @@ const VendorCard = ({ vendor }) => {
 
   return (
     <div className="card card-side bg-slate-50 shadow-2xl h-40 mx-2 w-full">
-      <figure className="w-1/2 lg:w-1/4">
+      <figure className="w-1/3 lg:w-1/4">
         <img className="h-full" src={image} alt={name} />
       </figure>
       <div className="card-body">
