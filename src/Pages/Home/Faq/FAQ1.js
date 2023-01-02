@@ -1,5 +1,6 @@
 import React from "react";
 import Item from "./Item/Item";
+import faqImg from "../../../images/faq.svg"
 import "./FAQ1.css";
 
 const FAQ1 = () => {
@@ -63,7 +64,7 @@ const FAQ1 = () => {
                 <div className="relative flex items-center justify-center h-full">
                   <img
                     className="relative z-20 w-full pt-6"
-                    src="https://djmdigital.be/wp-content/uploads/2022/04/online-communication.jpg"
+                    src={faqImg}
                     alt="rocket"
                   />
                 </div>
