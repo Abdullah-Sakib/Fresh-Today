@@ -8,7 +8,6 @@ import TopRatedVendors from '../TopRatedVendors/TopRatedVendors';
 import Highlight from '../Highlight/Highlight';
 import Process from '../Process/Process';
 import FAQ1 from '../Faq/FAQ1';
-import Brand from '../Brand/Brand';
 
 
 const Home = () => {
@@ -22,7 +21,6 @@ const Home = () => {
             <TopRatedVendors></TopRatedVendors>
             <FAQ1></FAQ1>
             <Highlight></Highlight>
-            <Brand></Brand>
             <Newsletter></Newsletter>
         </div>
     );
