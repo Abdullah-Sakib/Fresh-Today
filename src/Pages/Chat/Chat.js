@@ -76,14 +76,13 @@ const Chat = ({ c }) => {
       <>
         <button
           onClick={() => setshowChatbar(!showChatbar)}
-          className="flex text-center font-family backdrop-blur text-white bg-green-800 hover:bg-green-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          className="flex items-center just text-center font-family backdrop-blur text-white bg-green-800 hover:bg-green-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           type="button"
           data-drawer-target="drawer-example"
           data-drawer-show="drawer-example"
           aria-controls="drawer-example"
           fill="#2563EB"
           viewBox="0 0 100 80"
-          width="40"
           height="40"
         >
           <svg
@@ -116,23 +115,47 @@ const Chat = ({ c }) => {
           <></>
         )} */}
 
-{showChatbar ? (
-        <button
-          className="text-5xl text-dark cursor-pointer fixed right-5 top-56 z-50 "
-          onClick={() => setshowChatbar(!showChatbar)}
-        >
-          x
-        </button>
-
-      ) : (
-        <></>
-      )}
-
         <div
-          className={`w-96  bottom-0 right-0 bg-lime-50 text-black fixed h-3/4 z-40 px-2 ease-in-out duration-300 ${showChatbar ? "translate-x-0" : "translate-x-full"
-            }`}
+          className={`w-96  bottom-0 right-0 bg-lime-50 text-black fixed h-3/4 z-40 pl-2 ease-in-out duration-300 ${
+            showChatbar ? "translate-x-0" : "translate-x-full"
+          }`}
         >
-          <div className="p-1 m-3 overflow-y-scroll h-full overflow-x-hidden">
+          <div className="p-1 ml-3 overflow-y-scroll h-full overflow-x-hidden">
+            <div className="flex items-start justify-between mt-4">
+              <h2
+                className="text-lg font-medium text-gray-900"
+                id="slide-over-title"
+              >
+                Need help?
+              </h2>
+              <div className="ml-3 flex h-7 items-center">
+                <button
+                  type="button"
+                  className="-m-2 p-2 text-gray-400 hover:text-gray-500"
+                  onClick={() => {
+                    setshowChatbar(false);
+                  }}
+                >
+                  <span className="sr-only">Close panel</span>
+
+                  <svg
+                    className="h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
             {/* <div className="message flex flex-col mt-9 p-2">
               <div className="message-top flex">
                 <img
@@ -216,13 +239,14 @@ const Chat = ({ c }) => {
               </div>
             </div> */}
 
-            <Form className="flex w-full mx-auto my-4" onSubmit={handleChat}>
+            <Form className="flex w-full mx-auto my-4 " onSubmit={handleChat}>
               <div>
-                <textarea
-                  className="textarea textarea-bordered w-60"
+                <input
+                  type="text"
+                  className="textarea textarea-bordered w-60 mr-1"
                   placeholder="Your message"
                   name="message"
-                ></textarea>
+                />
               </div>
               <button className="btn gap-2 w-20 flex">Send</button>
             </Form>
