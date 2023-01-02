@@ -1,5 +1,4 @@
 import React from "react";
-import pa from "../../images/pa.png";
 import "./AboutUs.css";
 
 const AboutUs = () => {
