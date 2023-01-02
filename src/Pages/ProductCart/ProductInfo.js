@@ -1,25 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useStore } from "react-redux";
 import { Link, useLoaderData } from "react-router-dom";
 import Chat from "../Chat/Chat";
 import CartItems from "./CartItems";
+import Counter from "./Counter";
 
 // This part is contributed by Ankan Halder
 
 const ProductInfo = () => {
   const products = useLoaderData();
+  const store = useStore();
   const [cart, setCart] = useState([]);
   const [showSidebar, setShowSidebar] = useState(false);
-  const [counter, setCounter] = useState(1);
-  const [product, setProduct] = useState({});
 
-  useEffect(() => {
+  const handleCart = (product) => {
+
+    const previousItems = localStorage.getItem("cart");
+    if (previousItems) {
+      const parsedItems = JSON.parse(previousItems);
+      setCart(parsedItems);
+    }
+    const found = cart.find((item) => item._id === product._id);
+    const quantity = store.getState().states.quantity;
+    console.log(found, quantity, cart);
+
+    if (found || quantity === 0) {
+      console.log("Already in cart");
+      return;
+    }
+
     const selectedProduct = {
-      productId : product._id,
+      productId: product._id,
+      image: product.image,
       productName: product.productName,
-      price: product.price,
-      category: product.category,
-      quantity: counter,
+      quantity: quantity,
+      price: product.price * quantity
     };
+
+    store.dispatch({ type: "setQuantity", payload: 0 });
 
     const itemsInCart = localStorage.getItem("cart");
     if (itemsInCart) {
@@ -28,36 +46,12 @@ const ProductInfo = () => {
       setCart(newCart);
       localStorage.setItem("cart", JSON.stringify(newCart));
       return;
-    }
-    else {
+    } else {
       const newCart = [selectedProduct];
       setCart(newCart);
       localStorage.setItem("cart", JSON.stringify(newCart));
       return;
     }
-  }, [product, counter]);
-
-
-  
-  const handleQuantity = (e) => {
-    if (e === 0) {
-      setCounter(0);
-    } else {
-      setCounter(counter - 1);
-    }
-  };
-
-  const handleCart = (product) => {
-
-    const found = cart.find((item) => item.productId === product._id);
-    console.log(found, cart);
-
-    if (found) {
-      console.log("Already in cart");
-      return;
-    }
-
-    setProduct(product);
   };
 
   return (
@@ -113,6 +107,7 @@ const ProductInfo = () => {
                       Add to cart
                     </button>
                     {/* <Chat></Chat> */}
+                    <Counter></Counter>
                   </div>
                 </div>
               </div>
@@ -177,10 +172,7 @@ const ProductInfo = () => {
                               {cart.map((item) => (
                                 <CartItems 
                                   item={item} 
-                                  key={item?._id}
-                                  handleQuantity={handleQuantity}
-                                  counter={counter}
-                                  setCounter={setCounter}
+                                  key={item?.productId}
                                 ></CartItems>
                               ))}
                             </ul>

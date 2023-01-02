@@ -1,13 +1,21 @@
 import React from "react";
+import { useStore } from "react-redux";
 import payment from "../../images/payment.svg";
 
 const Payment = () => {
+  const store = useStore();
+  const user = store.getState().states.user;
+  const userName = user?.username;
+  const userEmail = user?.email;
+  const totalPrice = store.getState().states.totalPrice;
+  console.log(user, totalPrice);
+
   const handleOrderSummeryForm = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
-    const email = form.email.value;
-    const price = form.price.value;
+    const name = userName;
+    const email = userEmail;
+    const price = totalPrice;
     const phone = form.phone.value;
     const address = form.address.value;
     const postcode = form.postcode.value;
@@ -46,7 +54,7 @@ const Payment = () => {
                                 <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                                     <div>
                                         <label className="text-gray-700 dark:text-gray-200" htmlFor="username">Name</label>
-                                        <input id="username" type="text" name='name' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                                        <input id="username" type="text" name='name' defaultValue={userName} readOnly className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                                     </div>
 
                   <div>
@@ -60,6 +68,8 @@ const Payment = () => {
                       id="emailAddress"
                       name="email"
                       type="email"
+                      defaultValue={userEmail}
+                      readOnly
                       className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                     />
                   </div>
@@ -75,6 +85,8 @@ const Payment = () => {
                       id="price"
                       type="price"
                       name="price"
+                      defaultValue={totalPrice}
+                      readOnly
                       className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                     />
                   </div>

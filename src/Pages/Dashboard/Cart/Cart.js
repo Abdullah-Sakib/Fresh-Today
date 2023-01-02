@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { useStore } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-
+  const store = useStore();
   const cart = JSON.parse(localStorage.getItem("cart"));
+  
   console.log(cart);
+
+  const totalPrice = cart.reduce((total, product) => total + product.price, 0);
+  store.dispatch({ type: "setTotalPrice", payload: totalPrice });
+  localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
   
   return (
     <div className=" font-family m-5 md:m-10 ">
@@ -51,7 +57,7 @@ const Cart = () => {
               <th colSpan={3} className="bg-green-400 text-lg ">
                 Total
               </th>
-              <th className="bg-green-400 text-lg ">220</th>
+              <th className="bg-green-400 text-lg ">{totalPrice}</th>
               <th className="text-center bg-green-400 text-lg">
                 <button className="btn btn-active">
                   <Link to="/payment">Pay Now</Link>
