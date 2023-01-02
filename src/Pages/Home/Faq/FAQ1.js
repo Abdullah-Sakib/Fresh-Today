@@ -5,11 +5,11 @@ import "./FAQ1.css";
 const FAQ1 = () => {
   return (
     <div>
-      <div class="lg:mx-20 mx-5 font-family relative flex flex-col min-w-0 break-words bg-white   rounded-2xl bg-clip-border mt-16 md:mt-28 lg:mt-20">
-        <div class="flex-auto p-4">
-          <div class="flex flex-wrap -mx-3">
-            <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
-              <div class="flex flex-col h-full">
+      <div className="lg:mx-20 mx-5 font-family relative flex flex-col min-w-0 break-words bg-white   rounded-2xl bg-clip-border mt-16 md:mt-28 lg:mt-20">
+        <div className="flex-auto p-4">
+          <div className="flex flex-wrap -mx-3">
+            <div className="max-w-full px-3 lg:w-1/2 lg:flex-none">
+              <div className="flex flex-col h-full">
                 <h2 className="text-center font-bold text-slate-800 text-4xl font-family my-5">
                   {" "}
                   Some Commonly Asked Questions About Us
@@ -58,11 +58,11 @@ const FAQ1 = () => {
               </div>
             </div>
 
-            <div class="max-w-full px-3 mt-12 ml-auto text-center lg:mt-0 lg:w-5/12 lg:flex-none space-y-4 mx-auto">
-              <div class="h-full rounded-xl">
-                <div class="relative flex items-center justify-center h-full">
+            <div className="max-w-full px-3 mt-12 ml-auto text-center lg:mt-0 lg:w-5/12 lg:flex-none space-y-4 mx-auto">
+              <div className="h-full rounded-xl">
+                <div className="relative flex items-center justify-center h-full">
                   <img
-                    class="relative z-20 w-full pt-6"
+                    className="relative z-20 w-full pt-6"
                     src="https://djmdigital.be/wp-content/uploads/2022/04/online-communication.jpg"
                     alt="rocket"
                   />

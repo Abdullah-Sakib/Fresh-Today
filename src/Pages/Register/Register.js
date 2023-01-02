@@ -1,5 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth } from "firebase/auth";
+import app from "../../Firebase/firebase.config";
 
 const Register = () => {
   const [passwordError, setPasswordError] = useState("");
@@ -7,6 +10,17 @@ const Register = () => {
   const name = useRef("");
   const email = useRef("");
   const password = useRef("");
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => console.error(error));
+  };
+
   const handleRegisterForm = (e) => {
     e.preventDefault();
     const role = e.target.account.value;
@@ -61,8 +75,8 @@ const Register = () => {
           Welcome back!
         </p> */}
 
-        <a
-          href="/"
+        <Link
+          onClick={handleGoogleSignIn}
           className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
         >
           <div className="px-4 py-2">
@@ -89,7 +103,7 @@ const Register = () => {
           <span className="w-5/6 px-4 py-3 font-bold text-center">
             Register in with Google
           </span>
-        </a>
+        </Link>
 
         <div className="flex items-center justify-between mt-4">
           <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useStore } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -6,8 +6,6 @@ const Cart = () => {
   const store = useStore();
   const cart = JSON.parse(localStorage.getItem("cart"));
   
-  console.log(cart);
-
   const totalPrice = cart.reduce((total, product) => total + product.price, 0);
   store.dispatch({ type: "setTotalPrice", payload: totalPrice });
   localStorage.setItem("totalPrice", JSON.stringify(totalPrice));

@@ -3,158 +3,150 @@ import React from "react";
 const Highlight = () => {
   return (
     <div>
-      <div className="mt-16 md:mt-28 lg:mt-32 shadow-lg font-family 2xl:container 2xl:mx-auto md:py-12 py-9 bg-gray-50">
-        <div className=" bg-gray-50 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-8 md:gap-12 gap-14 lg:px-20 lg:py-12 py-10 md:px-12 px-4">
-          {/* Delivery grid Card */}
-          <div>
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M21.3334 4H1.33337V21.3333H21.3334V4Z"
-                stroke="#4B5563"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M21.3334 10.6665H26.6667L30.6667 14.6665V21.3332H21.3334V10.6665Z"
-                stroke="#4B5563"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M7.33333 28.0002C9.17428 28.0002 10.6667 26.5078 10.6667 24.6668C10.6667 22.8259 9.17428 21.3335 7.33333 21.3335C5.49238 21.3335 4 22.8259 4 24.6668C4 26.5078 5.49238 28.0002 7.33333 28.0002Z"
-                stroke="#4B5563"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M24.6667 28.0002C26.5077 28.0002 28 26.5078 28 24.6668C28 22.8259 26.5077 21.3335 24.6667 21.3335C22.8258 21.3335 21.3334 22.8259 21.3334 24.6668C21.3334 26.5078 22.8258 28.0002 24.6667 28.0002Z"
-                stroke="#4B5563"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <h3 className=" text-xl leading-5 font-semibold text-gray-800 lg:mt-10 mt-8 ">
-              Delivery
-            </h3>
-            <p className=" text-base leading-6 font-normal text-gray-600 mt-4 lg:w-full md:w-9/12 w-full">
-              Free delivery over orders above 1000 /-
-            </p>
+      <div class="flex items-center justify-center font-family mt-16 md:mt-28 lg:mt-32 ">
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+          <div class="relative  bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow ">
+            <div class=" shadow-xl text-white mx-20 mb-3 absolute rounded-full py-4 px-4  bg-green-500 left-4 -top-6">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="32"
+                  height="32"
+                >
+                  <path d="M3.375 4.5C2.339 4.5 1.5 5.34 1.5 6.375V13.5h12V6.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM13.5 15h-12v2.625c0 1.035.84 1.875 1.875 1.875h.375a3 3 0 116 0h3a.75.75 0 00.75-.75V15z" />
+                  <path d="M8.25 19.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0zM15.75 6.75a.75.75 0 00-.75.75v11.25c0 .087.015.17.042.248a3 3 0 015.958.464c.853-.175 1.522-.935 1.464-1.883a18.659 18.659 0 00-3.732-10.104 1.837 1.837 0 00-1.47-.725H15.75z" />
+                  <path d="M19.5 19.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="mt-12">
+              <div class="border-t-2"></div>
+
+              <div class="flex justify-between">
+                <div>
+                  <h3 className=" text-xl leading-5 font-semibold text-gray-800 lg:mt-5 mt-8 ">
+                    Delivery
+                  </h3>
+                  <p className=" text-sm leading-6 font-normal text-gray-600 mt-4 lg:w-full md:w-9/12 w-full">
+                    Free delivery over orders above 1000 /-
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* customer Grid Card */}
+          <div class="relative  bg-white py-6 px-6 rounded-3xl w-64 my-4   shadow">
+            <div class="shadow-xl text-white mx-20 mb-3 absolute rounded-full py-4 px-4  bg-green-500 left-4 -top-6">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="32"
+                  height="32"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="mt-12">
+              <div class="border-t-2"></div>
 
-          <div>
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M28 20C28 20.7072 27.719 21.3855 27.219 21.8856C26.7189 22.3857 26.0406 22.6667 25.3333 22.6667H9.33333L4 28V6.66667C4 5.95942 4.28095 5.28115 4.78105 4.78105C5.28115 4.28095 5.95942 4 6.66667 4H25.3333C26.0406 4 26.7189 4.28095 27.219 4.78105C27.719 5.28115 28 5.95942 28 6.66667V20Z"
-                stroke="#4B5563"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <h3 className=" text-xl leading-5 font-semibold text-gray-800 lg:mt-10 mt-8 ">
-              Customer Care
-            </h3>
-            <p className=" text-base leading-6 font-normal text-gray-600 mt-4 lg:w-full md:w-9/12 w-full">
-              Our customer care is available 24/7 at{" "}
-              <span className=" font-semibold cursor-pointer">
-                +8801711-735378
-              </span>{" "}
-              and{" "}
-              <span className=" font-semibold cursor-pointer">
-                customercare@gmail.com
-              </span>
-            </p>
+              <div class="flex justify-between">
+                <div>
+                  <h3 className="text-xl leading-5 font-semibold text-gray-800 lg:mt-5 mt-8">
+                    Customer Care
+                  </h3>
+                  <p className=" text-sm leading-6 font-normal text-gray-600 mt-4 lg:w-full md:w-9/12 w-full">
+                    Our customer care is available 24/7 at{" "}
+                    <span className=" font-semibold cursor-pointer text-sm">
+                      +8801711-735378
+                    </span>{" "}
+                    and{" "}
+                    <span className=" font-semibold cursor-pointer text-sm">
+                      customercare@gmail.com
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Recycle Grid Card */}
+          <div class="relative  bg-white py-6 px-6 rounded-3xl w-64 my-4  shadow ">
+            <div class="shadow-xl text-white mx-20 mb-3 absolute rounded-full py-4 px-4  bg-green-500 left-4 -top-6">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="32"
+                  height="32"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12 1.5c-1.921 0-3.816.111-5.68.327-1.497.174-2.57 1.46-2.57 2.93V21.75a.75.75 0 001.029.696l3.471-1.388 3.472 1.388a.75.75 0 00.556 0l3.472-1.388 3.471 1.388a.75.75 0 001.029-.696V4.757c0-1.47-1.073-2.756-2.57-2.93A49.255 49.255 0 0012 1.5zm-.97 6.53a.75.75 0 10-1.06-1.06L7.72 9.22a.75.75 0 000 1.06l2.25 2.25a.75.75 0 101.06-1.06l-.97-.97h3.065a1.875 1.875 0 010 3.75H12a.75.75 0 000 1.5h1.125a3.375 3.375 0 100-6.75h-3.064l.97-.97z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="mt-12">
+              <div class="border-t-2"></div>
 
-          <div>
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M22.6667 1.3335L28.0001 6.66683L22.6667 12.0002"
-                stroke="#1F2937"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M4 14.6665V11.9998C4 10.5853 4.5619 9.22879 5.5621 8.2286C6.56229 7.22841 7.91885 6.6665 9.33333 6.6665H28"
-                stroke="#1F2937"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M9.33333 30.6667L4 25.3333L9.33333 20"
-                stroke="#1F2937"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M28 17.3335V20.0002C28 21.4147 27.4381 22.7712 26.4379 23.7714C25.4377 24.7716 24.0812 25.3335 22.6667 25.3335H4"
-                stroke="#1F2937"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <h3 className=" text-xl leading-5 font-semibold text-gray-800 lg:mt-10 mt-8 ">
-              Recycle
-            </h3>
-            <p className=" text-base leading-6 font-normal text-gray-600 mt-4 lg:w-full md:w-9/12 w-full">
-              All out products are 100 percent recycable
-            </p>
+              <div class="flex justify-between">
+                <div>
+                  <h3 className=" text-xl leading-5 font-semibold text-gray-800 lg:mt-5 mt-8 ">
+                    Return Policy
+                  </h3>
+                  <p className=" text-sm leading-6 font-normal text-gray-600 mt-4 lg:w-full md:w-9/12 w-full">
+                    Our Return and Replacement policy are easy and flexible.
+                    Returns if not satisfied with Products quality, size.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
+          <div class="relative  bg-white py-6 px-6 rounded-3xl w-64 my-4  shadow ">
+            <div class="shadow-xl text-white mx-20 mb-3 absolute rounded-full py-4 px-4  bg-green-500 left-4 -top-6">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="32"
+                  height="32"
+                >
+                  <path d="M4.5 3.75a3 3 0 00-3 3v.75h21v-.75a3 3 0 00-3-3h-15z" />
+                  <path
+                    fillRule="evenodd"
+                    d="M22.5 9.75h-21v7.5a3 3 0 003 3h15a3 3 0 003-3v-7.5zm-18 3.75a.75.75 0 01.75-.75h6a.75.75 0 010 1.5h-6a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="mt-12">
+              <div class="border-t-2"></div>
 
-          {/* Secure Payment Card */}
-
-          <div>
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15.9999 29.3332C15.9999 29.3332 26.6666 23.9998 26.6666 15.9998V6.6665L15.9999 2.6665L5.33325 6.6665V15.9998C5.33325 23.9998 15.9999 29.3332 15.9999 29.3332Z"
-                stroke="#1F2937"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <h3 className=" text-xl leading-5 font-semibold text-gray-800 lg:mt-10 mt-8 ">
-              Secure Payment
-            </h3>
-            <p className=" text-base leading-6 font-normal text-gray-600 mt-4 lg:w-full md:w-9/12 w-full">
-              Transaction process has end to end encryption
-            </p>
+              <div class="flex justify-between">
+                <div>
+                  <h3 className=" text-xl leading-5 font-semibold text-gray-800 lg:mt-5 mt-8 ">
+                    Payment Gateway
+                  </h3>
+                  <p className=" text-sm leading-6 font-normal text-gray-600 mt-4 lg:w-full md:w-9/12 w-full">
+                    We receive Bkash, Rocket and masters card. We have cash on
+                    delivery system.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
