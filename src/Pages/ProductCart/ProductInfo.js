@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Chat from "../Chat/Chat";
 import CartItems from "./CartItems";
@@ -7,16 +7,57 @@ import CartItems from "./CartItems";
 
 const ProductInfo = () => {
   const products = useLoaderData();
-
   const [cart, setCart] = useState([]);
   const [showSidebar, setShowSidebar] = useState(false);
+  const [counter, setCounter] = useState(1);
+  const [product, setProduct] = useState({});
 
-  // console.log(cart);
+  useEffect(() => {
+    const selectedProduct = {
+      productId : product._id,
+      productName: product.productName,
+      price: product.price,
+      category: product.category,
+      quantity: counter,
+    };
+
+    const itemsInCart = localStorage.getItem("cart");
+    if (itemsInCart) {
+      const parsedItems = JSON.parse(itemsInCart);
+      const newCart = [...parsedItems, selectedProduct];
+      setCart(newCart);
+      localStorage.setItem("cart", JSON.stringify(newCart));
+      return;
+    }
+    else {
+      const newCart = [selectedProduct];
+      setCart(newCart);
+      localStorage.setItem("cart", JSON.stringify(newCart));
+      return;
+    }
+  }, [product, counter]);
+
+
+  
+  const handleQuantity = (e) => {
+    if (e === 0) {
+      setCounter(0);
+    } else {
+      setCounter(counter - 1);
+    }
+  };
 
   const handleCart = (product) => {
-    const newCart = [...cart, product];
-    setCart(newCart);
-    console.log(cart);
+
+    const found = cart.find((item) => item.productId === product._id);
+    console.log(found, cart);
+
+    if (found) {
+      console.log("Already in cart");
+      return;
+    }
+
+    setProduct(product);
   };
 
   return (
@@ -43,7 +84,8 @@ const ProductInfo = () => {
         </div>
       </section>
 
-      <div className="w-11/12 mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 my-40">
+      <h1 className="text-center mt-16 text-5xl">{products[0].productName}</h1>
+      <div className="w-11/12 mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 mt-0 mb-32">
         {products?.map((product) => (
           <div
             key={product._id}
@@ -55,7 +97,7 @@ const ProductInfo = () => {
                 <div className="flex justify-between items-center">
                   <div>
                     <h1 className="mt-5 text-2xl font-semibold">
-                      {product.productName}
+                      {product.vendorName}
                     </h1>
                     <p className="mt-2">price: {product.price}/-</p>
                     <p className="mt-2">Available {product.quantity} kg</p>
@@ -70,7 +112,7 @@ const ProductInfo = () => {
                     >
                       Add to cart
                     </button>
-                    <Chat></Chat>
+                    {/* <Chat></Chat> */}
                   </div>
                 </div>
               </div>
@@ -132,8 +174,14 @@ const ProductInfo = () => {
                         <div className="mt-8">
                           <div className="flow-root">
                             <ul className="-my-6 divide-y divide-gray-200">
-                              {cart.map((c) => (
-                                <CartItems c={c} key={c?._id}></CartItems>
+                              {cart.map((item) => (
+                                <CartItems 
+                                  item={item} 
+                                  key={item?._id}
+                                  handleQuantity={handleQuantity}
+                                  counter={counter}
+                                  setCounter={setCounter}
+                                ></CartItems>
                               ))}
                             </ul>
                           </div>

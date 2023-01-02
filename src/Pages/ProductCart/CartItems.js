@@ -2,24 +2,23 @@ import React, { useState } from "react";
 import { BsPlusSquare } from "react-icons/bs";
 import { AiOutlineMinusSquare } from "react-icons/ai";
 
-const CartItems = ({ c }) => {
-  const [counter, setCounter] = useState(0);
+const CartItems = ({ item, handleQuantity, counter, setCounter }) => {
+  // const [counter, setCounter] = useState(1);
 
-
-  const handleQuantity = (e) => {
-    if (e === 0) {
-      setCounter(0);
-    } else {
-      setCounter(counter - 1);
-    }
-  };
+  // const handleQuantity = (e) => {
+  //   if (e === 0) {
+  //     setCounter(0);
+  //   } else {
+  //     setCounter(counter - 1);
+  //   }
+  // };
 
   return (
     <div>
       <li className="flex py-6">
         <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
           <img
-            src={c.image}
+            src={item.image}
             alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
             className="h-full w-full object-cover object-center"
           />
@@ -29,9 +28,9 @@ const CartItems = ({ c }) => {
           <div>
             <div className="flex justify-between text-base font-medium text-gray-900">
               <h3>
-                <span>{c.productName} </span>
+                <span>{item.productName} </span>
               </h3>
-              <p className="ml-4">{c.price * counter}/-</p>
+              <p className="ml-4">{item.price * counter}/-</p>
             </div>
           </div>
 

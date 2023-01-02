@@ -84,7 +84,7 @@ const Header = () => {
           </li>
           {user?.role === "customer" && (
             <li>
-              <Link to="/cart">Cart</Link>
+              <Link to="/cart">My Orders</Link>
             </li>
           )}
           {(user?.role === "admin" || user?.role === "vendor") && (
