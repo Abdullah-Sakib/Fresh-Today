@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Conversation = ({ conversation }) => {
   //   const {user} = useContext(AuthContext);
@@ -59,9 +59,6 @@ const Conversation = ({ conversation }) => {
               {conversation.message}
             </p>
           </div>
-          <div>
-            <p className="messageBottom text-sm px-4 py-2">1 hour ago</p>
-          </div>
         </div>
       ) : (
         <div className="message flex flex-col mt-9 p-2">
@@ -77,9 +74,6 @@ const Conversation = ({ conversation }) => {
             >
               Hi this is tasfi..
             </p>
-          </div>
-          <div>
-            <p className="messageBottom text-sm px-4 py-2">1 hour ago</p>
           </div>
         </div>
       )}
