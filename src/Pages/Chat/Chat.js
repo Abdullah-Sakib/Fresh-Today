@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { Form } from "react-router-dom";
 import Conversation from "../Conversation/Conversation";
-// import ProductInfo from "../ProductInfo/ProductInfo";
 import "./Chat.css";
 
 const Chat = () => {
@@ -32,10 +31,7 @@ const Chat = () => {
   const handleChat = (event) => {
     event.preventDefault();
     const form = event.target;
-    // const name = user.name;
-    // const email = user.email;
     const message = form.message.value;
-    // const photo = user.img;
 
     const chat = {
       conversationId,

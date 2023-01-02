@@ -1,22 +1,57 @@
 import React, { useState } from "react";
+import { useStore } from "react-redux";
 import { Link, useLoaderData } from "react-router-dom";
 import Chat from "../Chat/Chat";
 import CartItems from "./CartItems";
+import Counter from "./Counter";
 
 // This part is contributed by Ankan Halder
 
 const ProductInfo = () => {
   const products = useLoaderData();
-
+  const store = useStore();
   const [cart, setCart] = useState([]);
   const [showSidebar, setShowSidebar] = useState(false);
 
-  // console.log(cart);
-
   const handleCart = (product) => {
-    const newCart = [...cart, product];
-    setCart(newCart);
-    console.log(cart);
+
+    const previousItems = localStorage.getItem("cart");
+    if (previousItems) {
+      const parsedItems = JSON.parse(previousItems);
+      setCart(parsedItems);
+    }
+    const found = cart.find((item) => item._id === product._id);
+    const quantity = store.getState().states.quantity;
+    console.log(found, quantity, cart);
+
+    if (found || quantity === 0) {
+      console.log("Already in cart");
+      return;
+    }
+
+    const selectedProduct = {
+      productId: product._id,
+      image: product.image,
+      productName: product.productName,
+      quantity: quantity,
+      price: product.price * quantity
+    };
+
+    store.dispatch({ type: "setQuantity", payload: 0 });
+
+    const itemsInCart = localStorage.getItem("cart");
+    if (itemsInCart) {
+      const parsedItems = JSON.parse(itemsInCart);
+      const newCart = [...parsedItems, selectedProduct];
+      setCart(newCart);
+      localStorage.setItem("cart", JSON.stringify(newCart));
+      return;
+    } else {
+      const newCart = [selectedProduct];
+      setCart(newCart);
+      localStorage.setItem("cart", JSON.stringify(newCart));
+      return;
+    }
   };
 
   return (
@@ -43,7 +78,8 @@ const ProductInfo = () => {
         </div>
       </section>
 
-      <div className="w-11/12 mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 my-40">
+      <h1 className="text-center mt-16 text-5xl">{products[0].productName}</h1>
+      <div className="w-11/12 mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 mt-0 mb-32">
         {products?.map((product) => (
           <div
             key={product._id}
@@ -55,7 +91,7 @@ const ProductInfo = () => {
                 <div className="flex justify-between items-center">
                   <div>
                     <h1 className="mt-5 text-2xl font-semibold">
-                      {product.productName}
+                      {product.vendorName}
                     </h1>
                     <p className="mt-2">price: {product.price}/-</p>
                     <p className="mt-2">Available {product.quantity} kg</p>
@@ -71,6 +107,7 @@ const ProductInfo = () => {
                       Add to cart
                     </button>
                     <Chat></Chat>
+                    <Counter></Counter>
                   </div>
                 </div>
               </div>
@@ -132,8 +169,11 @@ const ProductInfo = () => {
                         <div className="mt-8">
                           <div className="flow-root">
                             <ul className="-my-6 divide-y divide-gray-200">
-                              {cart.map((c) => (
-                                <CartItems c={c} key={c?._id}></CartItems>
+                              {cart.map((item) => (
+                                <CartItems 
+                                  item={item} 
+                                  key={item?.productId}
+                                ></CartItems>
                               ))}
                             </ul>
                           </div>
