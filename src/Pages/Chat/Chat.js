@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/style-prop-object */
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { Form } from "react-router-dom";
 import Conversation from "../Conversation/Conversation";
@@ -10,8 +10,7 @@ import "./Chat.css";
 const Chat = () => {
   const [conversations, setConversations] = useState([]);
   const [messageSent, setMessageSent] = useState(false);
-
-  console.log(messageSent);
+  const scrollRef = useRef();
 
   const [showChatbar, setshowChatbar] = useState(false);
   const conversationId = "63ae01d31068510422115243";
@@ -21,7 +20,7 @@ const Chat = () => {
       .then((res) => res.json())
       .then((data) => setConversations(data));
   }, [messageSent]);
-  // console.log("conversations", conversations);
+  console.log("conversations", conversations);
 
   const user = {
     name: "Nishi",
@@ -61,6 +60,10 @@ const Chat = () => {
       })
       .catch((error) => console.error(error));
   };
+
+  useEffect(() => {
+    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [conversations]);
 
   return (
     <div>
@@ -136,10 +139,12 @@ const Chat = () => {
             </div>
 
             {conversations.map((conversation) => (
-              <Conversation
-                key={conversation._id}
-                conversation={conversation}
-              ></Conversation>
+              <div ref={scrollRef}>
+                <Conversation
+                  key={conversation._id}
+                  conversation={conversation}
+                ></Conversation>
+              </div>
             ))}
           </div>
           <Form
