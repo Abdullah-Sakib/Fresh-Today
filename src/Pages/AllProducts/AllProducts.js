@@ -29,28 +29,28 @@ const AllProducts = () => {
   const [categoryMeat, setCategoryMeat] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/category/Fruits`)
+    fetch(`https://fresh-today-server.vercel.app/products/category/Fruits`)
       .then(res => res.json())
       .then(data => {
         setCategoryProducts(data)
       })
   }, [])
   useEffect(() => {
-    fetch(`http://localhost:5000/products/category/Vegetables`)
+    fetch(`https://fresh-today-server.vercel.app/products/category/Vegetables`)
       .then(res => res.json())
       .then(data => {
         setCategoryVegetables(data)
       })
   }, [])
   useEffect(() => {
-    fetch(`http://localhost:5000/products/category/Dry-Food`)
+    fetch(`https://fresh-today-server.vercel.app/products/category/Dry-Food`)
       .then(res => res.json())
       .then(data => {
         setCategoryDryFood(data)
       })
   }, [])
   useEffect(() => {
-    fetch(`http://localhost:5000/products/category/Meat`)
+    fetch(`https://fresh-today-server.vercel.app/products/category/Meat`)
       .then(res => res.json())
       .then(data => {
         setCategoryMeat(data)
