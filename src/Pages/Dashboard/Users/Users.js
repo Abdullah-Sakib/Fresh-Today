@@ -6,7 +6,7 @@ const Users = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${role}`)
+    fetch(`https://fresh-today-server.vercel.app/user/${role}`)
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, [role]);

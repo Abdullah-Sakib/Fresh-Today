@@ -7,7 +7,6 @@ import { getAuth } from "firebase/auth";
 import app from "../../Firebase/firebase.config";
 
 
-
 const Login = () => {
   const store = useStore();
   const navigate = useNavigate();
@@ -32,7 +31,7 @@ const Login = () => {
     const user = { userEmail, userPassword };
 
     try{
-      fetch("http://localhost:5000/user/login", {
+      fetch("https://fresh-today-server.vercel.app/user/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),

@@ -59,7 +59,7 @@ const router = createBrowserRouter([
         path: "product/:name",
         element: <ProductCart></ProductCart>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.name}`),
+          fetch(`https://fresh-today-server.vercel.app/products/${params.name}`),
       },
       {
         path: "/payment",

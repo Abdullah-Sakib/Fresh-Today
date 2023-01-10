@@ -23,7 +23,7 @@ const Payment = () => {
     console.log(orderSummery);
 
         try{
-            fetch('http://localhost:5000/payment', {
+            fetch('https://fresh-today-server.vercel.app/payment', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

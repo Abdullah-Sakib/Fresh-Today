@@ -15,7 +15,7 @@ const Chat = () => {
   const conversationId = "63ae01d31068510422115243";
 
   useEffect(() => {
-    fetch(`http://localhost:5000/chats/${conversationId}`)
+    fetch(`https://fresh-today-server.vercel.app/chats/${conversationId}`)
       .then((res) => res.json())
       .then((data) => setConversations(data));
   }, [messageSent]);
@@ -42,7 +42,7 @@ const Chat = () => {
       photo: user.img,
     };
 
-    fetch("http://localhost:5000/chats", {
+    fetch("https://fresh-today-server.vercel.app/chats", {
       method: "POST",
       headers: {
         "content-type": "application/json",

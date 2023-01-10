@@ -9,7 +9,7 @@ const Products = () => {
   const [vendorProducts, setVendorProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/vendor/${user?.email}`)
+    fetch(`https://fresh-today-server.vercel.app/products/vendor/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setVendorProducts(data));
   }, [user?.email]);
